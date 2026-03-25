@@ -1,9 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/kamalshafei/Desktop/**)",
-      "Bash(python3 -c \":*)",
-      "Bash(pip3 install:*)"
+      "Bash(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Agent(*)",
+      "WebSearch(*)",
+      "WebFetch(*)",
+      "mcp__Claude_Preview__*",
+      "mcp__Claude_in_Chrome__*"
     ]
   }
 }

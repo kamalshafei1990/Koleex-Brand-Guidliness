@@ -191,6 +191,121 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .scroll-anchor-label{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.65rem;font-weight:600;color:var(--gray-500);letter-spacing:.03em;opacity:0;transition:opacity .2s ease;pointer-events:none}
 .scroll-anchor-dot:hover .scroll-anchor-label,.scroll-anchor-dot.active .scroll-anchor-label{opacity:1}
 @media(max-width:1024px){.scroll-anchor{display:none}}
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+  direction: ltr;
+}
+  direction: rtl;
+  text-align: right;
+}
+  text-align: right;
+}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+  margin-left: auto;
+  margin-right: 0;
+}
+  text-align: right;
+}
+  flex-direction: row-reverse;
+}
+  flex-direction: row-reverse;
+}
+  flex-direction: row-reverse;
+}
+  direction: rtl !important;
+  text-align: right !important;
+}
+  direction: rtl !important;
+  text-align: right !important;
+  flex-direction: row-reverse !important;
+}
+  direction: rtl !important;
+  text-align: right !important;
+}
+  direction: ltr !important;
+  left: 24px !important;
+  right: auto !important;
+}
+  text-align: right;
+}
+  justify-content: flex-end;
+}
+  justify-content: flex-end;
+}
+  flex-direction: row-reverse;
+  text-align: right;
+}
+  flex-direction: row-reverse;
+  text-align: right;
+}
+  direction: rtl;
+}
+  flex-direction: row-reverse;
+}
+  text-align: right;
+}
+  text-align: left;
+}
+  direction: rtl;
+  text-align: right;
+}
+  text-align: right;
+}
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+  direction: ltr;
+}
+  direction: rtl;
+  text-align: right;
+}
+/* Page header — align right in Arabic */
+  text-align: right;
+}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+  margin-left: auto;
+  margin-right: 0;
+}
+/* Section titles and subtitles */
+  text-align: right;
+}
+  flex-direction: row-reverse;
+}
+/* Subsection headers */
+  flex-direction: row-reverse;
+}
+/* Nav menu items order reversed for Arabic */
+  flex-direction: row-reverse;
+}
+/* Dropdown menu content flows RTL */
+  direction: rtl !important;
+  text-align: right !important;
+}
+  direction: rtl !important;
+  text-align: right !important;
+  flex-direction: row-reverse !important;
+}
+  direction: rtl !important;
+  text-align: right !important;
+}
+/* Scroll anchor stays left */
+  direction: ltr !important;
+  left: 24px !important;
+  right: auto !important;
+}
+/* Mobile menu stays LTR */
+  direction: ltr !important;
+}
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+
 /* ===== RTL FOR ARABIC ===== */
 html[lang="ar"] body {
   font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
@@ -202,7 +317,6 @@ html[lang="ar"] .page-content {
   direction: rtl;
   text-align: right;
 }
-/* Page header — align right in Arabic */
 html[lang="ar"] .page-header {
   text-align: right;
 }
@@ -215,7 +329,6 @@ html[lang="ar"] .page-header p {
   margin-left: auto;
   margin-right: 0;
 }
-/* Section titles and subtitles */
 html[lang="ar"] .section-title,
 html[lang="ar"] .section-subtitle,
 html[lang="ar"] .section-label {
@@ -224,15 +337,12 @@ html[lang="ar"] .section-label {
 html[lang="ar"] .section-label {
   flex-direction: row-reverse;
 }
-/* Subsection headers */
 html[lang="ar"] .intro-subsection-header {
   flex-direction: row-reverse;
 }
-/* Nav menu items order reversed for Arabic */
 html[lang="ar"] .nav-center {
   flex-direction: row-reverse;
 }
-/* Dropdown menu content flows RTL */
 html[lang="ar"] .mega-inner {
   direction: rtl !important;
   text-align: right !important;
@@ -246,21 +356,52 @@ html[lang="ar"] .nav-dropdown-item span {
   direction: rtl !important;
   text-align: right !important;
 }
-/* Scroll anchor stays left */
 html[lang="ar"] .scroll-anchor {
   direction: ltr !important;
   left: 24px !important;
   right: auto !important;
 }
-/* Mobile menu stays LTR */
-html[lang="ar"] .mobile-menu {
-  direction: ltr !important;
+html[lang="ar"] .intro-hero {
+  text-align: right;
 }
-html[lang="ar"] .mobile-menu * {
-  direction: ltr !important;
-  text-align: left !important;
+html[lang="ar"] .intro-hero .section-label {
+  justify-content: flex-end;
 }
-
+html[lang="ar"] .intro-hero .intro-hero-tags {
+  justify-content: flex-end;
+}
+html[lang="ar"] .objective-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+html[lang="ar"] .governance-item,
+html[lang="ar"] .red-border-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+html[lang="ar"] .compare-row {
+  direction: rtl;
+}
+html[lang="ar"] .prev-next {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .prev-next a:first-child {
+  text-align: right;
+}
+html[lang="ar"] .prev-next a:last-child {
+  text-align: left;
+}
+html[lang="ar"] .footer-inner {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] p,
+html[lang="ar"] li,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  text-align: right;
+}
 
 @media(max-width:480px){.nav-logo svg{height:14px}.kx-lang{padding:2px;border-radius:14px}.kx-lang-btn{width:30px;height:20px;line-height:20px;font-size:7px;border-radius:10px}.section-title{font-size:1.8rem}.page-header h1{font-size:1.6rem}.page-header-num{font-size:4rem}.intro-hero{padding:32px 18px}.intro-hero h3{font-size:1.3rem}.prev-next a{padding:20px 16px}.intro-summary{padding:24px 18px}.roles-grid{grid-template-columns:1fr}}
 </style>
