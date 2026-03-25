@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 File Naming &amp; Structure — Koleex Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000000;--white:#FFFFFF;--silver:#C0C0C0;--silver-light:#D9D9D9;--silver-dark:#A0A0A0;--gray-50:#FAFAFA;--gray-100:#F5F5F7;--gray-200:#E8E8ED;--gray-300:#D2D2D7;--gray-400:#AFAFAF;--gray-500:#86868B;--gray-600:#6E6E73;--gray-700:#424245;--gray-800:#1D1D1F;--gray-900:#0A0A0A;--success:#34C759;--error:#FF3B30;--warning:#FF9500;--radius-s:8px;--radius-m:12px;--radius-l:20px;--radius-xl:28px;--shadow-s:0 1px 3px rgba(0,0,0,.08);--shadow-m:0 4px 20px rgba(0,0,0,.08);--shadow-l:0 12px 40px rgba(0,0,0,.12);--shadow-xl:0 20px 60px rgba(0,0,0,.18);--transition:all .35s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth;font-size:16px;overflow-y:scroll;scrollbar-gutter:stable}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--white);color:var(--gray-800);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html[lang="ar"] body{font-family:'Noto Sans Arabic','Inter',sans-serif}
+html[lang="zh"] body{font-family:'Noto Sans SC','Inter',sans-serif}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--gray-100)}::-webkit-scrollbar-thumb{background:var(--silver-dark);border-radius:3px}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08);height:52px}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo svg{height:20px;width:auto;display:block}.nav-logo svg path{fill:var(--white)}
+.nav-logo{display:flex;align-items:center;height:52px}
+.nav-center{display:flex;align-items:center;gap:0}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{padding:0 16px;height:52px;display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.8);cursor:pointer;transition:var(--transition);border:none;background:none;font-family:inherit}
+.nav-dropdown-trigger:hover{color:var(--white)}
+.nav-dropdown-trigger i.fa-chevron-down{font-size:.5rem;transition:var(--transition);color:rgba(255,255,255,.4)}
+.nav-dropdown:hover .nav-dropdown-trigger i.fa-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:fixed;top:52px;left:0;right:0;width:100vw;background:rgba(29,29,31,.97);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:none;padding:44px 0 48px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1),transform .35s cubic-bezier(.25,.1,.25,1);box-shadow:none;z-index:999}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu .mega-inner{max-width:980px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.nav-dropdown-item{display:flex;align-items:center;gap:12px;padding:8px 0;border-radius:0;transition:color .2s ease,opacity .3s ease,transform .3s ease;font-size:.88rem;font-weight:400;color:rgba(255,255,255,.8);opacity:0;transform:translateY(4px)}
+.nav-dropdown:hover .nav-dropdown-item{opacity:1;transform:translateY(0)}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(1){transition-delay:.02s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(2){transition-delay:.04s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(3){transition-delay:.06s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(4){transition-delay:.08s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(5){transition-delay:.1s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(6){transition-delay:.12s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(7){transition-delay:.14s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(8){transition-delay:.16s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(9){transition-delay:.18s}
+.nav-dropdown-item:hover{background:none;color:var(--white)}
+.nav-dropdown-item i{width:auto;height:auto;border-radius:0;background:none;display:inline;font-size:.75rem;color:rgba(255,255,255,.4);flex-shrink:0}
+.nav-dropdown-item:hover i{background:none;color:rgba(255,255,255,.6)}
+.nav-dropdown-item .item-num{display:none}
+.nav-blur-overlay{position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:998;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1);pointer-events:none}
+.nav-blur-overlay.active{opacity:1;visibility:visible}
+.nav-right{display:flex;align-items:center;gap:16px}
+.kx-lang{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:3px;background:rgba(255,255,255,.04);gap:2px}
+.kx-lang-btn{display:inline-block;width:72px;height:30px;line-height:30px;border-radius:19px;border:none;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:rgba(255,255,255,.4);transition:background .25s ease,color .25s ease,box-shadow .25s ease;letter-spacing:.03em;font-family:inherit;text-align:center;-webkit-appearance:none;appearance:none;outline:none;margin:0;padding:0;box-sizing:border-box}
+.kx-lang-btn.active{background:#fff;color:#000;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.kx-lang-btn:hover:not(.active){color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.hamburger{display:none;width:36px;height:36px;cursor:pointer;padding:0;border:none;background:none;position:relative;flex-shrink:0;z-index:1001}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--white);position:absolute;left:50%;transform:translateX(-50%);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.hamburger span:nth-child(1){top:12px}
+.hamburger span:nth-child(2){top:17px}
+.hamburger span:nth-child(3){top:22px}
+.hamburger.active span:nth-child(1){top:17px;transform:translateX(-50%) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0;transform:translateX(-50%) scaleX(0)}
+.hamburger.active span:nth-child(3){top:17px;transform:translateX(-50%) rotate(-45deg)}
+.mobile-menu{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:998;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:0;overflow-y:auto;transform:translateY(-100%);opacity:0;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;pointer-events:none;-webkit-overflow-scrolling:touch}
+.mobile-menu.active{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu-inner{padding:24px 24px 100px}
+.mobile-menu-section{margin-bottom:24px}
+.mobile-menu-label{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:12px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu-link{display:flex;align-items:center;gap:12px;padding:14px 0;color:rgba(255,255,255,.85);text-decoration:none;font-size:.9rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s ease}
+.mobile-menu-link:hover,.mobile-menu-link:active{color:#fff}
+.mobile-menu-link i{font-size:.75rem;width:20px;text-align:center;color:rgba(255,255,255,.4)}
+.mobile-menu-close{display:none!important}
+.mobile-menu-link .coming-tag{font-size:.45rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-left:auto;padding:2px 6px;border:1px solid rgba(255,255,255,.1);border-radius:4px}
+.scroll-progress{display:none}
+/* PAGE HEADER */
+.page-header{padding:160px 0 80px;background:var(--white);border-bottom:1px solid var(--gray-200);position:relative;overflow:hidden}
+
+.page-header-num{font-size:10rem;font-weight:900;letter-spacing:-.05em;line-height:.85;color:#ECECEC;margin:0 0 -24px auto;text-align:right;user-select:none}
+.page-header-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--black);color:var(--white);font-size:1.3rem;margin-bottom:20px}
+.page-header h1{font-size:3.5rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:16px}
+.page-header p{font-size:1.2rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+/* SECTION CONTENT STYLES */
+.section{padding:120px 0}
+.section:last-of-type{padding-bottom:160px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px}
+.section-label i{font-size:.65rem}
+.section-title{font-size:3.2rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:24px}
+.section-subtitle{font-size:1.35rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+.intro-section{background:var(--white)}
+.intro-hero{margin-top:56px;background:var(--black);border-radius:var(--radius-xl);padding:80px 72px;position:relative;overflow:hidden}
+.intro-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(192,192,192,.06),transparent)}
+.intro-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.03),transparent)}
+.intro-hero-content{position:relative;z-index:1}
+.intro-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-size:.7rem;font-weight:600;color:var(--silver);letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
+.intro-hero h3{font-size:2.4rem;font-weight:700;color:var(--white);letter-spacing:-.02em;line-height:1.2;margin-bottom:24px;max-width:700px}
+.intro-hero p{font-size:1.1rem;color:var(--silver);line-height:1.75;max-width:640px;font-weight:300}
+.intro-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.intro-hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.07);font-size:.7rem;font-weight:600;color:var(--silver-light);letter-spacing:.02em}
+.intro-hero-tag i{font-size:.6rem;color:var(--silver-dark)}
+.intro-subsection{margin-top:100px}
+.intro-subsection-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.intro-subsection-icon{width:52px;height:52px;border-radius:14px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.intro-subsection-title{font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-.01em}
+.intro-subsection-desc{font-size:1rem;color:var(--gray-600);line-height:1.7;max-width:720px;margin-bottom:32px}
+.objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.objective-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.objective-item:hover{border-color:var(--gray-300);background:var(--white)}
+.objective-item i{flex-shrink:0;margin-top:2px;font-size:.75rem;color:var(--black);width:26px;height:26px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.objective-item:hover i{background:var(--gray-200);color:var(--black)}
+.objective-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.philosophy-item{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);font-size:.82rem;font-weight:500;color:var(--gray-700);transition:var(--transition)}
+.philosophy-item:hover{border-color:var(--gray-300);background:var(--white)}
+.philosophy-item i{font-size:.9rem;color:var(--black)}
+.feel-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.feel-tag{padding:10px 20px;border-radius:30px;background:var(--black);color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.03em;transition:var(--transition)}
+.feel-tag:hover{background:var(--gray-800);transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.role-tag{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.role-tag:hover{border-color:var(--gray-300)}
+.role-tag i{font-size:1rem;color:var(--black);flex-shrink:0}
+.role-tag span{font-size:.78rem;font-weight:500;color:var(--gray-700)}
+.consistency-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.consistency-item{text-align:center;padding:24px 16px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-m);transition:var(--transition)}
+.consistency-item:hover{border-color:var(--gray-300)}
+.consistency-item i{font-size:1.6rem;color:var(--black);margin-bottom:12px;display:block}
+.consistency-item span{font-size:.8rem;font-weight:600;color:var(--black)}
+/* Compare Row (Do/Don't) */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.compare-col{padding:28px 24px;border-radius:var(--radius-m);border:2px solid var(--gray-200);background:var(--white)}
+.compare-col.do{border-color:var(--success)}
+.compare-col.dont{border-color:var(--error)}
+.compare-col-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:.85rem;font-weight:700;color:var(--black)}
+.compare-col-header i{font-size:.75rem}
+.compare-col.do .compare-col-header i{color:var(--success)}
+.compare-col.dont .compare-col-header i{color:var(--error)}
+.compare-col-list{list-style:none;padding:0;margin:0}
+.compare-col-list li{padding:8px 0;font-size:.82rem;font-weight:500;color:var(--gray-700);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--gray-100)}
+.compare-col-list li:last-child{border-bottom:none}
+.compare-col-list li i{font-size:.6rem;flex-shrink:0}
+.compare-col.do .compare-col-list li i{color:var(--success)}
+.compare-col.dont .compare-col-list li i{color:var(--error)}
+/* Check / X cards */
+.check-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.check-card{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.check-card:hover{border-color:var(--gray-300);background:var(--gray-50)}
+.check-card i{flex-shrink:0;margin-top:2px;font-size:.7rem;color:var(--success);width:24px;height:24px;background:rgba(52,199,89,.08);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.check-card span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.x-card{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.x-card:hover{border-color:var(--gray-300);background:var(--gray-50)}
+.x-card i{flex-shrink:0;margin-top:2px;font-size:.7rem;color:var(--error);width:24px;height:24px;background:rgba(255,59,48,.08);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.x-card span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+/* Warning Banner */
+.warning-banner{margin-top:28px;padding:24px 28px;background:var(--black);border-radius:var(--radius-m);border-left:5px solid var(--warning);display:flex;align-items:flex-start;gap:16px}
+.warning-banner i{color:var(--warning);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.warning-banner-content h4{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.warning-banner-content p{font-size:.88rem;color:var(--silver);line-height:1.6;font-weight:300}
+/* Summary */
+.intro-summary{margin-top:64px;background:var(--black);border-radius:var(--radius-l);padding:48px;display:flex;gap:48px;align-items:flex-start}
+.intro-summary-left{flex:0 0 auto}.intro-summary-left i{font-size:2rem;color:var(--silver)}
+.intro-summary-right{flex:1}
+.intro-summary-right h4{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:16px}
+.intro-summary-tags{display:flex;flex-wrap:wrap;gap:8px}
+.intro-summary-tag{padding:8px 18px;border-radius:6px;background:rgba(255,255,255,.08);font-size:.78rem;font-weight:600;color:var(--silver-light)}
+.intro-summary-note{margin-top:20px;font-size:.9rem;color:var(--silver);font-weight:300;line-height:1.6;font-style:italic}
+/* PREV/NEXT NAV */
+.prev-next{display:flex;gap:20px;padding:60px 0 80px;border-top:1px solid var(--gray-200)}
+.prev-next a{flex:1;display:flex;align-items:center;gap:16px;padding:28px 32px;border:1px solid var(--gray-200);border-radius:var(--radius-m);transition:var(--transition);text-decoration:none}
+.prev-next a:hover{border-color:var(--black);box-shadow:var(--shadow-m);transform:translateY(-2px)}
+.prev-next a.next{justify-content:flex-end;text-align:right}
+.prev-next .pn-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400)}
+.prev-next .pn-title{font-size:1rem;font-weight:600;color:var(--black)}
+.prev-next .pn-icon{font-size:1.2rem;color:var(--gray-400)}
+/* FOOTER */
+.page-footer{background:var(--black);padding:32px 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-logo svg{height:18px}.footer-logo svg path{fill:var(--silver-dark)}
+.footer-text{font-size:.72rem;color:var(--gray-600)}
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}.delay-6{transition-delay:.6s}
+/* Scroll Anchor Bar */
+.scroll-anchor{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;align-items:center;gap:20px;opacity:0;transition:opacity .4s ease}
+.scroll-anchor.visible{opacity:1}
+.scroll-anchor-line{width:1px;height:16px;background:var(--gray-300)}
+.scroll-anchor-dot{width:10px;height:10px;border-radius:50%;background:var(--gray-300);transition:all .3s ease;cursor:pointer;position:relative}
+.scroll-anchor-dot.active{background:var(--black);width:12px;height:12px;box-shadow:0 0 0 3px rgba(0,0,0,.1)}
+.scroll-anchor-dot:hover{background:var(--gray-600);transform:scale(1.3)}
+.scroll-anchor-label{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.65rem;font-weight:600;color:var(--gray-500);letter-spacing:.03em;opacity:0;transition:opacity .2s ease;pointer-events:none}
+.scroll-anchor-dot:hover .scroll-anchor-label,.scroll-anchor-dot.active .scroll-anchor-label{opacity:1}
+/* Mobile language globe */
+.mobile-lang-wrap{display:none;position:relative}
+.mobile-lang-trigger{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;transition:all .3s ease}
+.mobile-lang-trigger:hover,.mobile-lang-trigger:active{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:rgba(0,0,0,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;min-width:120px;z-index:1002;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.mobile-lang-dropdown.active{display:flex;flex-direction:column;gap:2px;animation:langDropIn .25s cubic-bezier(.4,0,.2,1)}
+@keyframes langDropIn{from{opacity:0;transform:translateY(-8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.mobile-lang-opt{padding:10px 14px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;text-align:left;cursor:pointer;border-radius:8px;transition:all .2s ease;font-family:inherit}
+.mobile-lang-opt:hover{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-opt.active{background:rgba(255,255,255,.15);color:#fff;font-weight:600}
+
+/* ====================== PAGE-SPECIFIC STYLES ====================== */
+
+/* File naming comparison */
+.fn-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.fn-compare-col{padding:28px;border-radius:var(--radius-m);border:2px solid var(--gray-200)}
+.fn-compare-col.correct{border-color:var(--success);background:rgba(52,199,89,.02)}
+.fn-compare-col.wrong{border-color:var(--error);background:rgba(255,59,48,.02)}
+.fn-compare-header{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:.85rem;font-weight:700;color:var(--black)}
+.fn-compare-header i{font-size:.8rem}
+.fn-compare-col.correct .fn-compare-header i{color:var(--success)}
+.fn-compare-col.wrong .fn-compare-header i{color:var(--error)}
+.fn-file{display:flex;align-items:center;gap:10px;padding:10px 14px;margin-bottom:8px;border-radius:var(--radius-s);background:var(--white);border:1px solid var(--gray-200);font-size:.78rem;font-weight:500;color:var(--gray-700);font-family:'SF Mono',SFMono-Regular,ui-monospace,'Cascadia Code',Menlo,Consolas,monospace}
+.fn-file i{font-size:.7rem;flex-shrink:0}
+.fn-compare-col.correct .fn-file i{color:var(--success)}
+.fn-compare-col.wrong .fn-file i{color:var(--error)}
+
+/* Structure formula */
+.fn-formula{margin-top:32px;padding:32px;background:var(--black);border-radius:var(--radius-l);text-align:center}
+.fn-formula-parts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;margin-top:16px}
+.fn-formula-part{padding:8px 14px;border-radius:6px;background:rgba(255,255,255,.1);font-size:.75rem;font-weight:600;color:var(--white);letter-spacing:.02em}
+.fn-formula-sep{color:var(--silver-dark);font-size:.9rem;font-weight:300}
+
+/* Category tags */
+.cat-tags-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.cat-tag-item{padding:10px 18px;border-radius:6px;background:var(--gray-50);border:1px solid var(--gray-200);font-size:.75rem;font-weight:600;color:var(--gray-700);transition:var(--transition);display:flex;align-items:center;gap:8px}
+.cat-tag-item:hover{background:var(--white);border-color:var(--gray-300)}
+.cat-tag-item i{font-size:.65rem;color:var(--gray-500)}
+
+/* Version flow */
+.version-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:32px;flex-wrap:wrap}
+.version-box{padding:20px 28px;border-radius:var(--radius-m);background:var(--white);border:2px solid var(--gray-200);text-align:center;min-width:120px;transition:var(--transition)}
+.version-box:hover{border-color:var(--black);box-shadow:var(--shadow-m)}
+.version-box .v-label{font-size:1.4rem;font-weight:800;color:var(--black);margin-bottom:4px}
+.version-box .v-desc{font-size:.68rem;font-weight:500;color:var(--gray-500)}
+.version-arrow{font-size:1.2rem;color:var(--gray-400);padding:0 12px}
+
+/* Format cards grid */
+.format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.format-card{padding:24px;border-radius:var(--radius-m);background:var(--white);border:1px solid var(--gray-200);transition:var(--transition)}
+.format-card:hover{border-color:var(--gray-300);box-shadow:var(--shadow-m)}
+.format-card-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.format-card-icon{width:40px;height:40px;border-radius:10px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.format-card-title{font-size:.88rem;font-weight:700;color:var(--black)}
+.format-card-exts{display:flex;flex-wrap:wrap;gap:6px}
+.format-ext{padding:4px 10px;border-radius:4px;background:var(--gray-50);border:1px solid var(--gray-200);font-size:.7rem;font-weight:600;color:var(--gray-600);font-family:'SF Mono',SFMono-Regular,ui-monospace,monospace}
+
+/* Folder tree */
+.folder-tree{margin-top:32px;padding:32px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-l);font-family:'SF Mono',SFMono-Regular,ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;font-size:.78rem;line-height:2.2;color:var(--gray-700);overflow-x:auto}
+.folder-tree .root{font-weight:700;color:var(--black);font-size:.88rem}
+.folder-tree .folder{color:var(--gray-700);font-weight:500}
+.folder-tree .folder i{color:var(--gray-500);margin-right:6px;font-size:.7rem;width:16px;text-align:center}
+.folder-tree ul{padding-left:28px;list-style:none;margin:0;border-left:1px solid var(--gray-300)}
+.folder-tree>ul{border-left:none;padding-left:0}
+
+/* Master assets */
+.master-vis{margin-top:32px;padding:40px;background:var(--black);border-radius:var(--radius-xl);position:relative;overflow:hidden}
+.master-vis::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(192,192,192,.05),transparent)}
+.master-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.master-item{padding:18px 14px;border-radius:var(--radius-s);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);text-align:center;transition:var(--transition)}
+.master-item:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15)}
+.master-item i{font-size:1.2rem;color:var(--silver);margin-bottom:8px;display:block}
+.master-item span{font-size:.7rem;font-weight:600;color:var(--silver-light);display:block}
+
+/* Wrong names banner */
+.wrong-names{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.wrong-name{padding:6px 14px;border-radius:6px;background:rgba(255,59,48,.06);border:1px solid rgba(255,59,48,.15);font-size:.72rem;font-weight:600;color:var(--error);font-family:'SF Mono',SFMono-Regular,ui-monospace,monospace;text-decoration:line-through}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .roles-grid{grid-template-columns:repeat(3,1fr)}.consistency-grid{grid-template-columns:repeat(2,1fr)}.philosophy-grid{grid-template-columns:repeat(2,1fr)}.page-header h1{font-size:2.6rem}.page-header-num{font-size:7rem}.scroll-anchor{display:none}
+  .format-grid{grid-template-columns:repeat(2,1fr)}.master-grid{grid-template-columns:repeat(3,1fr)}.fn-compare{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .kx-lang{display:none}.mobile-lang-wrap{display:block}.nav-inner{padding:0 12px}.nav-logo{margin-left:6px}.nav-logo svg{height:16px}.nav-right{gap:8px}.container{padding:0 20px}.nav-center{display:none}.hamburger{display:flex;align-items:center;justify-content:center}.section{padding:80px 0}.section:last-of-type{padding-bottom:100px}.section-title{font-size:2.2rem}.section-subtitle{font-size:1.1rem}.footer-inner{flex-direction:column;gap:12px;text-align:center}.objectives-grid{grid-template-columns:1fr}.roles-grid{grid-template-columns:repeat(2,1fr)}.consistency-grid,.philosophy-grid{grid-template-columns:1fr}.intro-hero{padding:48px 28px}.intro-hero h3{font-size:1.6rem}.intro-summary{flex-direction:column;gap:24px;padding:32px 24px}.page-header{padding:100px 0 40px}.page-header h1{font-size:2rem}.page-header-num{font-size:5rem}.prev-next{flex-direction:column}
+  .compare-row{grid-template-columns:1fr}.check-cards-grid{grid-template-columns:1fr}
+  .format-grid{grid-template-columns:1fr}.master-grid{grid-template-columns:repeat(2,1fr)}.fn-compare{grid-template-columns:1fr}.version-flow{gap:8px}.version-box{min-width:90px;padding:14px 18px}
+}
+@media(max-width:480px){
+  .nav-logo svg{height:14px}.section-title{font-size:1.8rem}.page-header h1{font-size:1.6rem}.page-header-num{font-size:4rem}.intro-hero{padding:32px 18px}.intro-hero h3{font-size:1.3rem}.prev-next a{padding:20px 16px}.intro-summary{padding:24px 18px}.roles-grid{grid-template-columns:1fr}
+  .master-grid{grid-template-columns:1fr}.version-box{min-width:70px;padding:12px}
+}
+
+/* ===== RTL FOR ARABIC ===== */
+html[lang="ar"] body{font-family:'Noto Sans Arabic','Inter',sans-serif}
+html[lang="ar"]{direction:ltr}
+html[lang="ar"] .page-content{direction:rtl;text-align:right}
+html[lang="ar"] .page-header{text-align:right}
+html[lang="ar"] .page-header .container{display:flex;flex-direction:column;align-items:flex-end}
+html[lang="ar"] .page-header p{margin-left:auto;margin-right:0}
+html[lang="ar"] .section-title,html[lang="ar"] .section-subtitle,html[lang="ar"] .section-label{text-align:right}
+html[lang="ar"] .section-label{flex-direction:row-reverse}
+html[lang="ar"] .intro-subsection-header{flex-direction:row-reverse}
+html[lang="ar"] .nav-center{flex-direction:row-reverse}
+html[lang="ar"] .mega-inner{direction:rtl!important;text-align:right!important}
+html[lang="ar"] .nav-dropdown-item{direction:rtl!important;text-align:right!important;flex-direction:row-reverse!important}
+html[lang="ar"] .nav-dropdown-item span{direction:rtl!important;text-align:right!important}
+html[lang="ar"] .scroll-anchor{direction:ltr!important;left:24px!important;right:auto!important}
+html[lang="ar"] .mobile-menu{direction:ltr!important}
+html[lang="ar"] .mobile-menu *{direction:ltr!important;text-align:left!important}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68ZM473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68ZM585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+    <div class="nav-center">
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_foundation">Foundation <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="01-introduction.html" class="nav-dropdown-item"><i class="fa-solid fa-book-open"></i><span><span class="item-num">01</span> Introduction</span></a><a href="02-brand-overview.html" class="nav-dropdown-item"><i class="fa-solid fa-eye"></i><span><span class="item-num">02</span> Brand Overview</span></a><a href="03-meaning-of-koleex.html" class="nav-dropdown-item"><i class="fa-solid fa-signature"></i><span><span class="item-num">03</span> Meaning of KOLEEX</span></a><a href="04-brand-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-lightbulb"></i><span><span class="item-num">04</span> Brand Philosophy</span></a><a href="05-design-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-compass-drafting"></i><span><span class="item-num">05</span> Design Philosophy</span></a><a href="06-brand-personality.html" class="nav-dropdown-item"><i class="fa-solid fa-fingerprint"></i><span><span class="item-num">06</span> Brand Personality</span></a><a href="07-tone-of-voice.html" class="nav-dropdown-item"><i class="fa-solid fa-comment-dots"></i><span><span class="item-num">07</span> Tone of Voice</span></a><a href="08-brand-language.html" class="nav-dropdown-item"><i class="fa-solid fa-language"></i><span><span class="item-num">08</span> Brand Language</span></a><a href="09-brand-slogan.html" class="nav-dropdown-item"><i class="fa-solid fa-quote-right"></i><span><span class="item-num">09</span> Brand Slogan</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_visual">Visual Identity <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="10-logo-system.html" class="nav-dropdown-item"><i class="fa-solid fa-vector-square"></i><span><span class="item-num">10</span> Logo System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ruler-combined"></i><span><span class="item-num">11</span> Logo Usage Rules</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ban"></i><span><span class="item-num">12</span> Logo Do &amp; Don't</span></a><a href="13-color-system.html" class="nav-dropdown-item"><i class="fa-solid fa-droplet"></i><span><span class="item-num">13</span> Color System</span></a><a href="14-typography-system.html" class="nav-dropdown-item"><i class="fa-solid fa-font"></i><span><span class="item-num">14</span> Typography System</span></a><a href="15-layout-grid.html" class="nav-dropdown-item"><i class="fa-solid fa-border-all"></i><span><span class="item-num">15</span> Layout &amp; Grid System</span></a><a href="16-graphic-elements.html" class="nav-dropdown-item"><i class="fa-solid fa-shapes"></i><span><span class="item-num">16</span> Graphic Elements System</span></a><a href="17-photography-style.html" class="nav-dropdown-item"><i class="fa-solid fa-camera"></i><span><span class="item-num">18</span> Photography Style</span></a><a href="18-icon-system.html" class="nav-dropdown-item"><i class="fa-solid fa-icons"></i><span><span class="item-num">19</span> Icon System</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_digital">Digital &amp; Media <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="19-ui-components.html" class="nav-dropdown-item"><i class="fa-solid fa-mobile-screen-button"></i><span><span class="item-num">20</span> UI/UX Design System</span></a><a href="20-stationery-corporate.html" class="nav-dropdown-item"><i class="fa-solid fa-pen-ruler"></i><span><span class="item-num">21</span> Stationery &amp; Corporate</span></a><a href="22-website-guidelines.html" class="nav-dropdown-item"><i class="fa-solid fa-globe"></i><span><span class="item-num">22</span> Website Design Guidelines</span></a><a href="23-social-media.html" class="nav-dropdown-item"><i class="fa-solid fa-share-nodes"></i><span><span class="item-num">23</span> Social Media Guidelines</span></a><a href="24-print-marketing.html" class="nav-dropdown-item"><i class="fa-solid fa-print"></i><span><span class="item-num">24</span> Print &amp; Marketing Materials</span></a><a href="25-packaging-labels.html" class="nav-dropdown-item"><i class="fa-solid fa-box-open"></i><span><span class="item-num">25</span> Packaging &amp; Labels</span></a><a href="26-exhibition-design.html" class="nav-dropdown-item"><i class="fa-solid fa-store"></i><span><span class="item-num">26</span> Exhibition &amp; Environmental</span></a><a href="27-motion-animation.html" class="nav-dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span><span class="item-num">27</span> Motion &amp; Animation</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_management">Management <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="28-brand-applications.html" class="nav-dropdown-item"><i class="fa-solid fa-layer-group"></i><span><span class="item-num">28</span> Brand Applications</span></a><a href="29-brand-touchpoints.html" class="nav-dropdown-item"><i class="fa-solid fa-hand-pointer"></i><span><span class="item-num">29</span> Brand Touchpoints</span></a><a href="30-file-naming.html" class="nav-dropdown-item"><i class="fa-solid fa-folder-tree"></i><span><span class="item-num">30</span> File Naming &amp; Structure</span></a><a href="31-brand-architecture.html" class="nav-dropdown-item"><i class="fa-solid fa-diagram-project"></i><span><span class="item-num">31</span> Brand Architecture</span></a><a href="32-sub-brands.html" class="nav-dropdown-item"><i class="fa-solid fa-tags"></i><span><span class="item-num">32</span> Sub-Brands &amp; Product Naming</span></a><a href="33-brand-ownership.html" class="nav-dropdown-item"><i class="fa-solid fa-shield-halved"></i><span><span class="item-num">33</span> Brand Ownership &amp; Trademark</span></a><a href="34-brand-credits.html" class="nav-dropdown-item"><i class="fa-solid fa-user-pen"></i><span><span class="item-num">34</span> Brand Designer &amp; Credits</span></a><a href="35-brand-governance.html" class="nav-dropdown-item"><i class="fa-solid fa-gavel"></i><span><span class="item-num">35</span> Brand Governance</span></a><a href="36-final-summary.html" class="nav-dropdown-item"><i class="fa-solid fa-flag-checkered"></i><span><span class="item-num">36</span> Final Brand Summary</span></a></div></div></div>
+    </div>
+    <div class="nav-right">
+      <div class="kx-lang"><button class="kx-lang-btn active" data-lang="en">English</button><button class="kx-lang-btn" data-lang="zh">中文</button><button class="kx-lang-btn" data-lang="ar">العربية</button></div><div class="mobile-lang-wrap"><button class="mobile-lang-trigger" id="mobileLangTrigger"><i class="fa-solid fa-globe"></i></button><div class="mobile-lang-dropdown" id="mobileLangDropdown"><button class="mobile-lang-opt active" data-lang="en">English</button><button class="mobile-lang-opt" data-lang="zh">中文</button><button class="mobile-lang-opt" data-lang="ar">العربية</button></div></div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="page-content" role="application">
+<div class="scroll-anchor" id="scrollAnchor">
+  <div class="scroll-anchor-dot active" data-target="sec-purpose"><span class="scroll-anchor-label">Purpose</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-rules"><span class="scroll-anchor-label">Rules</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-structure"><span class="scroll-anchor-label">Structure</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-categories"><span class="scroll-anchor-label">Categories</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-versions"><span class="scroll-anchor-label">Versions</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-formats"><span class="scroll-anchor-label">Formats</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-folders"><span class="scroll-anchor-label">Folders</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-master"><span class="scroll-anchor-label">Master</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-dodont"><span class="scroll-anchor-label">Do &amp; Don't</span></div>
+</div>
+<div class="nav-blur-overlay"></div>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner">
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Foundation</div><a href="01-introduction.html" class="mobile-menu-link"><i class="fa-solid fa-book-open"></i> 01 Introduction</a><a href="02-brand-overview.html" class="mobile-menu-link"><i class="fa-solid fa-eye"></i> 02 Brand Overview</a><a href="03-meaning-of-koleex.html" class="mobile-menu-link"><i class="fa-solid fa-signature"></i> 03 Meaning of KOLEEX</a></div>
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Visual Identity</div><a href="10-logo-system.html" class="mobile-menu-link"><i class="fa-solid fa-vector-square"></i> 10 Logo System</a><a href="13-color-system.html" class="mobile-menu-link"><i class="fa-solid fa-droplet"></i> 13 Color System</a><a href="14-typography-system.html" class="mobile-menu-link"><i class="fa-solid fa-font"></i> 14 Typography System</a></div>
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Digital &amp; Media</div><a href="19-ui-components.html" class="mobile-menu-link"><i class="fa-solid fa-mobile-screen-button"></i> 20 UI/UX Design System</a><a href="20-stationery-corporate.html" class="mobile-menu-link"><i class="fa-solid fa-pen-ruler"></i> 21 Stationery &amp; Corporate</a><a href="22-website-guidelines.html" class="mobile-menu-link"><i class="fa-solid fa-globe"></i> 22 Website Design Guidelines</a><a href="23-social-media.html" class="mobile-menu-link"><i class="fa-solid fa-share-nodes"></i> 23 Social Media Guidelines</a></div>
+</div></div>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-num">30</div>
+    <div class="page-header-icon reveal"><i class="fa-solid fa-folder-tree"></i></div>
+    <h1 class="reveal">File Naming &amp; Structure</h1>
+    <p class="reveal">A comprehensive file naming and folder structure system for all brand files &mdash; ensuring consistency, organization, and professional workflow across every team and department.</p>
+  </div>
+</section>
+
+<!-- 30.1 Purpose -->
+<section class="section intro-section">
+  <div class="container">
+
+    <div class="intro-subsection" id="sec-purpose" style="margin-top:0">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 class="intro-subsection-title">30.1 &mdash; Purpose</h3>
+      </div>
+      <p class="intro-subsection-desc">The KOLEEX file naming and folder structure system ensures that every brand asset &mdash; from logos to technical documents &mdash; is organized, searchable, and consistently named across all teams, departments, and external partners.</p>
+
+      <div class="intro-hero reveal" style="margin-top:40px;padding:40px;border-radius:20px">
+        <div class="intro-hero-content">
+          <h3 style="font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:16px">One system. Every team. Every file.</h3>
+          <p style="font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:0">This system is mandatory for designers, marketing teams, engineers, management, printing companies, external agencies, and all partners working with KOLEEX brand files.</p>
+        </div>
+        <div class="intro-hero-tags" style="margin-top:20px">
+          <span class="intro-hero-tag"><i class="fa-solid fa-palette"></i> Designers</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-bullhorn"></i> Marketing</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-gear"></i> Engineers</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-briefcase"></i> Management</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-print"></i> Printing Companies</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-handshake"></i> External Partners</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30.2 General Rules -->
+    <div class="intro-subsection" id="sec-rules">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-gavel"></i></div>
+        <h3 class="intro-subsection-title">30.2 &mdash; General Rules</h3>
+      </div>
+      <p class="intro-subsection-desc">All KOLEEX brand files must follow these mandatory naming rules without exception. Consistency in naming prevents confusion, saves time, and maintains professionalism.</p>
+
+      <div class="objectives-grid reveal" style="margin-top:24px">
+        <div class="objective-item"><i class="fa-solid fa-globe"></i><span>English only &mdash; all file names must be in English</span></div>
+        <div class="objective-item"><i class="fa-solid fa-font"></i><span>Brand name always written as capital KOLEEX</span></div>
+        <div class="objective-item"><i class="fa-solid fa-minus"></i><span>Use hyphen &ldquo;-&rdquo; to separate words in the file name</span></div>
+        <div class="objective-item"><i class="fa-solid fa-underline"></i><span>Use underscore &ldquo;_&rdquo; only for version numbers</span></div>
+        <div class="objective-item"><i class="fa-solid fa-ban"></i><span>No spaces allowed in any file name</span></div>
+        <div class="objective-item"><i class="fa-solid fa-xmark"></i><span>No special characters (!@#$%^&amp;*) in file names</span></div>
+        <div class="objective-item"><i class="fa-solid fa-language"></i><span>No Chinese, Arabic, or non-English characters</span></div>
+        <div class="objective-item"><i class="fa-solid fa-user-slash"></i><span>No random, personal, or abbreviated names</span></div>
+      </div>
+
+      <!-- Correct vs Wrong comparison -->
+      <div class="fn-compare reveal">
+        <div class="fn-compare-col correct">
+          <div class="fn-compare-header"><i class="fa-solid fa-circle-check"></i> Correct Naming</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Brochure-Industrial-Machines-V1.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Logo-Primary-Black-V2.svg</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Catalog-Product-2026-V1.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Poster-Exhibition-Shanghai-V3.ai</div>
+        </div>
+        <div class="fn-compare-col wrong">
+          <div class="fn-compare-header"><i class="fa-solid fa-circle-xmark"></i> Wrong Naming</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> brochure final FINAL (2).pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> logo_new_v2_FINAL_USE THIS.svg</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> catalog ahmed edit march.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> poster copy - Copy (3).ai</div>
+        </div>
+      </div>
+
+      <div class="warning-banner reveal">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="warning-banner-content">
+          <h4>Never use these in file names</h4>
+          <p>The following naming patterns are strictly prohibited across all departments and partners.</p>
+        </div>
+      </div>
+      <div class="wrong-names reveal" style="margin-top:16px">
+        <span class="wrong-name">final</span>
+        <span class="wrong-name">new</span>
+        <span class="wrong-name">last version</span>
+        <span class="wrong-name">copy</span>
+        <span class="wrong-name">edit</span>
+        <span class="wrong-name">draft</span>
+        <span class="wrong-name">test</span>
+        <span class="wrong-name">use this one</span>
+        <span class="wrong-name">for print</span>
+        <span class="wrong-name">updated</span>
+      </div>
+    </div>
+
+    <!-- 30.3 Standard Structure -->
+    <div class="intro-subsection" id="sec-structure">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-diagram-project"></i></div>
+        <h3 class="intro-subsection-title">30.3 &mdash; Standard Naming Structure</h3>
+      </div>
+      <p class="intro-subsection-desc">Every KOLEEX file must follow this standard naming formula. The structure ensures that any person on any team can immediately understand the content, category, and version of any file.</p>
+
+      <div class="fn-formula reveal">
+        <div style="font-size:.7rem;font-weight:600;color:var(--silver);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px">Standard Naming Formula</div>
+        <div class="fn-formula-parts">
+          <span class="fn-formula-part">KOLEEX</span>
+          <span class="fn-formula-sep">-</span>
+          <span class="fn-formula-part">Category</span>
+          <span class="fn-formula-sep">-</span>
+          <span class="fn-formula-part">Item</span>
+          <span class="fn-formula-sep">-</span>
+          <span class="fn-formula-part">Description</span>
+          <span class="fn-formula-sep">-</span>
+          <span class="fn-formula-part">Version</span>
+          <span class="fn-formula-sep">-</span>
+          <span class="fn-formula-part">Year</span>
+          <span class="fn-formula-sep">.</span>
+          <span class="fn-formula-part">ext</span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px">
+        <div style="font-size:.8rem;font-weight:700;color:var(--black);margin-bottom:16px">Real Examples</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="fn-file reveal"><i class="fa-solid fa-file-pdf" style="color:var(--error)"></i> KOLEEX-Brochure-Industrial-Machines-V1-2026.pdf</div>
+          <div class="fn-file reveal delay-1"><i class="fa-solid fa-file-image" style="color:#007AFF"></i> KOLEEX-Logo-Primary-Black-V2-2026.svg</div>
+          <div class="fn-file reveal delay-2"><i class="fa-solid fa-file-powerpoint" style="color:#FF9500"></i> KOLEEX-Presentation-Company-Profile-V1-2026.pptx</div>
+          <div class="fn-file reveal delay-3"><i class="fa-solid fa-file-video" style="color:#5856D6"></i> KOLEEX-Video-Brand-Introduction-V1-2026.mp4</div>
+          <div class="fn-file reveal delay-4"><i class="fa-solid fa-file-lines" style="color:#34C759"></i> KOLEEX-Document-Brand-Guidelines-V1-2026.pdf</div>
+          <div class="fn-file reveal delay-5"><i class="fa-solid fa-file-zipper" style="color:#8E8E93"></i> KOLEEX-Template-SocialMedia-Instagram-V2-2026.fig</div>
+          <div class="fn-file reveal delay-6"><i class="fa-solid fa-file-image" style="color:#007AFF"></i> KOLEEX-Photo-Product-CNC-Machine-V1-2026.jpg</div>
+          <div class="fn-file reveal"><i class="fa-solid fa-file-code" style="color:#FF2D55"></i> KOLEEX-Icon-Set-Industrial-V3-2026.svg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30.4 File Categories -->
+    <div class="intro-subsection" id="sec-categories">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-tags"></i></div>
+        <h3 class="intro-subsection-title">30.4 &mdash; File Categories</h3>
+      </div>
+      <p class="intro-subsection-desc">KOLEEX brand files are organized into 33 official categories. Every file must belong to one of these categories and use the exact category name in its file name.</p>
+
+      <div class="cat-tags-grid reveal">
+        <div class="cat-tag-item"><i class="fa-solid fa-vector-square"></i> Logo</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-droplet"></i> Color</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-font"></i> Typography</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-icons"></i> Icon</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-shapes"></i> Graphic</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-border-all"></i> Layout</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-clone"></i> Template</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-file-alt"></i> Document</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-book-open"></i> Brochure</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-book"></i> Catalog</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-image"></i> Poster</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-box-open"></i> Packaging</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-tag"></i> Label</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-globe"></i> Website</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-mobile-screen-button"></i> UI</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-tablet-screen-button"></i> App</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-laptop-code"></i> Software</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-film"></i> Video</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Animation</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-camera"></i> Photo</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-store"></i> Exhibition</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-sign-hanging"></i> Signage</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-truck"></i> Vehicle</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-shirt"></i> Uniform</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-desktop"></i> Presentation</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-chart-line"></i> Report</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-file-contract"></i> Contract</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-certificate"></i> Certificate</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-share-nodes"></i> SocialMedia</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-rectangle-ad"></i> Advertisement</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-book-bookmark"></i> Manual</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-screwdriver-wrench"></i> Technical</div>
+        <div class="cat-tag-item"><i class="fa-solid fa-table-list"></i> Datasheet</div>
+      </div>
+    </div>
+
+    <!-- 30.5 Version Control -->
+    <div class="intro-subsection" id="sec-versions">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <h3 class="intro-subsection-title">30.5 &mdash; Version Control</h3>
+      </div>
+      <p class="intro-subsection-desc">All KOLEEX files use a simple, clear version control system. Versions are numbered sequentially: V1, V2, V3, and so on. Never use words like &ldquo;final&rdquo;, &ldquo;new&rdquo;, or &ldquo;last version&rdquo; in any file name.</p>
+
+      <div class="version-flow reveal">
+        <div class="version-box">
+          <div class="v-label">V1</div>
+          <div class="v-desc">Initial Release</div>
+        </div>
+        <div class="version-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="version-box">
+          <div class="v-label">V2</div>
+          <div class="v-desc">First Revision</div>
+        </div>
+        <div class="version-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="version-box">
+          <div class="v-label">V3</div>
+          <div class="v-desc">Second Revision</div>
+        </div>
+        <div class="version-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="version-box" style="border-color:var(--black);background:var(--black)">
+          <div class="v-label" style="color:var(--white)">V4</div>
+          <div class="v-desc" style="color:var(--silver)">Current</div>
+        </div>
+      </div>
+
+      <div class="warning-banner reveal" style="margin-top:32px">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="warning-banner-content">
+          <h4>Never use these version labels</h4>
+          <p>Words like &ldquo;final&rdquo;, &ldquo;new&rdquo;, &ldquo;latest&rdquo;, &ldquo;last version&rdquo;, &ldquo;updated&rdquo;, or &ldquo;revised&rdquo; are strictly prohibited. Only numeric versions (V1, V2, V3...) are allowed.</p>
+        </div>
+      </div>
+
+      <div class="fn-compare reveal" style="margin-top:24px">
+        <div class="fn-compare-col correct">
+          <div class="fn-compare-header"><i class="fa-solid fa-circle-check"></i> Correct Versions</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Brochure-Products-V1.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Brochure-Products-V2.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-check"></i> KOLEEX-Brochure-Products-V3.pdf</div>
+        </div>
+        <div class="fn-compare-col wrong">
+          <div class="fn-compare-header"><i class="fa-solid fa-circle-xmark"></i> Wrong Versions</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> KOLEEX-Brochure-Products-FINAL.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> KOLEEX-Brochure-Products-NEW.pdf</div>
+          <div class="fn-file"><i class="fa-solid fa-xmark"></i> KOLEEX-Brochure-Products-last-version.pdf</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30.6 File Formats -->
+    <div class="intro-subsection" id="sec-formats">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+        <h3 class="intro-subsection-title">30.6 &mdash; File Formats</h3>
+      </div>
+      <p class="intro-subsection-desc">Each type of brand asset has approved file formats. Using the correct format ensures quality, compatibility, and professional output across all platforms and media.</p>
+
+      <div class="format-grid reveal">
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <div class="format-card-title">Design Source</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.AI</span>
+            <span class="format-ext">.EPS</span>
+            <span class="format-ext">.SVG</span>
+            <span class="format-ext">.FIG</span>
+            <span class="format-ext">.PSD</span>
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-print"></i></div>
+            <div class="format-card-title">Print Ready</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.PDF</span>
+            <span class="format-ext">.AI</span>
+            <span class="format-ext">.EPS</span>
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-image"></i></div>
+            <div class="format-card-title">Images</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.JPG</span>
+            <span class="format-ext">.PNG</span>
+            <span class="format-ext">.TIFF</span>
+            <span class="format-ext">.WEBP</span>
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="format-card-title">Website</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.SVG</span>
+            <span class="format-ext">.PNG</span>
+            <span class="format-ext">.JPG</span>
+            <span class="format-ext">.WEBP</span>
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-film"></i></div>
+            <div class="format-card-title">Video</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.MP4</span>
+            <span class="format-ext">.MOV</span>
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-card-header">
+            <div class="format-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <div class="format-card-title">Documents</div>
+          </div>
+          <div class="format-card-exts">
+            <span class="format-ext">.PDF</span>
+            <span class="format-ext">.DOCX</span>
+            <span class="format-ext">.XLSX</span>
+            <span class="format-ext">.PPTX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30.7 Folder Structure -->
+    <div class="intro-subsection" id="sec-folders">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-folder-tree"></i></div>
+        <h3 class="intro-subsection-title">30.7 &mdash; Folder Structure</h3>
+      </div>
+      <p class="intro-subsection-desc">All KOLEEX brand files must be stored in the official folder structure. The main brand folder contains 33 numbered sub-folders &mdash; one for each file category.</p>
+
+      <div class="folder-tree reveal">
+        <div class="root"><i class="fa-solid fa-folder" style="color:var(--black);margin-right:8px"></i> KOLEEX Brand</div>
+        <ul>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 01 Logo</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 02 Color</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 03 Typography</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 04 Icon</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 05 Graphic</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 06 Layout</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 07 Template</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 08 Document</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 09 Brochure</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 10 Catalog</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 11 Poster</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 12 Packaging</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 13 Label</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 14 Website</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 15 UI</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 16 App</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 17 Software</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 18 Video</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 19 Animation</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 20 Photo</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 21 Exhibition</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 22 Signage</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 23 Vehicle</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 24 Uniform</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 25 Presentation</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 26 Report</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 27 Contract</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 28 Certificate</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 29 SocialMedia</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 30 Advertisement</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 31 Manual</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 32 Technical</li>
+          <li class="folder"><i class="fa-solid fa-folder"></i> 33 Datasheet</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 30.8 Master Brand Assets Folder -->
+    <div class="intro-subsection" id="sec-master">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-crown"></i></div>
+        <h3 class="intro-subsection-title">30.8 &mdash; Master Brand Assets Folder</h3>
+      </div>
+      <p class="intro-subsection-desc">The KOLEEX_Master_Brand_Assets folder is the single source of truth for all official brand assets. It contains the approved, current versions of every core brand element.</p>
+
+      <div class="master-vis reveal">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57" style="height:22px;width:auto"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z" fill="#fff"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z" fill="#fff"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z" fill="#fff"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z" fill="#fff"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z" fill="#fff"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z" fill="#fff"/></svg>
+          <div style="font-size:.65rem;font-weight:600;color:var(--silver-dark);letter-spacing:.1em;text-transform:uppercase">Master Brand Assets</div>
+        </div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:4px">KOLEEX_Master_Brand_Assets</div>
+        <div style="font-size:.82rem;color:var(--silver);margin-bottom:24px">Single source of truth for all official brand elements</div>
+        <div class="master-grid">
+          <div class="master-item"><i class="fa-solid fa-vector-square"></i><span>Official Logos</span></div>
+          <div class="master-item"><i class="fa-solid fa-droplet"></i><span>Color Palettes</span></div>
+          <div class="master-item"><i class="fa-solid fa-font"></i><span>Brand Fonts</span></div>
+          <div class="master-item"><i class="fa-solid fa-icons"></i><span>Icon Library</span></div>
+          <div class="master-item"><i class="fa-solid fa-shapes"></i><span>Graphic Elements</span></div>
+          <div class="master-item"><i class="fa-solid fa-clone"></i><span>Templates</span></div>
+          <div class="master-item"><i class="fa-solid fa-file-alt"></i><span>Documents</span></div>
+          <div class="master-item"><i class="fa-solid fa-image"></i><span>Brand Photos</span></div>
+          <div class="master-item"><i class="fa-solid fa-film"></i><span>Brand Videos</span></div>
+          <div class="master-item"><i class="fa-solid fa-desktop"></i><span>Presentations</span></div>
+          <div class="master-item"><i class="fa-solid fa-pen-ruler"></i><span>Stationery</span></div>
+          <div class="master-item"><i class="fa-solid fa-book"></i><span>Brand Guidelines</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30.9 Do & Don't -->
+    <div class="intro-subsection" id="sec-dodont">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3 class="intro-subsection-title">30.9 &mdash; Do &amp; Don't</h3>
+      </div>
+      <p class="intro-subsection-desc">Follow these rules strictly when naming and organizing all KOLEEX brand files. Violations create confusion and damage brand professionalism.</p>
+
+      <div class="compare-row reveal">
+        <div class="compare-col do">
+          <div class="compare-col-header"><i class="fa-solid fa-circle-check"></i> Do</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-check"></i> Always start file names with KOLEEX</li>
+            <li><i class="fa-solid fa-check"></i> Use English only for all file names</li>
+            <li><i class="fa-solid fa-check"></i> Use hyphens to separate words</li>
+            <li><i class="fa-solid fa-check"></i> Use the official category names</li>
+            <li><i class="fa-solid fa-check"></i> Use V1, V2, V3 for version control</li>
+            <li><i class="fa-solid fa-check"></i> Include the year in the file name</li>
+            <li><i class="fa-solid fa-check"></i> Store files in the correct numbered folder</li>
+            <li><i class="fa-solid fa-check"></i> Use approved file formats only</li>
+            <li><i class="fa-solid fa-check"></i> Keep file names descriptive and clear</li>
+            <li><i class="fa-solid fa-check"></i> Update version numbers with each revision</li>
+            <li><i class="fa-solid fa-check"></i> Archive old versions in a sub-folder</li>
+            <li><i class="fa-solid fa-check"></i> Follow the standard naming formula exactly</li>
+          </ul>
+        </div>
+        <div class="compare-col dont">
+          <div class="compare-col-header"><i class="fa-solid fa-circle-xmark"></i> Don't</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-xmark"></i> Never use spaces in file names</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use special characters (!@#$%)</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use Chinese or Arabic in file names</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use personal names in file names</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use &ldquo;final&rdquo; or &ldquo;new&rdquo; as versions</li>
+            <li><i class="fa-solid fa-xmark"></i> Never create random folder structures</li>
+            <li><i class="fa-solid fa-xmark"></i> Never rename official brand asset files</li>
+            <li><i class="fa-solid fa-xmark"></i> Never store brand files on personal devices only</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use abbreviated or unclear names</li>
+            <li><i class="fa-solid fa-xmark"></i> Never skip version numbers</li>
+            <li><i class="fa-solid fa-xmark"></i> Never mix categories in one folder</li>
+            <li><i class="fa-solid fa-xmark"></i> Never use lowercase for the brand name</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="intro-summary reveal">
+      <div class="intro-summary-left"><i class="fa-solid fa-bookmark"></i></div>
+      <div class="intro-summary-right">
+        <h4>File Naming &amp; Structure Summary</h4>
+        <div class="intro-summary-tags">
+          <span class="intro-summary-tag"><i class="fa-solid fa-globe" style="margin-right:6px;font-size:.6rem"></i> English Only</span>
+          <span class="intro-summary-tag"><i class="fa-solid fa-minus" style="margin-right:6px;font-size:.6rem"></i> Hyphen Separated</span>
+          <span class="intro-summary-tag"><i class="fa-solid fa-code-branch" style="margin-right:6px;font-size:.6rem"></i> V1, V2, V3</span>
+          <span class="intro-summary-tag"><i class="fa-solid fa-folder-tree" style="margin-right:6px;font-size:.6rem"></i> 33 Categories</span>
+          <span class="intro-summary-tag"><i class="fa-solid fa-crown" style="margin-right:6px;font-size:.6rem"></i> Master Assets</span>
+          <span class="intro-summary-tag"><i class="fa-solid fa-ban" style="margin-right:6px;font-size:.6rem"></i> No Spaces</span>
+        </div>
+        <p class="intro-summary-note">Every file produced for KOLEEX &mdash; whether internal or external &mdash; must follow this naming and structure system. Consistency in file management reflects the same professionalism and precision that defines the KOLEEX brand.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Prev/Next -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="prev-next">
+      <a href="29-brand-touchpoints.html"><i class="fa-solid fa-arrow-left pn-icon"></i><div><div class="pn-label">Previous</div><div class="pn-title">29 Brand Touchpoints</div></div></a>
+      <a href="31-brand-architecture.html" class="next"><div><div class="pn-label">Next</div><div class="pn-title">31 Brand Architecture</div></div><i class="fa-solid fa-arrow-right pn-icon"></i></a>
+    </div>
+  </div>
+</section>
+</div><!-- end page-content -->
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68ZM473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68ZM585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+      <span class="footer-text" data-i18n="footer_text">&copy; 2026 Koleex International Group. Brand Guidelines v1.0</span>
+    </div>
+  </div>
+</footer>
+
+<script src="translations.js?v=2"></script>
+<script src="shared-nav.js?v=7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="brand-checker.js"></script>
+<script src="brand-checker-ui.js"></script>
+</body>
+</html>

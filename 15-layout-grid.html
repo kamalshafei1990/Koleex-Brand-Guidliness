@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Layout &amp; Grid System — Koleex Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000000;--white:#FFFFFF;--silver:#C0C0C0;--silver-light:#D9D9D9;--silver-dark:#A0A0A0;--gray-50:#FAFAFA;--gray-100:#F5F5F7;--gray-200:#E8E8ED;--gray-300:#D2D2D7;--gray-400:#AFAFAF;--gray-500:#86868B;--gray-600:#6E6E73;--gray-700:#424245;--gray-800:#1E1E20;--gray-900:#0A0A0A;--success:#34C759;--error:#FF3B30;--warning:#FF9500;--radius-s:8px;--radius-m:12px;--radius-l:20px;--radius-xl:28px;--shadow-s:0 1px 3px rgba(0,0,0,.08);--shadow-m:0 4px 20px rgba(0,0,0,.08);--shadow-l:0 12px 40px rgba(0,0,0,.12);--shadow-xl:0 20px 60px rgba(0,0,0,.18);--transition:all .35s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth;font-size:16px;overflow-y:scroll;scrollbar-gutter:stable}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--white);color:var(--gray-800);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html[lang="ar"] body{font-family:'Noto Sans Arabic','Inter',sans-serif}
+html[lang="zh"] body{font-family:'Noto Sans SC','Inter',sans-serif}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--gray-100)}::-webkit-scrollbar-thumb{background:var(--silver-dark);border-radius:3px}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08);height:52px}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo svg{height:20px;width:auto;display:block}.nav-logo svg path{fill:var(--white)}
+.nav-logo{display:flex;align-items:center;height:52px}
+.nav-center{display:flex;align-items:center;gap:0}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{padding:0 16px;height:52px;display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.8);cursor:pointer;transition:var(--transition);border:none;background:none;font-family:inherit}
+.nav-dropdown-trigger:hover{color:var(--white)}
+.nav-dropdown-trigger i.fa-chevron-down{font-size:.5rem;transition:var(--transition);color:rgba(255,255,255,.4)}
+.nav-dropdown:hover .nav-dropdown-trigger i.fa-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:fixed;top:52px;left:0;right:0;width:100vw;background:rgba(29,29,31,.97);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:none;padding:44px 0 48px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1),transform .35s cubic-bezier(.25,.1,.25,1);box-shadow:none;z-index:999}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu .mega-inner{max-width:980px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.nav-dropdown-item{display:flex;align-items:center;gap:12px;padding:8px 0;border-radius:0;transition:color .2s ease,opacity .3s ease,transform .3s ease;font-size:.88rem;font-weight:400;color:rgba(255,255,255,.8);opacity:0;transform:translateY(4px)}
+.nav-dropdown:hover .nav-dropdown-item{opacity:1;transform:translateY(0)}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(1){transition-delay:.02s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(2){transition-delay:.04s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(3){transition-delay:.06s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(4){transition-delay:.08s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(5){transition-delay:.1s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(6){transition-delay:.12s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(7){transition-delay:.14s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(8){transition-delay:.16s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(9){transition-delay:.18s}
+.nav-dropdown-item:hover{background:none;color:var(--white)}
+.nav-dropdown-item i{width:auto;height:auto;border-radius:0;background:none;display:inline;font-size:.75rem;color:rgba(255,255,255,.4);flex-shrink:0}
+.nav-dropdown-item:hover i{background:none;color:rgba(255,255,255,.6)}
+.nav-dropdown-item .item-num{display:none}
+.nav-blur-overlay{position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:998;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1);pointer-events:none}
+.nav-blur-overlay.active{opacity:1;visibility:visible}
+.nav-right{display:flex;align-items:center;gap:16px}
+.kx-lang{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:3px;background:rgba(255,255,255,.04);gap:2px}
+.kx-lang-btn{display:inline-block;width:72px;height:30px;line-height:30px;border-radius:19px;border:none;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:rgba(255,255,255,.4);transition:background .25s ease,color .25s ease,box-shadow .25s ease;letter-spacing:.03em;font-family:inherit;text-align:center;-webkit-appearance:none;appearance:none;outline:none;margin:0;padding:0;box-sizing:border-box}
+.kx-lang-btn.active{background:#fff;color:#000;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.kx-lang-btn:hover:not(.active){color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.hamburger{display:none;width:36px;height:36px;cursor:pointer;padding:0;border:none;background:none;position:relative;flex-shrink:0;z-index:1001}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--white);position:absolute;left:50%;transform:translateX(-50%);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.hamburger span:nth-child(1){top:12px}
+.hamburger span:nth-child(2){top:17px}
+.hamburger span:nth-child(3){top:22px}
+.hamburger.active span:nth-child(1){top:17px;transform:translateX(-50%) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0;transform:translateX(-50%) scaleX(0)}
+.hamburger.active span:nth-child(3){top:17px;transform:translateX(-50%) rotate(-45deg)}
+.mobile-menu{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:998;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:0;overflow-y:auto;transform:translateY(-100%);opacity:0;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;pointer-events:none;-webkit-overflow-scrolling:touch}
+.mobile-menu.active{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu-inner{padding:24px 24px 100px}
+.mobile-menu-section{margin-bottom:24px}
+.mobile-menu-label{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:12px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu-link{display:flex;align-items:center;gap:12px;padding:14px 0;color:rgba(255,255,255,.85);text-decoration:none;font-size:.9rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s ease}
+.mobile-menu-link:hover,.mobile-menu-link:active{color:#fff}
+.mobile-menu-link i{font-size:.75rem;width:20px;text-align:center;color:rgba(255,255,255,.4)}
+.mobile-menu-close{display:none!important}
+.mobile-menu-link .coming-tag{font-size:.45rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-left:auto;padding:2px 6px;border:1px solid rgba(255,255,255,.1);border-radius:4px}
+.scroll-progress{display:none}
+/* PAGE HEADER */
+.page-header{padding:160px 0 80px;background:var(--white);border-bottom:1px solid var(--gray-200);position:relative;overflow:hidden}
+
+.page-header-num{font-size:10rem;font-weight:900;letter-spacing:-.05em;line-height:.85;color:#ECECEC;margin:0 0 -24px auto;text-align:right;user-select:none}
+.page-header-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--black);color:var(--white);font-size:1.3rem;margin-bottom:20px}
+.page-header h1{font-size:3.5rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:16px}
+.page-header p{font-size:1.2rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+/* SECTION CONTENT STYLES */
+.section{padding:120px 0}
+.section:last-of-type{padding-bottom:160px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px}
+.section-label i{font-size:.65rem}
+.section-title{font-size:3.2rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:24px}
+.section-subtitle{font-size:1.35rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+.intro-section{background:var(--white)}
+.intro-hero{margin-top:56px;background:var(--black);border-radius:var(--radius-xl);padding:80px 72px;position:relative;overflow:hidden}
+.intro-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(192,192,192,.06),transparent)}
+.intro-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.03),transparent)}
+.intro-hero-content{position:relative;z-index:1}
+.intro-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-size:.7rem;font-weight:600;color:var(--silver);letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
+.intro-hero h3{font-size:2.4rem;font-weight:700;color:var(--white);letter-spacing:-.02em;line-height:1.2;margin-bottom:24px;max-width:700px}
+.intro-hero p{font-size:1.1rem;color:var(--silver);line-height:1.75;max-width:640px;font-weight:300}
+.intro-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.intro-hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.07);font-size:.7rem;font-weight:600;color:var(--silver-light);letter-spacing:.02em}
+.intro-hero-tag i{font-size:.6rem;color:var(--silver-dark)}
+.intro-subsection{margin-top:100px}
+.intro-subsection-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.intro-subsection-icon{width:52px;height:52px;border-radius:14px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.intro-subsection-title{font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-.01em}
+.intro-subsection-desc{font-size:1rem;color:var(--gray-600);line-height:1.7;max-width:720px;margin-bottom:32px}
+.objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.objective-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.objective-item:hover{border-color:var(--gray-300);background:var(--white)}
+.objective-item i{flex-shrink:0;margin-top:2px;font-size:.75rem;color:var(--black);width:26px;height:26px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.objective-item:hover i{background:var(--gray-200);color:var(--black)}
+.objective-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.role-tag{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.role-tag:hover{border-color:var(--gray-300)}
+.role-tag i{font-size:1rem;color:var(--black);flex-shrink:0}
+.role-tag span{font-size:.78rem;font-weight:500;color:var(--gray-700)}
+/* PREV/NEXT NAV */
+.prev-next{display:flex;gap:20px;padding:60px 0 80px;border-top:1px solid var(--gray-200)}
+.prev-next a{flex:1;display:flex;align-items:center;gap:16px;padding:28px 32px;border:1px solid var(--gray-200);border-radius:var(--radius-m);transition:var(--transition);text-decoration:none}
+.prev-next a:hover{border-color:var(--black);box-shadow:var(--shadow-m);transform:translateY(-2px)}
+.prev-next a.next{justify-content:flex-end;text-align:right}
+.prev-next .pn-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400)}
+.prev-next .pn-title{font-size:1rem;font-weight:600;color:var(--black)}
+.prev-next .pn-icon{font-size:1.2rem;color:var(--gray-400)}
+/* FOOTER */
+.page-footer{background:var(--black);padding:32px 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-logo svg{height:18px}.footer-logo svg path{fill:var(--silver-dark)}
+.footer-text{font-size:.72rem;color:var(--gray-600)}
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}.delay-6{transition-delay:.6s}
+/* Green/Red border items */
+.green-border-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--success);border-left:4px solid var(--success);border-radius:var(--radius-s);margin-bottom:10px;transition:var(--transition)}
+.green-border-item:hover{background:rgba(52,199,89,.03)}
+.green-border-item i{color:var(--success);flex-shrink:0;margin-top:2px;font-size:.7rem}
+.green-border-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.red-border-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--error);border-left:4px solid var(--error);border-radius:var(--radius-s);margin-bottom:10px;transition:var(--transition)}
+.red-border-item:hover{background:rgba(255,59,48,.03)}
+.red-border-item i{color:var(--error);flex-shrink:0;margin-top:2px;font-size:.7rem}
+.red-border-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+/* Warning Banner */
+.warning-banner{margin-top:28px;padding:24px 28px;background:var(--black);border-radius:var(--radius-m);border-left:5px solid var(--warning);display:flex;align-items:flex-start;gap:16px}
+.warning-banner i{color:var(--warning);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.warning-banner-content h4{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.warning-banner-content p{font-size:.88rem;color:var(--silver);line-height:1.6;font-weight:300}
+/* Compare Row */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.compare-col{padding:28px 24px;border-radius:var(--radius-m);border:2px solid var(--gray-200);background:var(--white)}
+.compare-col.do{border-color:var(--success)}
+.compare-col.dont{border-color:var(--error)}
+.compare-col-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:.85rem;font-weight:700;color:var(--black)}
+.compare-col-header i{font-size:.75rem}
+.compare-col.do .compare-col-header i{color:var(--success)}
+.compare-col.dont .compare-col-header i{color:var(--error)}
+.compare-col-list{list-style:none;padding:0;margin:0}
+.compare-col-list li{padding:8px 0;font-size:.82rem;font-weight:500;color:var(--gray-700);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--gray-100)}
+.compare-col-list li:last-child{border-bottom:none}
+.compare-col-list li i{font-size:.6rem;flex-shrink:0}
+.compare-col.do .compare-col-list li i{color:var(--success)}
+.compare-col.dont .compare-col-list li i{color:var(--error)}
+/* Black Callout */
+.black-callout{margin-top:20px;padding:16px 22px;background:var(--black);border-radius:var(--radius-s);display:flex;align-items:center;gap:12px}
+.black-callout i{color:var(--silver);font-size:.85rem;flex-shrink:0}
+.black-callout span{font-size:.85rem;font-weight:600;color:var(--white);line-height:1.5}
+/* Summary */
+.intro-summary{margin-top:64px;background:var(--black);border-radius:var(--radius-l);padding:48px;display:flex;gap:48px;align-items:flex-start}
+.intro-summary-left{flex:0 0 auto}.intro-summary-left i{font-size:2rem;color:var(--silver)}
+.intro-summary-right{flex:1}
+.intro-summary-right h4{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:16px}
+.intro-summary-tags{display:flex;flex-wrap:wrap;gap:8px}
+.intro-summary-tag{padding:8px 18px;border-radius:6px;background:rgba(255,255,255,.08);font-size:.78rem;font-weight:600;color:var(--silver-light)}
+.intro-summary-note{margin-top:20px;font-size:.9rem;color:var(--silver);font-weight:300;line-height:1.6;font-style:italic}
+/* Scroll Anchor Bar */
+.scroll-anchor{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;align-items:center;gap:20px;opacity:0;transition:opacity .4s ease}
+.scroll-anchor.visible{opacity:1}
+.scroll-anchor-line{width:1px;height:16px;background:var(--gray-300)}
+.scroll-anchor-dot{width:10px;height:10px;border-radius:50%;background:var(--gray-300);transition:all .3s ease;cursor:pointer;position:relative}
+.scroll-anchor-dot.active{background:var(--black);width:12px;height:12px;box-shadow:0 0 0 3px rgba(0,0,0,.1)}
+.scroll-anchor-dot:hover{background:var(--gray-600);transform:scale(1.3)}
+.scroll-anchor-label{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.65rem;font-weight:600;color:var(--gray-500);letter-spacing:.03em;opacity:0;transition:opacity .2s ease;pointer-events:none}
+.scroll-anchor-dot:hover .scroll-anchor-label,.scroll-anchor-dot.active .scroll-anchor-label{opacity:1}
+/* Mobile language globe */
+.mobile-lang-wrap{display:none;position:relative}
+.mobile-lang-trigger{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;transition:all .3s ease}
+.mobile-lang-trigger:hover,.mobile-lang-trigger:active{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:rgba(0,0,0,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;min-width:120px;z-index:1002;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.mobile-lang-dropdown.active{display:flex;flex-direction:column;gap:2px;animation:langDropIn .25s cubic-bezier(.4,0,.2,1)}
+@keyframes langDropIn{from{opacity:0;transform:translateY(-8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.mobile-lang-opt{padding:10px 14px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;text-align:left;cursor:pointer;border-radius:8px;transition:all .2s ease;font-family:inherit}
+.mobile-lang-opt:hover{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-opt.active{background:rgba(255,255,255,.15);color:#fff;font-weight:600}
+@media(max-width:1024px){.scroll-anchor{display:none}}
+/* RESPONSIVE */
+@media(max-width:1024px){.objectives-grid{grid-template-columns:1fr}.page-header h1{font-size:2.6rem}.page-header-num{font-size:7rem}.roles-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.kx-lang{display:none}.mobile-lang-wrap{display:block}.nav-inner{padding:0 12px}.nav-logo{margin-left:6px}.nav-logo svg{height:16px}.nav-right{gap:8px}.kx-lang{padding:2px;border-radius:14px;gap:2px}.kx-lang-btn{width:36px;height:22px;line-height:22px;font-size:8px;border-radius:11px;letter-spacing:0}.kx-lang-btn.active{font-weight:700}.container{padding:0 20px}.nav-center{display:none}.hamburger{display:flex;align-items:center;justify-content:center}.mobile-menu{padding:70px 24px 40px}.section{padding:80px 0}.section:last-of-type{padding-bottom:100px}.section-title{font-size:2.2rem}.section-subtitle{font-size:1.1rem}.footer-inner{flex-direction:column;gap:12px;text-align:center}.objectives-grid{grid-template-columns:1fr}.roles-grid{grid-template-columns:repeat(2,1fr)}.intro-hero{padding:48px 28px}.intro-hero h3{font-size:1.6rem}.intro-summary{flex-direction:column;gap:24px;padding:32px 24px}.page-header{padding:100px 0 40px}.page-header h1{font-size:2rem}.page-header-num{font-size:5rem}.prev-next{flex-direction:column}.compare-row{grid-template-columns:1fr}}
+
+@media(max-width:480px){.nav-logo svg{height:14px}.kx-lang{padding:2px;border-radius:14px}.kx-lang-btn{width:30px;height:20px;line-height:20px;font-size:7px;border-radius:10px}.section-title{font-size:1.8rem}.page-header h1{font-size:1.6rem}.page-header-num{font-size:4rem}.intro-hero{padding:32px 18px}.intro-hero h3{font-size:1.3rem}.prev-next a{padding:20px 16px}.intro-summary{padding:24px 18px}.roles-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+    <div class="nav-center">
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_foundation">Foundation <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="01-introduction.html" class="nav-dropdown-item"><i class="fa-solid fa-book-open"></i><span><span class="item-num">01</span> Introduction</span></a><a href="02-brand-overview.html" class="nav-dropdown-item"><i class="fa-solid fa-eye"></i><span><span class="item-num">02</span> Brand Overview</span></a><a href="03-meaning-of-koleex.html" class="nav-dropdown-item"><i class="fa-solid fa-signature"></i><span><span class="item-num">03</span> Meaning of KOLEEX</span></a><a href="04-brand-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-lightbulb"></i><span><span class="item-num">04</span> Brand Philosophy</span></a><a href="05-design-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-compass-drafting"></i><span><span class="item-num">05</span> Design Philosophy</span></a><a href="06-brand-personality.html" class="nav-dropdown-item"><i class="fa-solid fa-fingerprint"></i><span><span class="item-num">06</span> Brand Personality</span></a><a href="07-tone-of-voice.html" class="nav-dropdown-item"><i class="fa-solid fa-comment-dots"></i><span><span class="item-num">07</span> Tone of Voice</span></a><a href="08-brand-language.html" class="nav-dropdown-item"><i class="fa-solid fa-language"></i><span><span class="item-num">08</span> Brand Language</span></a><a href="09-brand-slogan.html" class="nav-dropdown-item"><i class="fa-solid fa-quote-right"></i><span><span class="item-num">09</span> Brand Slogan</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_visual">Visual Identity <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="10-logo-system.html" class="nav-dropdown-item"><i class="fa-solid fa-vector-square"></i><span><span class="item-num">10</span> Logo System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ruler-combined"></i><span><span class="item-num">11</span> Logo Usage Rules</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ban"></i><span><span class="item-num">12</span> Logo Do &amp; Don't</span></a><a href="13-color-system.html" class="nav-dropdown-item"><i class="fa-solid fa-droplet"></i><span><span class="item-num">13</span> Color System</span></a><a href="14-typography-system.html" class="nav-dropdown-item"><i class="fa-solid fa-font"></i><span><span class="item-num">14</span> Typography System</span></a><a href="15-layout-grid.html" class="nav-dropdown-item"><i class="fa-solid fa-border-all"></i><span><span class="item-num">15</span> Layout &amp; Grid System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-shapes"></i><span><span class="item-num">16</span> Graphic Elements System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-swatchbook"></i><span><span class="item-num">17</span> Background Style</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-icons"></i><span><span class="item-num">18</span> Icon System</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_digital">Digital &amp; Media <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-mobile-screen-button"></i><span><span class="item-num">19</span> UI/UX Design System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-globe"></i><span><span class="item-num">20</span> Website Design Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-share-nodes"></i><span><span class="item-num">21</span> Social Media Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-print"></i><span><span class="item-num">22</span> Poster &amp; Print Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-box-open"></i><span><span class="item-num">23</span> Packaging &amp; Labels Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-store"></i><span><span class="item-num">24</span> Exhibition &amp; Interior Style</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span><span class="item-num">25</span> Motion &amp; Animation Style</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_management">Management <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-layer-group"></i><span><span class="item-num">26</span> Brand Applications</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-hand-pointer"></i><span><span class="item-num">27</span> Brand Touchpoints</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-folder-tree"></i><span><span class="item-num">28</span> File Naming &amp; Structure</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-diagram-project"></i><span><span class="item-num">29</span> Brand Architecture</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-flag-checkered"></i><span><span class="item-num">30</span> Final Brand Summary</span></a></div></div></div>
+    </div>
+    <div class="nav-right">
+      <div class="kx-lang"><button class="kx-lang-btn active" data-lang="en">English</button><button class="kx-lang-btn" data-lang="zh">中文</button><button class="kx-lang-btn" data-lang="ar">العربية</button></div><div class="mobile-lang-wrap"><button class="mobile-lang-trigger" id="mobileLangTrigger"><i class="fa-solid fa-globe"></i></button><div class="mobile-lang-dropdown" id="mobileLangDropdown"><button class="mobile-lang-opt active" data-lang="en">English</button><button class="mobile-lang-opt" data-lang="zh">中文</button><button class="mobile-lang-opt" data-lang="ar">العربية</button></div></div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="page-content" role="application">
+<div class="scroll-anchor" id="scrollAnchor">
+  <div class="scroll-anchor-dot active" data-target="sec-philosophy"><span class="scroll-anchor-label">Layout Philosophy</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-principles"><span class="scroll-anchor-label">Core Principles</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-grid-philosophy"><span class="scroll-anchor-label">Grid Philosophy</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-12col"><span class="scroll-anchor-label">12-Column Grid</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-spacing"><span class="scroll-anchor-label">Spacing System</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-content-width"><span class="scroll-anchor-label">Content Width</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-section-structure"><span class="scroll-anchor-label">Section Structure</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-alignment"><span class="scroll-anchor-label">Alignment Rules</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-negative-space"><span class="scroll-anchor-label">Negative Space</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-doc-layout"><span class="scroll-anchor-label">Documentation</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-poster"><span class="scroll-anchor-label">Poster Layout</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-website"><span class="scroll-anchor-label">Website Layout</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-ui"><span class="scroll-anchor-label">UI/Software</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-do"><span class="scroll-anchor-label">Layout Do</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-dont"><span class="scroll-anchor-label">Layout Don't</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-comparison"><span class="scroll-anchor-label">Correct vs Incorrect</span></div>
+</div>
+<div class="nav-blur-overlay"></div>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner">
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Foundation</div><a href="01-introduction.html" class="mobile-menu-link"><i class="fa-solid fa-book-open"></i> 01 Introduction</a><a href="02-brand-overview.html" class="mobile-menu-link"><i class="fa-solid fa-eye"></i> 02 Brand Overview</a><a href="03-meaning-of-koleex.html" class="mobile-menu-link"><i class="fa-solid fa-signature"></i> 03 Meaning of KOLEEX</a><a href="04-brand-philosophy.html" class="mobile-menu-link"><i class="fa-solid fa-lightbulb"></i> 04 Brand Philosophy</a><a href="05-design-philosophy.html" class="mobile-menu-link"><i class="fa-solid fa-compass-drafting"></i> 05 Design Philosophy</a><a href="06-brand-personality.html" class="mobile-menu-link"><i class="fa-solid fa-fingerprint"></i> 06 Brand Personality</a><a href="07-tone-of-voice.html" class="mobile-menu-link"><i class="fa-solid fa-comment-dots"></i> 07 Tone of Voice</a><a href="08-brand-language.html" class="mobile-menu-link"><i class="fa-solid fa-language"></i> 08 Brand Language</a><a href="09-brand-slogan.html" class="mobile-menu-link"><i class="fa-solid fa-quote-right"></i> 09 Brand Slogan</a></div>
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Visual Identity</div><a href="10-logo-system.html" class="mobile-menu-link"><i class="fa-solid fa-vector-square"></i> 10 Logo System</a><a href="#" class="mobile-menu-link"><i class="fa-solid fa-ruler-combined"></i> 11 Logo Usage Rules</a><a href="#" class="mobile-menu-link"><i class="fa-solid fa-ban"></i> 12 Logo Do & Don't</a><a href="13-color-system.html" class="mobile-menu-link"><i class="fa-solid fa-droplet"></i> 13 Color System</a><a href="14-typography-system.html" class="mobile-menu-link"><i class="fa-solid fa-font"></i> 14 Typography System</a><a href="15-layout-grid.html" class="mobile-menu-link"><i class="fa-solid fa-border-all"></i> 15 Layout &amp; Grid System</a></div>
+</div>
+<style>
+/* ===== PAGE 15 SPECIFIC STYLES ===== */
+
+/* Check Cards (used in Layout Philosophy) */
+.check-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.check-card{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.check-card:hover{border-color:var(--gray-300);background:var(--gray-50)}
+.check-card i{flex-shrink:0;margin-top:2px;font-size:.7rem;color:var(--success);width:24px;height:24px;background:rgba(52,199,89,.08);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.check-card span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+
+/* Feel Tags */
+.feel-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.feel-tag{padding:10px 22px;border-radius:6px;background:var(--black);color:var(--white);font-size:.82rem;font-weight:600;letter-spacing:.02em}
+
+/* Grid Helps Cards */
+.grid-helps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.grid-help-card{padding:20px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition);text-align:center}
+.grid-help-card:hover{border-color:var(--gray-300);background:var(--gray-50)}
+.grid-help-card i{font-size:1.2rem;color:var(--black);margin-bottom:10px}
+.grid-help-card span{display:block;font-size:.82rem;font-weight:600;color:var(--gray-700)}
+
+/* 12-Column Grid Demo */
+.grid-demo{display:flex;align-items:stretch;gap:0;margin-top:32px;border-radius:16px;overflow:hidden;border:1px solid var(--gray-200);background:var(--white)}
+.grid-demo-label{flex:0 0 60px;display:flex;align-items:center;justify-content:center;background:var(--gray-100);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-500);writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);padding:16px 8px}
+.grid-demo-columns{flex:1;display:grid;grid-template-columns:repeat(12,1fr);gap:8px;padding:16px 12px}
+.grid-col{background:rgba(0,0,0,.06);border-radius:4px;height:200px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:var(--gray-400);transition:var(--transition)}
+.grid-col:hover{background:rgba(0,0,0,.1)}
+.grid-demo-notes{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-demo-note{padding:14px 16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);font-size:.78rem;font-weight:500;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+.grid-demo-note i{font-size:.7rem;color:var(--black);flex-shrink:0}
+
+/* Spacing Scale */
+.spacing-scale{margin-top:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;padding:32px}
+.spacing-scale-item{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.spacing-label{font-size:.78rem;font-family:'SF Mono',Monaco,Consolas,monospace;font-weight:600;min-width:50px;text-align:right;color:var(--gray-500)}
+.spacing-bar{height:24px;background:var(--black);border-radius:4px;transition:var(--transition);position:relative}
+.spacing-bar:hover{background:var(--gray-700)}
+.spacing-value{font-size:.68rem;font-family:'SF Mono',Monaco,Consolas,monospace;font-weight:500;color:var(--gray-400);min-width:40px}
+.spacing-use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.spacing-use-tag{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.spacing-use-tag:hover{border-color:var(--gray-300)}
+.spacing-use-tag i{font-size:.75rem;color:var(--black);flex-shrink:0}
+.spacing-use-tag span{font-size:.78rem;font-weight:500;color:var(--gray-700)}
+
+/* Section Structure Diagram */
+.section-structure-diagram{margin-top:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;padding:40px}
+.structure-block{border:2px dashed var(--gray-300);border-radius:8px;padding:20px 24px;margin-bottom:12px;display:flex;align-items:center;gap:16px;transition:var(--transition)}
+.structure-block:hover{border-color:var(--gray-500);background:var(--gray-50)}
+.structure-block:last-child{margin-bottom:0}
+.structure-block-num{flex:0 0 36px;height:36px;border-radius:8px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700}
+.structure-block-label{font-size:.88rem;font-weight:700;color:var(--black)}
+.structure-block-desc{font-size:.78rem;font-weight:400;color:var(--gray-500);margin-left:auto}
+.structure-connector{width:2px;height:20px;background:var(--gray-300);margin:0 auto}
+
+/* Negative Space Comparison */
+.negative-space-comparison{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200)}
+.ns-side{padding:48px 40px;min-height:360px}
+.ns-side.correct{background:var(--white);border-right:1px solid var(--gray-200)}
+.ns-side.incorrect{background:var(--gray-50)}
+.ns-label{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;width:fit-content}
+.ns-label.green{background:rgba(52,199,89,.1);color:var(--success)}
+.ns-label.red{background:rgba(255,59,48,.1);color:var(--error)}
+.ns-mockup{border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;background:var(--white)}
+.ns-mockup-header{height:12px;background:var(--gray-100);border-bottom:1px solid var(--gray-200)}
+.ns-mockup-body{padding:32px}
+.ns-mockup-body.crowded{padding:8px}
+.ns-mockup-body .mock-title{height:14px;background:var(--gray-200);border-radius:3px;margin-bottom:16px;width:60%}
+.ns-mockup-body .mock-text{height:8px;background:var(--gray-100);border-radius:2px;margin-bottom:10px;width:100%}
+.ns-mockup-body .mock-text.short{width:75%}
+.ns-mockup-body .mock-block{height:80px;background:var(--gray-100);border-radius:6px;margin-top:24px}
+.ns-mockup-body.crowded .mock-title{margin-bottom:4px}
+.ns-mockup-body.crowded .mock-text{margin-bottom:3px}
+.ns-mockup-body.crowded .mock-block{margin-top:6px;height:50px}
+.ns-desc{margin-top:16px;font-size:.82rem;font-weight:500;color:var(--gray-600);line-height:1.5}
+
+/* Wireframe Mockups */
+.wireframe{background:#f8f8f8;border:1px solid var(--gray-200);border-radius:12px;padding:16px;margin-top:32px}
+.wireframe-block{background:var(--gray-200);border-radius:6px}
+.wireframe-label{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);text-align:center;padding:4px 0}
+
+/* Poster Mockup */
+.layout-poster{margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200)}
+.layout-poster-inner{background:var(--black);padding:80px 72px;min-height:520px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.layout-poster-content{position:relative;z-index:1}
+.layout-poster-inner .lp-logo{display:flex;align-items:center;gap:16px;margin-bottom:48px}
+.layout-poster-inner .lp-logo svg{width:120px;height:auto;overflow:visible}
+.layout-poster-inner .lp-logo svg path{fill:#fff}
+.layout-poster-inner .lp-title{font-size:4.5rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;margin-bottom:16px}
+.layout-poster-inner .lp-subtitle{font-size:1.2rem;font-weight:300;color:var(--silver);letter-spacing:.08em;margin-bottom:48px}
+.layout-poster-inner .lp-grid-overlay{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:8px;padding:20px;pointer-events:none}
+.layout-poster-inner .lp-grid-line{border-left:1px dashed rgba(255,255,255,.06);border-right:1px dashed rgba(255,255,255,.06);height:100%}
+.layout-poster-caption{padding:14px 20px;background:var(--white);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Website Wireframe */
+.web-wireframe{margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.wf-header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--gray-200);background:var(--gray-50)}
+.wf-header-logo{width:60px;height:10px;background:var(--gray-300);border-radius:3px}
+.wf-header-nav{display:flex;gap:16px}
+.wf-header-nav span{width:40px;height:6px;background:var(--gray-200);border-radius:3px;display:block}
+.wf-hero{padding:64px 56px;text-align:center;border-bottom:1px solid var(--gray-200)}
+.wf-hero-title{width:320px;height:20px;background:var(--gray-200);border-radius:4px;margin:0 auto 16px}
+.wf-hero-text{width:240px;height:8px;background:var(--gray-100);border-radius:3px;margin:0 auto 10px}
+.wf-hero-btn{width:100px;height:32px;background:var(--black);border-radius:980px;margin:24px auto 0}
+.wf-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px 56px;border-bottom:1px solid var(--gray-200)}
+.wf-col-block{background:var(--gray-100);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center}
+.wf-col-block .wireframe-label{color:var(--gray-400)}
+.wf-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:40px 56px;border-bottom:1px solid var(--gray-200)}
+.wf-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;overflow:hidden}
+.wf-card-img{height:80px;background:var(--gray-200)}
+.wf-card-body{padding:14px}
+.wf-card-body .wf-card-title{width:70%;height:8px;background:var(--gray-200);border-radius:3px;margin-bottom:8px}
+.wf-card-body .wf-card-text{width:100%;height:6px;background:var(--gray-100);border-radius:2px;margin-bottom:6px}
+.wf-card-body .wf-card-text.short{width:60%}
+.wf-footer-bar{padding:20px 56px;background:var(--gray-50);display:flex;align-items:center;justify-content:space-between}
+.wf-footer-bar .wf-footer-logo{width:50px;height:8px;background:var(--gray-300);border-radius:3px}
+.wf-footer-bar .wf-footer-text{width:120px;height:6px;background:var(--gray-200);border-radius:3px}
+.wf-caption{padding:14px 20px;background:var(--white);border-top:1px solid var(--gray-200);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Dashboard Wireframe */
+.dash-wireframe{margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06);display:grid;grid-template-columns:220px 1fr;min-height:480px}
+.dash-sidebar{background:var(--gray-50);border-right:1px solid var(--gray-200);padding:20px 16px;display:flex;flex-direction:column;gap:6px}
+.dash-sidebar-logo{width:80px;height:12px;background:var(--gray-300);border-radius:3px;margin-bottom:20px}
+.dash-sidebar-item{height:28px;background:var(--gray-200);border-radius:6px;width:100%}
+.dash-sidebar-item.active{background:var(--black)}
+.dash-main{display:flex;flex-direction:column}
+.dash-topbar{padding:14px 28px;border-bottom:1px solid var(--gray-200);display:flex;align-items:center;justify-content:space-between}
+.dash-topbar-title{width:120px;height:10px;background:var(--gray-200);border-radius:3px}
+.dash-topbar-actions{display:flex;gap:8px}
+.dash-topbar-actions span{width:24px;height:24px;background:var(--gray-100);border-radius:6px;display:block}
+.dash-body{flex:1;padding:28px}
+.dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.dash-kpi{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.dash-kpi-label{width:50%;height:6px;background:var(--gray-200);border-radius:2px}
+.dash-kpi-value{width:40%;height:14px;background:var(--gray-300);border-radius:3px}
+.dash-chart{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;height:160px;margin-bottom:20px;display:flex;align-items:center;justify-content:center}
+.dash-table{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;overflow:hidden}
+.dash-table-header{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:12px 16px;border-bottom:1px solid var(--gray-200);background:var(--gray-100)}
+.dash-table-header span{height:6px;background:var(--gray-300);border-radius:2px}
+.dash-table-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:10px 16px;border-bottom:1px solid var(--gray-100)}
+.dash-table-row:last-child{border-bottom:none}
+.dash-table-row span{height:6px;background:var(--gray-200);border-radius:2px}
+.dash-caption{grid-column:1/-1;padding:14px 20px;background:var(--white);border-top:1px solid var(--gray-200);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Layout Comparison */
+.layout-comparison{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200)}
+.lc-side{padding:40px 32px;min-height:400px}
+.lc-side.correct{background:var(--white);border-right:1px solid var(--gray-200)}
+.lc-side.incorrect{background:var(--gray-50)}
+.lc-label{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;width:fit-content}
+.lc-label.green{background:rgba(52,199,89,.1);color:var(--success)}
+.lc-label.red{background:rgba(255,59,48,.1);color:var(--error)}
+.lc-mock{border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;background:var(--white)}
+.lc-mock-row{display:flex;gap:12px;padding:16px;border-bottom:1px solid var(--gray-100)}
+.lc-mock-row:last-child{border-bottom:none}
+.lc-block{background:var(--gray-100);border-radius:4px;height:28px;flex:1}
+.lc-block.sm{flex:0 0 60px}
+.lc-block.md{flex:0 0 120px}
+.lc-mock-misaligned .lc-mock-row{padding:16px}
+.lc-mock-misaligned .lc-mock-row:nth-child(1){padding-left:16px}
+.lc-mock-misaligned .lc-mock-row:nth-child(2){padding-left:40px}
+.lc-mock-misaligned .lc-mock-row:nth-child(3){padding-left:8px}
+.lc-mock-misaligned .lc-mock-row:nth-child(4){padding-left:56px}
+.lc-mock-misaligned .lc-block{height:24px}
+.lc-mock-misaligned .lc-mock-row:nth-child(2) .lc-block{height:40px}
+.lc-mock-misaligned .lc-mock-row:nth-child(3) .lc-block{height:18px}
+.lc-desc{margin-top:16px;font-size:.82rem;font-weight:500;color:var(--gray-600);line-height:1.5}
+.layout-comparison-caption{grid-column:1/-1;padding:14px 20px;background:var(--white);border-top:1px solid var(--gray-200);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Responsive overrides for page 15 */
+@media(max-width:1024px){
+  .check-cards-grid{grid-template-columns:1fr}
+  .grid-helps-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-demo-notes{grid-template-columns:1fr}
+  .spacing-use-grid{grid-template-columns:repeat(2,1fr)}
+  .dash-wireframe{grid-template-columns:1fr}
+  .dash-sidebar{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--gray-200)}
+  .dash-kpi-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .check-cards-grid{grid-template-columns:1fr}
+  .grid-helps-grid{grid-template-columns:1fr}
+  .grid-demo{flex-direction:column}
+  .grid-demo-label{writing-mode:horizontal-tb;transform:none;flex:none;padding:12px 16px}
+  .grid-demo-columns{grid-template-columns:repeat(6,1fr)}
+  .grid-col{height:80px}
+  .spacing-use-grid{grid-template-columns:1fr}
+  .negative-space-comparison{grid-template-columns:1fr}
+  .ns-side.correct{border-right:none;border-bottom:1px solid var(--gray-200)}
+  .layout-poster-inner{padding:48px 32px}
+  .layout-poster-inner .lp-title{font-size:2.8rem}
+  .wf-two-col{grid-template-columns:1fr;padding:28px}
+  .wf-card-grid{grid-template-columns:1fr;padding:28px}
+  .wf-hero{padding:40px 28px}
+  .dash-wireframe{grid-template-columns:1fr}
+  .dash-kpi-row{grid-template-columns:1fr}
+  .layout-comparison{grid-template-columns:1fr}
+  .lc-side.correct{border-right:none;border-bottom:1px solid var(--gray-200)}
+}
+
+/* ===== RTL FOR ARABIC ===== */
+html[lang="ar"] body {
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+html[lang="ar"] {
+  direction: ltr;
+}
+html[lang="ar"] .page-content {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] .page-header {
+  text-align: right;
+}
+html[lang="ar"] .page-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+html[lang="ar"] .page-header p {
+  margin-left: auto;
+  margin-right: 0;
+}
+html[lang="ar"] .section-title,
+html[lang="ar"] .section-subtitle,
+html[lang="ar"] .section-label {
+  text-align: right;
+}
+html[lang="ar"] .section-label {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .intro-subsection-header {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .nav-center {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .mega-inner {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[lang="ar"] .nav-dropdown-item {
+  direction: rtl !important;
+  text-align: right !important;
+  flex-direction: row-reverse !important;
+}
+html[lang="ar"] .nav-dropdown-item span {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[lang="ar"] .scroll-anchor {
+  direction: ltr !important;
+  left: 24px !important;
+  right: auto !important;
+}
+html[lang="ar"] .mobile-menu {
+  direction: ltr !important;
+}
+html[lang="ar"] .mobile-menu * {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* ===== REALISTIC MOCKUP STYLES ===== */
+
+/* --- Realistic Poster --- */
+.poster-real{background:#000;min-height:560px;padding:60px;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.poster-real .pr-grid-overlay{position:absolute;inset:0;pointer-events:none}
+.poster-real .pr-grid-h{position:absolute;left:0;right:0;border-top:1px dashed rgba(255,255,255,.08)}
+.poster-real .pr-grid-v{position:absolute;top:0;bottom:0;border-left:1px dashed rgba(255,255,255,.08)}
+.poster-real .pr-annotation{position:absolute;font-size:9px;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.poster-real .pr-top{position:relative;z-index:1}
+.poster-real .pr-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end}
+.poster-real .pr-logo svg{width:120px;height:auto;display:block;margin-bottom:48px}
+.poster-real .pr-logo svg path{fill:#fff}
+.poster-real .pr-title{font-size:48px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.08;margin-bottom:16px}
+.poster-real .pr-subtitle{font-size:18px;font-weight:300;color:rgba(255,255,255,.5);letter-spacing:.06em;margin-bottom:32px}
+.poster-real .pr-line{width:60px;height:1px;background:rgba(255,255,255,.2);margin-bottom:0}
+.poster-real .pr-bottom-text{font-size:11px;font-weight:400;color:rgba(255,255,255,.35);letter-spacing:.03em}
+
+/* --- Realistic Website --- */
+.website-real{border-radius:20px;overflow:hidden;border:1px solid #e8e8ed;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.wr-header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:#000;border-bottom:1px solid #e8e8ed}
+.wr-header-logo svg{width:80px;height:auto;display:block;overflow:visible}
+.wr-header-logo svg path{fill:#fff}
+.wr-header-nav{display:flex;gap:20px}
+.wr-header-nav span{font-size:12px;font-weight:500;color:rgba(255,255,255,.7);letter-spacing:.02em}
+.wr-hero{padding:56px 56px 48px;text-align:center;border-bottom:1px solid #e8e8ed}
+.wr-hero-title{font-size:32px;font-weight:700;color:#000;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.wr-hero-sub{font-size:14px;font-weight:400;color:#86868b;line-height:1.6;max-width:480px;margin:0 auto 24px}
+.wr-hero-btn{display:inline-block;padding:10px 28px;background:#000;color:#fff;border-radius:980px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.wr-two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:40px 56px;border-bottom:1px solid #e8e8ed;align-items:center}
+.wr-col-text h4{font-size:18px;font-weight:700;color:#000;margin-bottom:10px}
+.wr-col-text p{font-size:13px;font-weight:400;color:#6e6e73;line-height:1.65}
+.wr-col-img{background:#f5f5f7;border-radius:12px;height:160px;display:flex;align-items:center;justify-content:center;border:1px solid #e8e8ed}
+.wr-col-img span{font-size:12px;font-weight:600;color:#afafaf;letter-spacing:.06em;text-transform:uppercase}
+.wr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:40px 56px;border-bottom:1px solid #e8e8ed}
+.wr-card{background:#fff;border:1px solid #e8e8ed;border-radius:10px;overflow:hidden}
+.wr-card-img{height:100px;background:#f5f5f7;display:flex;align-items:center;justify-content:center}
+.wr-card-img span{font-size:10px;font-weight:600;color:#afafaf;letter-spacing:.06em;text-transform:uppercase}
+.wr-card-body{padding:16px}
+.wr-card-body h5{font-size:14px;font-weight:700;color:#000;margin-bottom:6px}
+.wr-card-body p{font-size:12px;font-weight:400;color:#86868b;line-height:1.5;margin-bottom:10px}
+.wr-card-body a{font-size:12px;font-weight:600;color:#000;letter-spacing:.02em}
+.wr-footer{padding:20px 56px;background:#424245;display:flex;align-items:center;justify-content:space-between}
+.wr-footer-logo svg{width:60px;height:auto;display:block}
+.wr-footer-logo svg path{fill:rgba(255,255,255,.5)}
+.wr-footer span{font-size:11px;font-weight:400;color:rgba(255,255,255,.4)}
+
+/* --- Realistic Dashboard --- */
+.dashboard-real{border-radius:20px;overflow:hidden;border:1px solid #e8e8ed;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06);display:grid;grid-template-columns:180px 1fr;min-height:520px}
+.dr-sidebar{background:#1E1E20;padding:20px 16px;display:flex;flex-direction:column;gap:2px}
+.dr-sidebar-logo{margin-bottom:24px;padding:0 4px}
+.dr-sidebar-logo svg{width:70px;height:auto;display:block;overflow:visible}
+.dr-sidebar-logo svg path{fill:#fff}
+.dr-sidebar-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,.4);cursor:default;transition:background .2s}
+.dr-sidebar-item i{font-size:12px;width:16px;text-align:center}
+.dr-sidebar-item.active{background:rgba(255,255,255,.08);color:#fff}
+.dr-main{display:flex;flex-direction:column}
+.dr-topbar{padding:16px 28px;border-bottom:1px solid #e8e8ed;display:flex;align-items:center;justify-content:space-between}
+.dr-topbar h3{font-size:18px;font-weight:700;color:#000}
+.dr-topbar-badge{padding:5px 14px;border-radius:6px;background:#f5f5f7;font-size:12px;font-weight:500;color:#86868b}
+.dr-body{flex:1;padding:24px 28px;background:#f9f9fb}
+.dr-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.dr-kpi{background:#fff;border:1px solid #e8e8ed;border-radius:10px;padding:16px 18px}
+.dr-kpi-label{font-size:11px;font-weight:500;color:#86868b;margin-bottom:6px;letter-spacing:.02em}
+.dr-kpi-value{font-size:24px;font-weight:700;color:#000;letter-spacing:-.02em;margin-bottom:4px}
+.dr-kpi-change{font-size:11px;font-weight:600}
+.dr-kpi-change.up{color:#34C759}
+.dr-kpi-change.down{color:#FF3B30}
+.dr-chart-card{background:#fff;border:1px solid #e8e8ed;border-radius:10px;padding:20px;margin-bottom:20px}
+.dr-chart-card h4{font-size:14px;font-weight:700;color:#000;margin-bottom:20px}
+.dr-bars{display:flex;align-items:flex-end;gap:12px;height:120px}
+.dr-bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.dr-bar{width:100%;border-radius:4px 4px 0 0;min-height:8px}
+.dr-bar-label{font-size:10px;font-weight:500;color:#86868b}
+.dr-table-card{background:#fff;border:1px solid #e8e8ed;border-radius:10px;overflow:hidden}
+.dr-table-card h4{font-size:14px;font-weight:700;color:#000;padding:16px 18px 12px}
+.dr-table-head{display:grid;grid-template-columns:1fr 1.5fr 1.2fr .8fr 1fr;gap:8px;padding:10px 18px;border-bottom:1px solid #e8e8ed;background:#f9f9fb}
+.dr-table-head span{font-size:11px;font-weight:600;color:#86868b;letter-spacing:.03em;text-transform:uppercase}
+.dr-table-row{display:grid;grid-template-columns:1fr 1.5fr 1.2fr .8fr 1fr;gap:8px;padding:12px 18px;border-bottom:1px solid #f5f5f7;align-items:center}
+.dr-table-row:last-child{border-bottom:none}
+.dr-table-row span{font-size:12px;font-weight:500;color:#424245}
+.dr-table-row .status-badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.02em}
+.dr-table-row .status-badge.completed{background:rgba(52,199,89,.1);color:#34C759}
+.dr-table-row .status-badge.processing{background:rgba(255,149,0,.1);color:#FF9500}
+.dr-table-row .status-badge.shipped{background:rgba(0,122,255,.1);color:#007AFF}
+
+/* --- Realistic Negative Space --- */
+.ns-real-card{border:1px solid #e8e8ed;border-radius:12px;overflow:hidden;background:#fff}
+.ns-real-card .ns-card-bar{height:10px;background:#f5f5f7;border-bottom:1px solid #e8e8ed}
+.ns-real-card .ns-card-content{display:flex;flex-direction:column}
+.ns-real-card .ns-card-content h5{font-size:16px;font-weight:700;color:#000}
+.ns-real-card .ns-card-content p.ns-sub{font-size:13px;font-weight:400;color:#86868b}
+.ns-real-card .ns-card-content p.ns-body{font-size:12px;font-weight:400;color:#6e6e73;line-height:1.6}
+.ns-real-card .ns-card-content .ns-btn{display:inline-block;padding:8px 20px;background:#000;color:#fff;border-radius:6px;font-size:12px;font-weight:600;width:fit-content}
+.ns-real-card.correct-card .ns-card-content{padding:24px;gap:16px}
+.ns-real-card.correct-card .ns-card-content .ns-btn{margin-top:8px}
+.ns-real-card.incorrect-card .ns-card-content{padding:8px;gap:4px}
+.ns-real-card.incorrect-card .ns-card-content .ns-btn{margin-top:0}
+.ns-annotation{font-size:9px;font-weight:500;color:rgba(0,0,0,.3);letter-spacing:.04em;position:absolute}
+
+/* --- Realistic Correct vs Incorrect Layout --- */
+.lc-real{border:1px solid #e8e8ed;border-radius:12px;overflow:hidden;background:#fff}
+.lc-real-header{padding:16px 20px;border-bottom:1px solid #e8e8ed}
+.lc-real-header h5{font-size:16px;font-weight:700;color:#000;text-align:left}
+.lc-real-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px}
+.lc-real-card{border:1px solid #e8e8ed;border-radius:8px;padding:16px;text-align:left}
+.lc-real-card h6{font-size:13px;font-weight:700;color:#000;margin-bottom:6px}
+.lc-real-card p{font-size:11px;font-weight:400;color:#86868b;line-height:1.5;margin-bottom:10px}
+.lc-real-card .lc-mini-btn{display:inline-block;padding:5px 14px;background:#000;color:#fff;border-radius:4px;font-size:10px;font-weight:600}
+.lc-real.lc-incorrect .lc-real-header h5{text-align:center}
+.lc-real.lc-incorrect .lc-real-cards{gap:6px;padding:10px;grid-template-columns:55% 40%}
+.lc-real.lc-incorrect .lc-real-card:first-child{padding:20px 8px 8px}
+.lc-real.lc-incorrect .lc-real-card:last-child{padding:8px 20px 20px}
+.lc-real.lc-incorrect .lc-real-card h6{text-align:center}
+.lc-real.lc-incorrect .lc-real-card p{text-align:left}
+.lc-real.lc-incorrect .lc-real-card .lc-mini-btn{margin-left:auto;margin-right:auto;display:block;width:fit-content}
+
+/* Dashboard responsive */
+@media(max-width:1024px){
+  .dashboard-real{grid-template-columns:1fr}
+  .dr-sidebar{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .dr-kpi-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .dashboard-real{grid-template-columns:1fr}
+  .dr-kpi-row{grid-template-columns:1fr}
+  .dr-table-head,.dr-table-row{grid-template-columns:repeat(5,1fr)}
+  .wr-two-col{grid-template-columns:1fr;padding:28px}
+  .wr-cards{grid-template-columns:1fr;padding:28px}
+  .wr-hero{padding:40px 28px}
+  .poster-real{min-height:400px;padding:40px}
+  .poster-real .pr-title{font-size:32px}
+  .lc-real-cards{grid-template-columns:1fr}
+  .lc-real.lc-incorrect .lc-real-cards{grid-template-columns:1fr}
+}
+
+</style>
+<!-- Page Header -->
+</div>
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-num">15</div>
+    <div class="page-header-icon reveal"><i class="fa-solid fa-border-all"></i></div>
+    <h1 class="reveal">Layout &amp; Grid System</h1>
+    <p class="reveal">The official layout and grid system defining how all content is structured, spaced, and aligned across every Koleex brand touchpoint — from posters and websites to software interfaces, documents, and presentations.</p>
+  </div>
+</section>
+<!-- Section Content -->
+<section class="section intro-section">
+  <div class="container">
+
+    <!-- Hero Block -->
+    <div class="intro-hero reveal">
+      <div class="intro-hero-content">
+        <div class="intro-hero-badge"><i class="fa-solid fa-border-all"></i> LAYOUT &amp; GRID IDENTITY SYSTEM</div>
+        <h3>Structure before decoration. Every element must have a reason to be where it is.</h3>
+        <p>The Koleex layout system is the structural backbone of the entire brand identity. Every piece of content — from a poster to a software dashboard — must follow a precise, grid-based layout that communicates professionalism, engineering discipline, and visual clarity. Layout is not optional. It is the first thing that defines whether a design looks like Koleex or not.</p>
+        <div class="intro-hero-tags">
+          <span class="intro-hero-tag"><i class="fa-solid fa-border-all"></i> Grid-Based</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-ruler-combined"></i> Precision</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-align-left"></i> Structured</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-expand"></i> Breathing Space</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-layer-group"></i> Modular</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-arrows-left-right"></i> Consistent Spacing</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-gem"></i> Premium Industrial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Layout Philosophy -->
+    <div id="sec-philosophy" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+        <span class="intro-subsection-title">Layout Philosophy</span>
+      </div>
+      <p class="intro-subsection-desc">Structure before decoration. The Koleex layout philosophy is rooted in engineering precision. Every element must have a clear reason for its position, size, and spacing. Layout defines the visual order of the brand before any color, typography, or imagery is applied.</p>
+
+      <p class="intro-subsection-desc" style="margin-top:0;margin-bottom:16px;font-weight:600;color:var(--black)">This means:</p>
+      <div class="check-cards-grid">
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Every element is placed on a grid — no freehand positioning</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Spacing is consistent and based on a defined scale</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Margins and padding follow strict rules</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Content blocks are modular and repeatable</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Alignment is always left or center — never random</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>White space is intentional and generous</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Hierarchy is established through size and position, not decoration</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>The layout should feel engineered, not artistic</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Every layout decision must serve clarity and readability</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>The system must scale across all media and screen sizes</span></div>
+      </div>
+
+      <p class="intro-subsection-desc" style="margin-top:36px;margin-bottom:16px;font-weight:600;color:var(--black)">The layout should feel:</p>
+      <div class="feel-tags">
+        <span class="feel-tag reveal">Composed</span>
+        <span class="feel-tag reveal">Controlled</span>
+        <span class="feel-tag reveal">Balanced</span>
+        <span class="feel-tag reveal">Rational</span>
+        <span class="feel-tag reveal">Clean</span>
+        <span class="feel-tag reveal">High Quality</span>
+        <span class="feel-tag reveal">Scalable</span>
+        <span class="feel-tag reveal">System-Driven</span>
+      </div>
+    </div>
+
+    <!-- 2. Core Layout Principles -->
+    <div id="sec-principles" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-list-check"></i></div>
+        <span class="intro-subsection-title">Core Layout Principles</span>
+      </div>
+      <p class="intro-subsection-desc">These 20 principles govern every layout decision across the Koleex brand. They must be followed without exception in all design work — digital, print, environmental, and documentation.</p>
+
+      <div class="objectives-grid">
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Use a 12-column grid as the foundation for all layouts</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Maintain consistent margins on all sides of every layout</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Use a defined spacing scale — never arbitrary values</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Align all elements to the grid — no freehand placement</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Prioritize left alignment for body content and descriptions</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Use center alignment only for hero sections and headlines</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Ensure generous white space between sections</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Create clear visual hierarchy through size and position</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Use modular content blocks that can be reused</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Keep content width controlled — never edge-to-edge text</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Establish rhythm through consistent vertical spacing</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Group related elements together with proper proximity</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Separate unrelated elements with clear spacing or dividers</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Design for responsiveness — layouts must adapt to all screen sizes</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Use consistent gutters between columns</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Never crowd content — if in doubt, add more space</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Treat negative space as a design element, not empty space</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Follow the section structure pattern for all documentation</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Ensure layouts look like Apple, BMW, Sony, IBM level quality</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Every layout must pass the "engineering precision" test</span></div>
+      </div>
+    </div>
+
+    <!-- 3. Grid Philosophy -->
+    <div id="sec-grid-philosophy" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-th"></i></div>
+        <span class="intro-subsection-title">Grid Philosophy</span>
+      </div>
+      <p class="intro-subsection-desc">The grid is a RULE, not an option. Every Koleex layout must be built on a grid system. The grid is the invisible structure that ensures every element is aligned, proportional, and consistent. Without the grid, there is no Koleex design.</p>
+
+      <p class="intro-subsection-desc" style="margin-top:0;margin-bottom:16px;font-weight:600;color:var(--black)">The grid helps achieve:</p>
+      <div class="grid-helps-grid">
+        <div class="grid-help-card reveal"><i class="fa-solid fa-align-left"></i><span>Alignment</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-equals"></i><span>Consistency</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-music"></i><span>Rhythm</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-book-open"></i><span>Readability</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-up-right-and-down-left-from-center"></i><span>Scalability</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-cubes"></i><span>Modularity</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-mobile-screen"></i><span>Responsive Behavior</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-briefcase"></i><span>Professional Appearance</span></div>
+        <div class="grid-help-card reveal"><i class="fa-solid fa-fingerprint"></i><span>System Recognition</span></div>
+      </div>
+
+      <p class="intro-subsection-desc" style="margin-top:36px;margin-bottom:16px;font-weight:600;color:var(--black)">The grid must be used in:</p>
+      <div class="roles-grid">
+        <div class="role-tag reveal"><i class="fa-solid fa-globe"></i><span>Websites</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-desktop"></i><span>Software / UI</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-mobile-screen"></i><span>Mobile Apps</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-image"></i><span>Posters</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-file-lines"></i><span>Documents</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-presentation-screen"></i><span>Presentations</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-book-open"></i><span>Catalogs</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-newspaper"></i><span>Brochures</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-box"></i><span>Packaging</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-store"></i><span>Exhibitions</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-rectangle-ad"></i><span>Advertisements</span></div>
+        <div class="role-tag reveal"><i class="fa-solid fa-share-nodes"></i><span>Social Media</span></div>
+      </div>
+
+      <div class="warning-banner reveal">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="warning-banner-content">
+          <h4>Grid is Mandatory</h4>
+          <p>No design may be published without grid alignment. Designs that do not follow the grid system will be rejected during brand review.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 12-Column Grid System -->
+    <div id="sec-12col" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-columns"></i></div>
+        <span class="intro-subsection-title">12-Column Grid System</span>
+      </div>
+      <p class="intro-subsection-desc">The Koleex brand uses a standard 12-column grid system. This grid provides the structural foundation for all layouts. It allows for flexible column combinations (1, 2, 3, 4, 6, 12 columns) while maintaining visual consistency and alignment.</p>
+
+      <div class="grid-demo reveal">
+        <div class="grid-demo-label">Margin</div>
+        <div class="grid-demo-columns">
+          <div class="grid-col"><span>1</span></div>
+          <div class="grid-col"><span>2</span></div>
+          <div class="grid-col"><span>3</span></div>
+          <div class="grid-col"><span>4</span></div>
+          <div class="grid-col"><span>5</span></div>
+          <div class="grid-col"><span>6</span></div>
+          <div class="grid-col"><span>7</span></div>
+          <div class="grid-col"><span>8</span></div>
+          <div class="grid-col"><span>9</span></div>
+          <div class="grid-col"><span>10</span></div>
+          <div class="grid-col"><span>11</span></div>
+          <div class="grid-col"><span>12</span></div>
+        </div>
+        <div class="grid-demo-label">Margin</div>
+      </div>
+
+      <div class="grid-demo-notes reveal">
+        <div class="grid-demo-note"><i class="fa-solid fa-columns"></i> 12 equal columns with consistent gutters</div>
+        <div class="grid-demo-note"><i class="fa-solid fa-arrows-left-right"></i> 8px gutters between columns</div>
+        <div class="grid-demo-note"><i class="fa-solid fa-border-none"></i> Minimum 40px margins on each side</div>
+        <div class="grid-demo-note"><i class="fa-solid fa-expand"></i> Max content width: 1200px</div>
+        <div class="grid-demo-note"><i class="fa-solid fa-divide"></i> Supports 1, 2, 3, 4, 6, and 12 column layouts</div>
+        <div class="grid-demo-note"><i class="fa-solid fa-mobile-screen"></i> Collapses to fewer columns on smaller screens</div>
+      </div>
+
+      <p class="intro-subsection-desc" style="margin-top:32px;margin-bottom:16px">The 12-column system controls:</p>
+      <div class="objectives-grid">
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Content positioning and alignment across all layouts</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Card and module sizing in grid-based views</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Image and media placement within content areas</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Sidebar and main content proportions in dashboards</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Form layout and input field widths</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Navigation and header structure</span></div>
+      </div>
+    </div>
+
+    <!-- 5. Spacing System -->
+    <div id="sec-spacing" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <span class="intro-subsection-title">Spacing System</span>
+      </div>
+      <p class="intro-subsection-desc">The Koleex spacing system is based on a 4px base unit. All spacing values must come from this defined scale. No arbitrary spacing values are allowed. This ensures consistent rhythm and proportion across all designs.</p>
+
+      <div class="spacing-scale reveal">
+        <div class="spacing-scale-item"><span class="spacing-label">4px</span><div class="spacing-bar" style="width:3%"></div><span class="spacing-value">4</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">8px</span><div class="spacing-bar" style="width:5%"></div><span class="spacing-value">8</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">12px</span><div class="spacing-bar" style="width:7.5%"></div><span class="spacing-value">12</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">16px</span><div class="spacing-bar" style="width:10%"></div><span class="spacing-value">16</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">24px</span><div class="spacing-bar" style="width:15%"></div><span class="spacing-value">24</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">32px</span><div class="spacing-bar" style="width:20%"></div><span class="spacing-value">32</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">40px</span><div class="spacing-bar" style="width:25%"></div><span class="spacing-value">40</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">48px</span><div class="spacing-bar" style="width:30%"></div><span class="spacing-value">48</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">64px</span><div class="spacing-bar" style="width:40%"></div><span class="spacing-value">64</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">80px</span><div class="spacing-bar" style="width:50%"></div><span class="spacing-value">80</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">96px</span><div class="spacing-bar" style="width:60%"></div><span class="spacing-value">96</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">120px</span><div class="spacing-bar" style="width:75%"></div><span class="spacing-value">120</span></div>
+        <div class="spacing-scale-item"><span class="spacing-label">160px</span><div class="spacing-bar" style="width:100%"></div><span class="spacing-value">160</span></div>
+      </div>
+
+      <p class="intro-subsection-desc" style="margin-top:32px;margin-bottom:16px;font-weight:600;color:var(--black)">Spacing is used for:</p>
+      <div class="spacing-use-grid">
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-arrows-up-down"></i><span>Vertical rhythm between sections</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-arrows-left-right"></i><span>Horizontal gutters between columns</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-border-none"></i><span>Padding inside content blocks</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-square"></i><span>Margins around containers</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-grip"></i><span>Gap between grid items and cards</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-text-height"></i><span>Space between headings and body text</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-list"></i><span>List item spacing</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-square-check"></i><span>Button and input field padding</span></div>
+        <div class="spacing-use-tag reveal"><i class="fa-solid fa-table-cells"></i><span>Table cell padding</span></div>
+      </div>
+
+      <div class="black-callout reveal">
+        <i class="fa-solid fa-info-circle"></i>
+        <span>The base unit is 4px. All spacing must be a multiple of 4. Common values: 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 120, 160.</span>
+      </div>
+    </div>
+
+    <!-- 6. Content Width & Margins -->
+    <div id="sec-content-width" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-text-width"></i></div>
+        <span class="intro-subsection-title">Content Width &amp; Margins</span>
+      </div>
+      <p class="intro-subsection-desc">Content width and margins are critical to the Koleex brand. Content must never stretch edge-to-edge. Generous margins create breathing space and give every layout a premium, professional feel.</p>
+
+      <div class="objectives-grid">
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Maximum content width: 1200px for web and digital layouts</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Minimum side margins: 40px on desktop, 24px on mobile</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Text content should not exceed 720px width for readability</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Hero sections may use full container width but text stays constrained</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Print materials must have minimum 20mm margins on all sides</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Posters should use at least 10% margin on each side</span></div>
+      </div>
+
+      <div class="compare-row reveal">
+        <div class="compare-col do">
+          <div class="compare-col-header"><i class="fa-solid fa-check-circle"></i> Margin Do</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-check"></i> Use consistent margins on all four sides</li>
+            <li><i class="fa-solid fa-check"></i> Give content room to breathe</li>
+            <li><i class="fa-solid fa-check"></i> Use larger margins on posters and presentations</li>
+            <li><i class="fa-solid fa-check"></i> Match margins to the spacing scale</li>
+            <li><i class="fa-solid fa-check"></i> Increase margins on larger screens</li>
+            <li><i class="fa-solid fa-check"></i> Keep margins symmetrical left and right</li>
+          </ul>
+        </div>
+        <div class="compare-col dont">
+          <div class="compare-col-header"><i class="fa-solid fa-times-circle"></i> Margin Don't</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-xmark"></i> Don't use zero margins on any layout</li>
+            <li><i class="fa-solid fa-xmark"></i> Don't let text touch the edges of the screen</li>
+            <li><i class="fa-solid fa-xmark"></i> Don't use different margins on left and right</li>
+            <li><i class="fa-solid fa-xmark"></i> Don't use arbitrary margin values</li>
+            <li><i class="fa-solid fa-xmark"></i> Don't reduce margins to fit more content</li>
+            <li><i class="fa-solid fa-xmark"></i> Don't ignore margins on mobile devices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Section Structure -->
+    <div id="sec-section-structure" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <span class="intro-subsection-title">Section Structure</span>
+      </div>
+      <p class="intro-subsection-desc">Every content section in the Koleex brand follows a standard structure. This ensures consistency across all pages, documents, and presentations. The structure flows from label to title to intro to content to examples to rules.</p>
+
+      <!-- Flowchart Diagram -->
+      <div class="section-structure-diagram reveal">
+        <div class="structure-block">
+          <div class="structure-block-num">01</div>
+          <div class="structure-block-label">Section Label</div>
+          <div class="structure-block-desc">Category identifier — small, uppercase, with icon</div>
+        </div>
+        <div class="structure-connector"></div>
+        <div class="structure-block">
+          <div class="structure-block-num">02</div>
+          <div class="structure-block-label">Section Title</div>
+          <div class="structure-block-desc">Main heading — large, bold, clear</div>
+        </div>
+        <div class="structure-connector"></div>
+        <div class="structure-block">
+          <div class="structure-block-num">03</div>
+          <div class="structure-block-label">Introduction Text</div>
+          <div class="structure-block-desc">Brief overview — 1-3 sentences explaining purpose</div>
+        </div>
+        <div class="structure-connector"></div>
+        <div class="structure-block">
+          <div class="structure-block-num">04</div>
+          <div class="structure-block-label">Content Body</div>
+          <div class="structure-block-desc">Main content — lists, grids, cards, descriptions</div>
+        </div>
+        <div class="structure-connector"></div>
+        <div class="structure-block">
+          <div class="structure-block-num">05</div>
+          <div class="structure-block-label">Visual Examples</div>
+          <div class="structure-block-desc">Mockups, diagrams, and visual demonstrations</div>
+        </div>
+        <div class="structure-connector"></div>
+        <div class="structure-block">
+          <div class="structure-block-num">06</div>
+          <div class="structure-block-label">Rules &amp; Notes</div>
+          <div class="structure-block-desc">Do/don't rules, warnings, and important notes</div>
+        </div>
+      </div>
+
+      <!-- Realistic Rendered Example -->
+      <p style="font-size:.85rem;font-weight:600;color:var(--gray-500);margin-top:40px;margin-bottom:16px;letter-spacing:.05em;text-transform:uppercase"><i class="fa-solid fa-eye" style="margin-right:6px"></i> Live Section Example</p>
+      <div class="ss-real-example reveal" style="border:1px solid var(--gray-200);border-radius:20px;overflow:hidden;background:var(--white)">
+        <!-- Step 1: Section Label -->
+        <div style="padding:40px 48px 0">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:4px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 01</span>
+            <div style="display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500)"><i class="fa-solid fa-droplet" style="font-size:.6rem"></i> COLOR SYSTEM</div>
+          </div>
+        </div>
+        <!-- Step 2: Section Title -->
+        <div style="padding:12px 48px 0">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:8px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 02</span>
+            <h2 style="font-size:2.2rem;font-weight:800;color:var(--black);letter-spacing:-.03em;line-height:1.1">Color System</h2>
+          </div>
+        </div>
+        <!-- Step 3: Introduction -->
+        <div style="padding:16px 48px 0">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:4px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 03</span>
+            <p style="font-size:.92rem;color:var(--gray-600);line-height:1.6;max-width:600px">The official Koleex color palette and usage rules. Color is a controlled system used for hierarchy, contrast, and brand consistency.</p>
+          </div>
+        </div>
+        <!-- Step 4: Content Body -->
+        <div style="padding:32px 48px 0">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:12px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 04</span>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+              <div style="background:var(--black);border-radius:10px;height:80px"></div>
+              <div style="background:#86868B;border-radius:10px;height:80px"></div>
+              <div style="background:#D2D2D7;border-radius:10px;height:80px"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+              <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:14px 16px;font-size:.78rem;color:var(--gray-600)"><i class="fa-solid fa-check" style="color:var(--success);margin-right:6px"></i> Use black and white as primary</div>
+              <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:14px 16px;font-size:.78rem;color:var(--gray-600)"><i class="fa-solid fa-check" style="color:var(--success);margin-right:6px"></i> Use gray for structure</div>
+            </div>
+          </div>
+        </div>
+        <!-- Step 5: Visual Examples -->
+        <div style="padding:32px 48px 0">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:12px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 05</span>
+            <div style="background:var(--black);border-radius:12px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:100px">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57" style="width:140px;height:auto"><path fill="#fff" d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path fill="#fff" d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path fill="#fff" d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path fill="#fff" d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path fill="#fff" d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path fill="#fff" d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Step 6: Rules -->
+        <div style="padding:32px 48px 40px">
+          <div style="position:relative">
+            <span style="position:absolute;left:-60px;top:8px;font-size:.6rem;font-weight:700;color:var(--gray-300);letter-spacing:.04em">STEP 06</span>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;background:rgba(52,199,89,.06);border:1px solid rgba(52,199,89,.2);border-radius:8px;padding:14px 16px;font-size:.78rem;color:#2d8a4e"><i class="fa-solid fa-check" style="margin-right:6px"></i> Do: Use black on white</div>
+              <div style="flex:1;background:rgba(255,59,48,.06);border:1px solid rgba(255,59,48,.2);border-radius:8px;padding:14px 16px;font-size:.78rem;color:#d63027"><i class="fa-solid fa-xmark" style="margin-right:6px"></i> Don't: Use random colors</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--gray-500)"><i class="fa-solid fa-info-circle"></i> This is a live rendered example of the standard section structure. Every documentation page must follow this exact flow.</div>
+
+      <div class="black-callout reveal">
+        <i class="fa-solid fa-info-circle"></i>
+        <span>This structure must be followed in all brand guidelines pages, documentation, presentations, and any material that explains or showcases Koleex brand elements.</span>
+      </div>
+    </div>
+
+    <!-- 8. Alignment Rules -->
+    <div id="sec-alignment" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-align-left"></i></div>
+        <span class="intro-subsection-title">Alignment Rules</span>
+      </div>
+      <p class="intro-subsection-desc">Alignment is one of the most important layout principles. Proper alignment creates order, structure, and professionalism. Koleex uses primarily left alignment with center alignment reserved for specific use cases.</p>
+
+      <div class="compare-row reveal">
+        <div class="compare-col do">
+          <div class="compare-col-header"><i class="fa-solid fa-check-circle"></i> Left Alignment (Default)</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-check"></i> Body text and paragraphs</li>
+            <li><i class="fa-solid fa-check"></i> Lists and bullet points</li>
+            <li><i class="fa-solid fa-check"></i> Form labels and inputs</li>
+            <li><i class="fa-solid fa-check"></i> Navigation items</li>
+            <li><i class="fa-solid fa-check"></i> Table content</li>
+            <li><i class="fa-solid fa-check"></i> Card content and descriptions</li>
+            <li><i class="fa-solid fa-check"></i> Document and report text</li>
+            <li><i class="fa-solid fa-check"></i> Sidebar content</li>
+            <li><i class="fa-solid fa-check"></i> Footer links and information</li>
+          </ul>
+        </div>
+        <div class="compare-col do" style="border-color:var(--gray-300)">
+          <div class="compare-col-header"><i class="fa-solid fa-align-center" style="color:var(--black)"></i> Center Alignment (Exception)</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Hero section headlines</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Page titles on landing pages</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Short taglines and slogans</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Call-to-action buttons</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Single-line captions under images</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Empty state messages</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Modal dialog titles</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Icon + label combinations</li>
+            <li><i class="fa-solid fa-check" style="color:var(--gray-500)"></i> Poster headlines (when appropriate)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warning-banner reveal">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="warning-banner-content">
+          <h4>Never Use Right Alignment</h4>
+          <p>Right alignment is not part of the Koleex design system (except in RTL languages like Arabic). Right-aligned text looks unprofessional and breaks the visual structure of the layout. Justified text is also not allowed — it creates uneven word spacing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Negative Space -->
+    <div id="sec-negative-space" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-expand"></i></div>
+        <span class="intro-subsection-title">Negative Space</span>
+      </div>
+      <p class="intro-subsection-desc">Negative space (white space) is a critical design element in the Koleex brand. It is not empty space — it is intentional breathing room that communicates quality, clarity, and confidence. More space means more premium.</p>
+
+      <div class="negative-space-comparison reveal">
+        <div class="ns-side correct">
+          <div class="ns-label green"><i class="fa-solid fa-check"></i> Correct</div>
+          <div class="ns-real-card correct-card" style="position:relative">
+            <div class="ns-card-bar"></div>
+            <div class="ns-card-content">
+              <h5>Product Overview</h5>
+              <p class="ns-sub">Industrial Controller Series</p>
+              <p class="ns-body">Our precision-engineered controllers deliver reliable performance across demanding industrial environments. Built with quality components and rigorously tested to meet international standards.</p>
+              <div class="ns-btn">View Details</div>
+            </div>
+            <span class="ns-annotation" style="left:-36px;top:50%;transform:rotate(-90deg) translateX(-50%);transform-origin:left center;white-space:nowrap">24px padding</span>
+            <span class="ns-annotation" style="right:8px;top:16px">40px from edge</span>
+          </div>
+          <div class="ns-desc">Calm, spacious, and structured. Generous padding (24px), clear separation between elements (16px gaps), easy to scan. Content has room to breathe.</div>
+        </div>
+        <div class="ns-side incorrect">
+          <div class="ns-label red"><i class="fa-solid fa-xmark"></i> Incorrect</div>
+          <div class="ns-real-card incorrect-card">
+            <div class="ns-card-bar"></div>
+            <div class="ns-card-content">
+              <h5>Product Overview</h5>
+              <p class="ns-sub">Industrial Controller Series</p>
+              <p class="ns-body">Our precision-engineered controllers deliver reliable performance across demanding industrial environments. Built with quality components and rigorously tested to meet international standards.</p>
+              <div class="ns-btn">View Details</div>
+            </div>
+          </div>
+          <div class="ns-desc">Crowded, cluttered, and hard to read. Minimal padding (8px), elements crammed together (4px gaps), button touching text. Feels cheap and unprofessional.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Layout for Documentation -->
+    <div id="sec-doc-layout" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <span class="intro-subsection-title">Layout for Documentation</span>
+      </div>
+      <p class="intro-subsection-desc">Documentation layouts must feel editorial and technical at the same time. They should communicate precision, structure, and professionalism — like a technical manual from a premium engineering brand.</p>
+
+      <p class="intro-subsection-desc" style="margin-top:0;margin-bottom:16px;font-weight:600;color:var(--black)">Documentation must look:</p>
+      <div class="check-cards-grid">
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Clean and minimal — no visual clutter or unnecessary decoration</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Structured with clear headings, subheadings, and body text</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Well-spaced with generous margins and padding</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Grid-aligned with consistent column widths</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Professional like Apple, BMW, or IBM documentation</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Easy to navigate with clear section boundaries</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Consistent across all pages and sections</span></div>
+        <div class="check-card reveal"><i class="fa-solid fa-check"></i><span>Focused on content readability above all else</span></div>
+      </div>
+
+      <p class="intro-subsection-desc" style="margin-top:36px;margin-bottom:16px;font-weight:600;color:var(--black)">Documentation must NOT look like:</p>
+      <div class="objectives-grid">
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>A casual blog with inconsistent styling</span></div>
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>A Word document with default formatting</span></div>
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>A presentation with too many colors and effects</span></div>
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>A marketing flyer with decorative elements</span></div>
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>A crowded layout with no breathing room</span></div>
+        <div class="objective-item reveal" style="border-color:var(--error);border-left:4px solid var(--error)"><i class="fa-solid fa-xmark" style="color:var(--error);background:rgba(255,59,48,.08)"></i><span>An unstructured page without clear hierarchy</span></div>
+      </div>
+    </div>
+
+    <!-- 11. Layout for Posters -->
+    <div id="sec-poster" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-image"></i></div>
+        <span class="intro-subsection-title">Layout for Posters</span>
+      </div>
+      <p class="intro-subsection-desc">Poster layouts must follow the grid system with generous margins and clear hierarchy. The Koleex logo should be placed in the top-left corner. Large bold titles with minimal supporting text. Grid overlay lines ensure precise alignment.</p>
+
+      <div class="layout-poster reveal">
+        <div class="poster-real">
+          <!-- Grid overlay -->
+          <div class="pr-grid-overlay">
+            <div class="pr-grid-v" style="left:20%"></div>
+            <div class="pr-grid-v" style="left:40%"></div>
+            <div class="pr-grid-v" style="left:60%"></div>
+            <div class="pr-grid-v" style="left:80%"></div>
+            <div class="pr-grid-h" style="top:33%"></div>
+            <div class="pr-grid-h" style="top:66%"></div>
+          </div>
+          <!-- Annotations -->
+          <span class="pr-annotation" style="left:8px;top:50%;transform:rotate(-90deg) translateX(-50%);transform-origin:left center;white-space:nowrap">40px margin</span>
+          <span class="pr-annotation" style="left:50%;top:8px;transform:translateX(-50%)">Gutter 20px</span>
+          <!-- Content top -->
+          <div class="pr-top">
+            <div class="pr-logo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+            </div>
+            <div class="pr-title">Industrial<br>Technology</div>
+            <div class="pr-subtitle">Precision. Engineering. Systems.</div>
+            <div class="pr-line"></div>
+          </div>
+          <!-- Content bottom -->
+          <div class="pr-bottom">
+            <span class="pr-bottom-text">KOLEEX International Group</span>
+            <span class="pr-bottom-text">www.koleex.com</span>
+          </div>
+        </div>
+        <div class="layout-poster-caption"><i class="fa-solid fa-info-circle"></i> Poster layout example — black background, logo top-left, large title, grid overlay for alignment reference</div>
+      </div>
+    </div>
+
+    <!-- 12. Layout for Website -->
+    <div id="sec-website" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-globe"></i></div>
+        <span class="intro-subsection-title">Layout for Website</span>
+      </div>
+      <p class="intro-subsection-desc">Website layouts follow the 12-column grid with a maximum content width of 1200px. The structure includes a fixed header, hero section, content blocks, card grids, and footer. All elements must be grid-aligned with consistent spacing.</p>
+
+      <div class="website-real reveal">
+        <!-- Header -->
+        <div class="wr-header">
+          <div class="wr-header-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+          </div>
+          <div class="wr-header-nav">
+            <span>Products</span><span>Solutions</span><span>Technology</span><span>About</span><span>Contact</span>
+          </div>
+        </div>
+        <!-- Hero -->
+        <div class="wr-hero">
+          <div class="wr-hero-title">Industrial Technology<br>Built for the Future</div>
+          <p class="wr-hero-sub">Precision-engineered systems designed for reliability, scalability, and performance in the most demanding industrial environments.</p>
+          <div class="wr-hero-btn">Explore Products &rarr;</div>
+        </div>
+        <!-- Two Column -->
+        <div class="wr-two-col">
+          <div class="wr-col-text">
+            <h4>Our Systems</h4>
+            <p>Koleex delivers industrial-grade controllers, sensors, and automation platforms trusted by manufacturers worldwide. Every product is built with engineering precision and tested under extreme conditions.</p>
+          </div>
+          <div class="wr-col-img"><span>Product Image</span></div>
+        </div>
+        <!-- Card Grid -->
+        <div class="wr-cards">
+          <div class="wr-card">
+            <div class="wr-card-img"><span>Image</span></div>
+            <div class="wr-card-body">
+              <h5>System Name</h5>
+              <p>High-performance industrial controller with real-time monitoring capabilities.</p>
+              <a href="#">Learn More &rarr;</a>
+            </div>
+          </div>
+          <div class="wr-card">
+            <div class="wr-card-img"><span>Image</span></div>
+            <div class="wr-card-body">
+              <h5>System Name</h5>
+              <p>Advanced sensor array for precision measurement in harsh environments.</p>
+              <a href="#">Learn More &rarr;</a>
+            </div>
+          </div>
+          <div class="wr-card">
+            <div class="wr-card-img"><span>Image</span></div>
+            <div class="wr-card-body">
+              <h5>System Name</h5>
+              <p>Integrated automation platform for seamless factory floor operations.</p>
+              <a href="#">Learn More &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <div class="wr-footer">
+          <div class="wr-footer-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+          </div>
+          <span>&copy; 2026 Koleex International Group</span>
+        </div>
+      </div>
+      <div class="wf-caption"><i class="fa-solid fa-info-circle"></i> Website layout — header with navigation, hero section, 2-column content, 3-card grid, footer. All elements aligned to the 12-column grid.</div>
+    </div>
+
+    <!-- 13. Layout for UI/Software -->
+    <div id="sec-ui" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-desktop"></i></div>
+        <span class="intro-subsection-title">Layout for UI/Software</span>
+      </div>
+      <p class="intro-subsection-desc">Software and dashboard layouts follow the same grid principles with a sidebar navigation pattern. The layout includes a fixed sidebar, top bar, KPI row, main chart area, and data table. Clean enterprise style with clear information hierarchy.</p>
+
+      <div class="dashboard-real reveal">
+        <!-- Sidebar -->
+        <div class="dr-sidebar">
+          <div class="dr-sidebar-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+          </div>
+          <div class="dr-sidebar-item active"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+          <div class="dr-sidebar-item"><i class="fa-solid fa-chart-line"></i> Analytics</div>
+          <div class="dr-sidebar-item"><i class="fa-solid fa-box"></i> Products</div>
+          <div class="dr-sidebar-item"><i class="fa-solid fa-truck"></i> Orders</div>
+          <div class="dr-sidebar-item"><i class="fa-solid fa-gear"></i> Settings</div>
+        </div>
+        <!-- Main -->
+        <div class="dr-main">
+          <div class="dr-topbar">
+            <h3>Dashboard Overview</h3>
+            <div class="dr-topbar-badge">March 2026</div>
+          </div>
+          <div class="dr-body">
+            <!-- KPI Row -->
+            <div class="dr-kpi-row">
+              <div class="dr-kpi">
+                <div class="dr-kpi-label">Total Revenue</div>
+                <div class="dr-kpi-value">$2.4M</div>
+                <div class="dr-kpi-change up">+12.3%</div>
+              </div>
+              <div class="dr-kpi">
+                <div class="dr-kpi-label">Active Orders</div>
+                <div class="dr-kpi-value">1,284</div>
+                <div class="dr-kpi-change up">+8.1%</div>
+              </div>
+              <div class="dr-kpi">
+                <div class="dr-kpi-label">Products</div>
+                <div class="dr-kpi-value">156</div>
+                <div class="dr-kpi-change up">+3</div>
+              </div>
+              <div class="dr-kpi">
+                <div class="dr-kpi-label">Efficiency</div>
+                <div class="dr-kpi-value">94.2%</div>
+                <div class="dr-kpi-change up">+2.1%</div>
+              </div>
+            </div>
+            <!-- Chart -->
+            <div class="dr-chart-card">
+              <h4>Revenue Overview</h4>
+              <div class="dr-bars">
+                <div class="dr-bar-group"><div class="dr-bar" style="height:55%;background:#000"></div><div class="dr-bar-label">Jan</div></div>
+                <div class="dr-bar-group"><div class="dr-bar" style="height:72%;background:#000"></div><div class="dr-bar-label">Feb</div></div>
+                <div class="dr-bar-group"><div class="dr-bar" style="height:48%;background:#424245"></div><div class="dr-bar-label">Mar</div></div>
+                <div class="dr-bar-group"><div class="dr-bar" style="height:85%;background:#000"></div><div class="dr-bar-label">Apr</div></div>
+                <div class="dr-bar-group"><div class="dr-bar" style="height:64%;background:#424245"></div><div class="dr-bar-label">May</div></div>
+                <div class="dr-bar-group"><div class="dr-bar" style="height:92%;background:#000"></div><div class="dr-bar-label">Jun</div></div>
+              </div>
+            </div>
+            <!-- Table -->
+            <div class="dr-table-card">
+              <h4>Recent Orders</h4>
+              <div class="dr-table-head">
+                <span>Order ID</span><span>Product</span><span>Customer</span><span>Status</span><span>Amount</span>
+              </div>
+              <div class="dr-table-row">
+                <span>KX-2024-001</span><span>Industrial Controller</span><span>Acme Corp</span><span><span class="status-badge completed">Completed</span></span><span>$12,450</span>
+              </div>
+              <div class="dr-table-row">
+                <span>KX-2024-002</span><span>Sensor Array Pro</span><span>TechVision Ltd</span><span><span class="status-badge processing">Processing</span></span><span>$8,200</span>
+              </div>
+              <div class="dr-table-row">
+                <span>KX-2024-003</span><span>Automation Hub</span><span>BuildRight Inc</span><span><span class="status-badge shipped">Shipped</span></span><span>$15,800</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-caption"><i class="fa-solid fa-info-circle"></i> Dashboard layout — sidebar navigation, top bar, 4 KPI cards, revenue chart, orders table. Clean enterprise design.</div>
+    </div>
+
+    <!-- 14. Layout Do -->
+    <div id="sec-do" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-check"></i></div>
+        <span class="intro-subsection-title">Layout Do</span>
+      </div>
+      <p class="intro-subsection-desc">These are the 22 layout rules that must always be followed in every Koleex design. They define the standard for structural quality across all brand materials.</p>
+
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use the 12-column grid as the layout foundation</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always maintain consistent margins on all sides</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use the defined spacing scale (multiples of 4px)</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always align all elements to the grid</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use generous white space between sections</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always create clear visual hierarchy through size and position</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use left alignment as the default for body content</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always keep text content width under 720px for readability</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use modular, repeatable content blocks</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always follow the section structure pattern (label, title, intro, content, examples, rules)</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always design for responsiveness across all screen sizes</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use consistent gutters between columns</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always group related elements with proper proximity</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always separate unrelated content with clear spacing</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always treat negative space as a design element</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always ensure layouts meet premium quality standards</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always test layouts on multiple screen sizes before publishing</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use proper content width constraints (max 1200px)</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always align buttons and CTAs to the grid</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use the same grid system across all brand materials</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always maintain visual balance between left and right sides</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use the section structure diagram as a reference for documentation</span></div>
+    </div>
+
+    <!-- 15. Layout Don't -->
+    <div id="sec-dont" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-xmark"></i></div>
+        <span class="intro-subsection-title">Layout Don't</span>
+      </div>
+      <p class="intro-subsection-desc">These are the 23 layout mistakes that must never appear in any Koleex design. Violating these rules will result in rejected designs during brand review.</p>
+
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't place elements without grid alignment</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use arbitrary spacing values outside the defined scale</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use zero margins on any layout</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't let content touch the edges of the screen or page</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't crowd content — if in doubt, add more space</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't mix alignment styles within the same content block</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use right alignment for body text (except RTL languages)</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use justified text alignment</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't create layouts without clear visual hierarchy</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use inconsistent column widths within the same grid</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't ignore responsive behavior — layouts must work on all devices</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use different grid systems across different brand materials</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't stretch text content beyond 720px width</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use decorative layout elements (borders, shadows, gradients) for structure</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't place logos or brand marks off-grid</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use random padding values inside content blocks</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't create asymmetric layouts without intentional purpose</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't reduce margins to fit more content on the page</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't use more than 3 column variations on a single page</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't skip the section structure pattern in documentation</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't allow uneven vertical spacing between sections</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't center-align long paragraphs of text</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Don't publish any layout without grid verification</span></div>
+    </div>
+
+    <!-- 16. Correct vs Incorrect Layout -->
+    <div id="sec-comparison" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-columns"></i></div>
+        <span class="intro-subsection-title">Visual Example: Correct vs Incorrect Layout</span>
+      </div>
+      <p class="intro-subsection-desc">Side-by-side comparison showing properly aligned grid-based layout versus misaligned, inconsistent layout that violates the Koleex brand guidelines.</p>
+
+      <div class="layout-comparison reveal">
+        <div class="lc-side correct">
+          <div class="lc-label green"><i class="fa-solid fa-check"></i> Correct</div>
+          <div class="lc-real">
+            <div class="lc-real-header"><h5>Product Catalog</h5></div>
+            <div class="lc-real-cards">
+              <div class="lc-real-card">
+                <h6>Industrial Controller</h6>
+                <p>High-performance controller with real-time monitoring and precision output management.</p>
+                <div class="lc-mini-btn">View Details</div>
+              </div>
+              <div class="lc-real-card">
+                <h6>Sensor Array Pro</h6>
+                <p>Advanced multi-sensor platform for environmental and process measurements.</p>
+                <div class="lc-mini-btn">View Details</div>
+              </div>
+            </div>
+          </div>
+          <div class="lc-desc">Title left-aligned, two equal cards with consistent spacing (16px gaps, 20px padding), text left-aligned, uniform structure.</div>
+        </div>
+        <div class="lc-side incorrect">
+          <div class="lc-label red"><i class="fa-solid fa-xmark"></i> Incorrect</div>
+          <div class="lc-real lc-incorrect">
+            <div class="lc-real-header"><h5>Product Catalog</h5></div>
+            <div class="lc-real-cards">
+              <div class="lc-real-card">
+                <h6>Industrial Controller</h6>
+                <p>High-performance controller with real-time monitoring and precision output management.</p>
+                <div class="lc-mini-btn">View Details</div>
+              </div>
+              <div class="lc-real-card">
+                <h6>Sensor Array Pro</h6>
+                <p>Advanced multi-sensor platform for environmental and process measurements.</p>
+                <div class="lc-mini-btn">View Details</div>
+              </div>
+            </div>
+          </div>
+          <div class="lc-desc">Title centered, cards are different widths (55%/40%), inconsistent padding, mixed alignment, buttons centered instead of left-aligned.</div>
+        </div>
+        <div class="layout-comparison-caption"><i class="fa-solid fa-info-circle"></i> Left: Grid-aligned layout with consistent spacing and structure. Right: Off-grid layout with inconsistent widths and alignment.</div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="intro-summary reveal">
+      <div class="intro-summary-left"><i class="fa-solid fa-bookmark"></i></div>
+      <div class="intro-summary-right">
+        <h4>Summary of Layout &amp; Grid System</h4>
+        <div class="intro-summary-tags" style="margin-top:20px">
+          <span class="intro-summary-tag">12-Column Grid</span>
+          <span class="intro-summary-tag">4px Base Unit</span>
+          <span class="intro-summary-tag">1200px Max Width</span>
+          <span class="intro-summary-tag">40px Margins</span>
+          <span class="intro-summary-tag">Left Aligned</span>
+          <span class="intro-summary-tag">Grid Mandatory</span>
+          <span class="intro-summary-tag">Generous White Space</span>
+          <span class="intro-summary-tag">Modular Blocks</span>
+          <span class="intro-summary-tag">Responsive</span>
+          <span class="intro-summary-tag">22 Do Rules</span>
+          <span class="intro-summary-tag">23 Don't Rules</span>
+        </div>
+        <p class="intro-summary-note">The Koleex layout and grid system must always be used with precision and consistency. Structure comes before decoration. The grid is a rule, not an option. Every element must be aligned, spaced, and positioned according to this system. Any deviation requires written approval from the brand management team.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Prev/Next -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="prev-next">
+      <a href="14-typography-system.html"><i class="fa-solid fa-arrow-left pn-icon"></i><div><div class="pn-label">Previous</div><div class="pn-title">14 Typography System</div></div></a>
+      <a href="16-graphic-elements.html" class="next"><div><div class="pn-label">Next</div><div class="pn-title">16 Graphic Elements</div></div><i class="fa-solid fa-arrow-right pn-icon"></i></a>
+    </div>
+  </div>
+</section>
+</div><!-- end page-content -->
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+      <span class="footer-text">&copy; 2026 Koleex International Group. Brand Guidelines v1.0</span>
+    </div>
+  </div>
+</footer>
+
+<script src="translations.js?v=2"></script>
+<script src="shared-nav.js?v=7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="brand-checker.js"></script>
+<script src="brand-checker-ui.js"></script>
+</body>
+</html>

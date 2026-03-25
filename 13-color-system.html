@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13 Color System — Koleex Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000000;--white:#FFFFFF;--silver:#C0C0C0;--silver-light:#D9D9D9;--silver-dark:#A0A0A0;--gray-50:#FAFAFA;--gray-100:#F5F5F7;--gray-200:#E8E8ED;--gray-300:#D2D2D7;--gray-400:#AFAFAF;--gray-500:#86868B;--gray-600:#6E6E73;--gray-700:#424245;--gray-800:#1E1E20;--gray-900:#0A0A0A;--success:#34C759;--error:#FF3B30;--warning:#FF9500;--radius-s:8px;--radius-m:12px;--radius-l:20px;--radius-xl:28px;--shadow-s:0 1px 3px rgba(0,0,0,.08);--shadow-m:0 4px 20px rgba(0,0,0,.08);--shadow-l:0 12px 40px rgba(0,0,0,.12);--shadow-xl:0 20px 60px rgba(0,0,0,.18);--transition:all .35s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth;font-size:16px;overflow-y:scroll;scrollbar-gutter:stable}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--white);color:var(--gray-800);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html[lang="ar"] body{font-family:'Noto Sans Arabic','Inter',sans-serif}
+html[lang="zh"] body{font-family:'Noto Sans SC','Inter',sans-serif}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--gray-100)}::-webkit-scrollbar-thumb{background:var(--silver-dark);border-radius:3px}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08);height:52px}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo svg{height:20px;width:auto;display:block}.nav-logo svg path{fill:var(--white)}
+.nav-logo{display:flex;align-items:center;height:52px}
+.nav-center{display:flex;align-items:center;gap:0}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{padding:0 16px;height:52px;display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.8);cursor:pointer;transition:var(--transition);border:none;background:none;font-family:inherit}
+.nav-dropdown-trigger:hover{color:var(--white)}
+.nav-dropdown-trigger i.fa-chevron-down{font-size:.5rem;transition:var(--transition);color:rgba(255,255,255,.4)}
+.nav-dropdown:hover .nav-dropdown-trigger i.fa-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:fixed;top:52px;left:0;right:0;width:100vw;background:rgba(29,29,31,.97);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:none;padding:44px 0 48px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1),transform .35s cubic-bezier(.25,.1,.25,1);box-shadow:none;z-index:999}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu .mega-inner{max-width:980px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.nav-dropdown-item{display:flex;align-items:center;gap:12px;padding:8px 0;border-radius:0;transition:color .2s ease,opacity .3s ease,transform .3s ease;font-size:.88rem;font-weight:400;color:rgba(255,255,255,.8);opacity:0;transform:translateY(4px)}
+.nav-dropdown:hover .nav-dropdown-item{opacity:1;transform:translateY(0)}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(1){transition-delay:.02s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(2){transition-delay:.04s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(3){transition-delay:.06s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(4){transition-delay:.08s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(5){transition-delay:.1s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(6){transition-delay:.12s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(7){transition-delay:.14s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(8){transition-delay:.16s}
+.nav-dropdown:hover .nav-dropdown-item:nth-child(9){transition-delay:.18s}
+.nav-dropdown-item:hover{background:none;color:var(--white)}
+.nav-dropdown-item i{width:auto;height:auto;border-radius:0;background:none;display:inline;font-size:.75rem;color:rgba(255,255,255,.4);flex-shrink:0}
+.nav-dropdown-item:hover i{background:none;color:rgba(255,255,255,.6)}
+.nav-dropdown-item .item-num{display:none}
+.nav-blur-overlay{position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:998;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.25,.1,.25,1),visibility .35s cubic-bezier(.25,.1,.25,1);pointer-events:none}
+.nav-blur-overlay.active{opacity:1;visibility:visible}
+.nav-right{display:flex;align-items:center;gap:16px}
+.kx-lang{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:3px;background:rgba(255,255,255,.04);gap:2px}
+.kx-lang-btn{display:inline-block;width:72px;height:30px;line-height:30px;border-radius:19px;border:none;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:rgba(255,255,255,.4);transition:background .25s ease,color .25s ease,box-shadow .25s ease;letter-spacing:.03em;font-family:inherit;text-align:center;-webkit-appearance:none;appearance:none;outline:none;margin:0;padding:0;box-sizing:border-box}
+.kx-lang-btn.active{background:#fff;color:#000;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.kx-lang-btn:hover:not(.active){color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.hamburger{display:none;width:36px;height:36px;cursor:pointer;padding:0;border:none;background:none;position:relative;flex-shrink:0;z-index:1001}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--white);position:absolute;left:50%;transform:translateX(-50%);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.hamburger span:nth-child(1){top:12px}
+.hamburger span:nth-child(2){top:17px}
+.hamburger span:nth-child(3){top:22px}
+.hamburger.active span:nth-child(1){top:17px;transform:translateX(-50%) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0;transform:translateX(-50%) scaleX(0)}
+.hamburger.active span:nth-child(3){top:17px;transform:translateX(-50%) rotate(-45deg)}
+.mobile-menu{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:998;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:0;overflow-y:auto;transform:translateY(-100%);opacity:0;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;pointer-events:none;-webkit-overflow-scrolling:touch}
+.mobile-menu.active{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu-inner{padding:24px 24px 100px}
+.mobile-menu-section{margin-bottom:24px}
+.mobile-menu-label{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:12px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu-link{display:flex;align-items:center;gap:12px;padding:14px 0;color:rgba(255,255,255,.85);text-decoration:none;font-size:.9rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s ease}
+.mobile-menu-link:hover,.mobile-menu-link:active{color:#fff}
+.mobile-menu-link i{font-size:.75rem;width:20px;text-align:center;color:rgba(255,255,255,.4)}
+.mobile-menu-close{display:none!important}
+.mobile-menu-link .coming-tag{font-size:.45rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-left:auto;padding:2px 6px;border:1px solid rgba(255,255,255,.1);border-radius:4px}
+.scroll-progress{display:none}
+/* PAGE HEADER */
+.page-header{padding:160px 0 80px;background:var(--white);border-bottom:1px solid var(--gray-200);position:relative;overflow:hidden}
+
+.page-header-num{font-size:10rem;font-weight:900;letter-spacing:-.05em;line-height:.85;color:#ECECEC;margin:0 0 -24px auto;text-align:right;user-select:none}
+.page-header-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--black);color:var(--white);font-size:1.3rem;margin-bottom:20px}
+.page-header h1{font-size:3.5rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:16px}
+.page-header p{font-size:1.2rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+/* SECTION CONTENT STYLES */
+.section{padding:120px 0}
+.section:last-of-type{padding-bottom:160px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px}
+.section-label i{font-size:.65rem}
+.section-title{font-size:3.2rem;font-weight:700;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:24px}
+.section-subtitle{font-size:1.35rem;font-weight:400;color:var(--gray-600);max-width:640px;line-height:1.65}
+.intro-section{background:var(--white)}
+.intro-hero{margin-top:56px;background:var(--black);border-radius:var(--radius-xl);padding:80px 72px;position:relative;overflow:hidden}
+.intro-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(192,192,192,.06),transparent)}
+.intro-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.03),transparent)}
+.intro-hero-content{position:relative;z-index:1}
+.intro-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-size:.7rem;font-weight:600;color:var(--silver);letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
+.intro-hero h3{font-size:2.4rem;font-weight:700;color:var(--white);letter-spacing:-.02em;line-height:1.2;margin-bottom:24px;max-width:700px}
+.intro-hero p{font-size:1.1rem;color:var(--silver);line-height:1.75;max-width:640px;font-weight:300}
+.intro-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.intro-hero-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.07);font-size:.7rem;font-weight:600;color:var(--silver-light);letter-spacing:.02em}
+.intro-hero-tag i{font-size:.6rem;color:var(--silver-dark)}
+.intro-subsection{margin-top:100px}
+.intro-subsection-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.intro-subsection-icon{width:52px;height:52px;border-radius:14px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.intro-subsection-title{font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-.01em}
+.intro-subsection-desc{font-size:1rem;color:var(--gray-600);line-height:1.7;max-width:720px;margin-bottom:32px}
+.objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.objective-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.objective-item:hover{border-color:var(--gray-300);background:var(--white)}
+.objective-item i{flex-shrink:0;margin-top:2px;font-size:.75rem;color:var(--black);width:26px;height:26px;background:var(--gray-100);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.objective-item:hover i{background:var(--gray-200);color:var(--black)}
+.objective-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.role-tag{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-s);transition:var(--transition)}
+.role-tag:hover{border-color:var(--gray-300)}
+.role-tag i{font-size:1rem;color:var(--black);flex-shrink:0}
+.role-tag span{font-size:.78rem;font-weight:500;color:var(--gray-700)}
+/* PREV/NEXT NAV */
+.prev-next{display:flex;gap:20px;padding:60px 0 80px;border-top:1px solid var(--gray-200)}
+.prev-next a{flex:1;display:flex;align-items:center;gap:16px;padding:28px 32px;border:1px solid var(--gray-200);border-radius:var(--radius-m);transition:var(--transition);text-decoration:none}
+.prev-next a:hover{border-color:var(--black);box-shadow:var(--shadow-m);transform:translateY(-2px)}
+.prev-next a.next{justify-content:flex-end;text-align:right}
+.prev-next .pn-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400)}
+.prev-next .pn-title{font-size:1rem;font-weight:600;color:var(--black)}
+.prev-next .pn-icon{font-size:1.2rem;color:var(--gray-400)}
+/* FOOTER */
+.page-footer{background:var(--black);padding:32px 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-logo svg{height:18px}.footer-logo svg path{fill:var(--silver-dark)}
+.footer-text{font-size:.72rem;color:var(--gray-600)}
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}.delay-6{transition-delay:.6s}
+/* Green/Red border items */
+.green-border-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--success);border-left:4px solid var(--success);border-radius:var(--radius-s);margin-bottom:10px;transition:var(--transition)}
+.green-border-item:hover{background:rgba(52,199,89,.03)}
+.green-border-item i{color:var(--success);flex-shrink:0;margin-top:2px;font-size:.7rem}
+.green-border-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+.red-border-item{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;background:var(--white);border:1px solid var(--error);border-left:4px solid var(--error);border-radius:var(--radius-s);margin-bottom:10px;transition:var(--transition)}
+.red-border-item:hover{background:rgba(255,59,48,.03)}
+.red-border-item i{color:var(--error);flex-shrink:0;margin-top:2px;font-size:.7rem}
+.red-border-item span{font-size:.85rem;font-weight:500;color:var(--gray-700);line-height:1.45}
+/* Warning Banner */
+.warning-banner{margin-top:28px;padding:24px 28px;background:var(--black);border-radius:var(--radius-m);border-left:5px solid var(--warning);display:flex;align-items:flex-start;gap:16px}
+.warning-banner i{color:var(--warning);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.warning-banner-content h4{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.warning-banner-content p{font-size:.88rem;color:var(--silver);line-height:1.6;font-weight:300}
+/* Compare Row */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.compare-col{padding:28px 24px;border-radius:var(--radius-m);border:2px solid var(--gray-200);background:var(--white)}
+.compare-col.do{border-color:var(--success)}
+.compare-col.dont{border-color:var(--error)}
+.compare-col-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:.85rem;font-weight:700;color:var(--black)}
+.compare-col-header i{font-size:.75rem}
+.compare-col.do .compare-col-header i{color:var(--success)}
+.compare-col.dont .compare-col-header i{color:var(--error)}
+.compare-col-list{list-style:none;padding:0;margin:0}
+.compare-col-list li{padding:8px 0;font-size:.82rem;font-weight:500;color:var(--gray-700);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--gray-100)}
+.compare-col-list li:last-child{border-bottom:none}
+.compare-col-list li i{font-size:.6rem;flex-shrink:0}
+.compare-col.do .compare-col-list li i{color:var(--success)}
+.compare-col.dont .compare-col-list li i{color:var(--error)}
+/* Black Callout */
+.black-callout{margin-top:20px;padding:16px 22px;background:var(--black);border-radius:var(--radius-s);display:flex;align-items:center;gap:12px}
+.black-callout i{color:var(--silver);font-size:.85rem;flex-shrink:0}
+.black-callout span{font-size:.85rem;font-weight:600;color:var(--white);line-height:1.5}
+/* Summary */
+.intro-summary{margin-top:64px;background:var(--black);border-radius:var(--radius-l);padding:48px;display:flex;gap:48px;align-items:flex-start}
+.intro-summary-left{flex:0 0 auto}.intro-summary-left i{font-size:2rem;color:var(--silver)}
+.intro-summary-right{flex:1}
+.intro-summary-right h4{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:16px}
+.intro-summary-tags{display:flex;flex-wrap:wrap;gap:8px}
+.intro-summary-tag{padding:8px 18px;border-radius:6px;background:rgba(255,255,255,.08);font-size:.78rem;font-weight:600;color:var(--silver-light)}
+.intro-summary-note{margin-top:20px;font-size:.9rem;color:var(--silver);font-weight:300;line-height:1.6;font-style:italic}
+/* Scroll Anchor Bar */
+.scroll-anchor{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;align-items:center;gap:20px;opacity:0;transition:opacity .4s ease}
+.scroll-anchor.visible{opacity:1}
+.scroll-anchor-line{width:1px;height:16px;background:var(--gray-300)}
+.scroll-anchor-dot{width:10px;height:10px;border-radius:50%;background:var(--gray-300);transition:all .3s ease;cursor:pointer;position:relative}
+.scroll-anchor-dot.active{background:var(--black);width:12px;height:12px;box-shadow:0 0 0 3px rgba(0,0,0,.1)}
+.scroll-anchor-dot:hover{background:var(--gray-600);transform:scale(1.3)}
+.scroll-anchor-label{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.65rem;font-weight:600;color:var(--gray-500);letter-spacing:.03em;opacity:0;transition:opacity .2s ease;pointer-events:none}
+.scroll-anchor-dot:hover .scroll-anchor-label,.scroll-anchor-dot.active .scroll-anchor-label{opacity:1}
+/* Mobile language globe */
+.mobile-lang-wrap{display:none;position:relative}
+.mobile-lang-trigger{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;transition:all .3s ease}
+.mobile-lang-trigger:hover,.mobile-lang-trigger:active{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;background:rgba(0,0,0,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;min-width:120px;z-index:1002;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.mobile-lang-dropdown.active{display:flex;flex-direction:column;gap:2px;animation:langDropIn .25s cubic-bezier(.4,0,.2,1)}
+@keyframes langDropIn{from{opacity:0;transform:translateY(-8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.mobile-lang-opt{padding:10px 14px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;text-align:left;cursor:pointer;border-radius:8px;transition:all .2s ease;font-family:inherit}
+.mobile-lang-opt:hover{background:rgba(255,255,255,.1);color:#fff}
+.mobile-lang-opt.active{background:rgba(255,255,255,.15);color:#fff;font-weight:600}
+@media(max-width:1024px){.scroll-anchor{display:none}}
+/* RESPONSIVE */
+@media(max-width:1024px){.objectives-grid{grid-template-columns:1fr}.page-header h1{font-size:2.6rem}.page-header-num{font-size:7rem}.roles-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.kx-lang{display:none}.mobile-lang-wrap{display:block}.nav-inner{padding:0 12px}.nav-logo{margin-left:6px}.nav-logo svg{height:16px}.nav-right{gap:8px}.kx-lang{padding:2px;border-radius:14px;gap:2px}.kx-lang-btn{width:36px;height:22px;line-height:22px;font-size:8px;border-radius:11px;letter-spacing:0}.kx-lang-btn.active{font-weight:700}.container{padding:0 20px}.nav-center{display:none}.hamburger{display:flex;align-items:center;justify-content:center}.mobile-menu{padding:70px 24px 40px}.section{padding:80px 0}.section:last-of-type{padding-bottom:100px}.section-title{font-size:2.2rem}.section-subtitle{font-size:1.1rem}.footer-inner{flex-direction:column;gap:12px;text-align:center}.objectives-grid{grid-template-columns:1fr}.roles-grid{grid-template-columns:repeat(2,1fr)}.intro-hero{padding:48px 28px}.intro-hero h3{font-size:1.6rem}.intro-summary{flex-direction:column;gap:24px;padding:32px 24px}.page-header{padding:100px 0 40px}.page-header h1{font-size:2rem}.page-header-num{font-size:5rem}.prev-next{flex-direction:column}.compare-row{grid-template-columns:1fr}}
+
+@media(max-width:480px){.nav-logo svg{height:14px}.kx-lang{padding:2px;border-radius:14px}.kx-lang-btn{width:30px;height:20px;line-height:20px;font-size:7px;border-radius:10px}.section-title{font-size:1.8rem}.page-header h1{font-size:1.6rem}.page-header-num{font-size:4rem}.intro-hero{padding:32px 18px}.intro-hero h3{font-size:1.3rem}.prev-next a{padding:20px 16px}.intro-summary{padding:24px 18px}.roles-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+    <div class="nav-center">
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_foundation">Foundation <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="01-introduction.html" class="nav-dropdown-item"><i class="fa-solid fa-book-open"></i><span><span class="item-num">01</span> Introduction</span></a><a href="02-brand-overview.html" class="nav-dropdown-item"><i class="fa-solid fa-eye"></i><span><span class="item-num">02</span> Brand Overview</span></a><a href="03-meaning-of-koleex.html" class="nav-dropdown-item"><i class="fa-solid fa-signature"></i><span><span class="item-num">03</span> Meaning of KOLEEX</span></a><a href="04-brand-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-lightbulb"></i><span><span class="item-num">04</span> Brand Philosophy</span></a><a href="05-design-philosophy.html" class="nav-dropdown-item"><i class="fa-solid fa-compass-drafting"></i><span><span class="item-num">05</span> Design Philosophy</span></a><a href="06-brand-personality.html" class="nav-dropdown-item"><i class="fa-solid fa-fingerprint"></i><span><span class="item-num">06</span> Brand Personality</span></a><a href="07-tone-of-voice.html" class="nav-dropdown-item"><i class="fa-solid fa-comment-dots"></i><span><span class="item-num">07</span> Tone of Voice</span></a><a href="08-brand-language.html" class="nav-dropdown-item"><i class="fa-solid fa-language"></i><span><span class="item-num">08</span> Brand Language</span></a><a href="09-brand-slogan.html" class="nav-dropdown-item"><i class="fa-solid fa-quote-right"></i><span><span class="item-num">09</span> Brand Slogan</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_visual">Visual Identity <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="10-logo-system.html" class="nav-dropdown-item"><i class="fa-solid fa-vector-square"></i><span><span class="item-num">10</span> Logo System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ruler-combined"></i><span><span class="item-num">11</span> Logo Usage Rules</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-ban"></i><span><span class="item-num">12</span> Logo Do &amp; Don't</span></a><a href="13-color-system.html" class="nav-dropdown-item"><i class="fa-solid fa-droplet"></i><span><span class="item-num">13</span> Color System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-font"></i><span><span class="item-num">14</span> Typography System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-border-all"></i><span><span class="item-num">15</span> Layout &amp; Grid System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-shapes"></i><span><span class="item-num">16</span> Graphic Elements System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-swatchbook"></i><span><span class="item-num">17</span> Background Style</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-icons"></i><span><span class="item-num">18</span> Icon System</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_digital">Digital &amp; Media <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-mobile-screen-button"></i><span><span class="item-num">19</span> UI/UX Design System</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-globe"></i><span><span class="item-num">20</span> Website Design Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-share-nodes"></i><span><span class="item-num">21</span> Social Media Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-print"></i><span><span class="item-num">22</span> Poster &amp; Print Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-box-open"></i><span><span class="item-num">23</span> Packaging &amp; Labels Guidelines</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-store"></i><span><span class="item-num">24</span> Exhibition &amp; Interior Style</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span><span class="item-num">25</span> Motion &amp; Animation Style</span></a></div></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" data-i18n="nav_management">Management <i class="fa-solid fa-chevron-down"></i></button><div class="nav-dropdown-menu"><div class="mega-inner"><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-layer-group"></i><span><span class="item-num">26</span> Brand Applications</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-hand-pointer"></i><span><span class="item-num">27</span> Brand Touchpoints</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-folder-tree"></i><span><span class="item-num">28</span> File Naming &amp; Structure</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-diagram-project"></i><span><span class="item-num">29</span> Brand Architecture</span></a><a href="#" class="nav-dropdown-item"><i class="fa-solid fa-flag-checkered"></i><span><span class="item-num">30</span> Final Brand Summary</span></a></div></div></div>
+    </div>
+    <div class="nav-right">
+      <div class="kx-lang"><button class="kx-lang-btn active" data-lang="en">English</button><button class="kx-lang-btn" data-lang="zh">中文</button><button class="kx-lang-btn" data-lang="ar">العربية</button></div><div class="mobile-lang-wrap"><button class="mobile-lang-trigger" id="mobileLangTrigger"><i class="fa-solid fa-globe"></i></button><div class="mobile-lang-dropdown" id="mobileLangDropdown"><button class="mobile-lang-opt active" data-lang="en">English</button><button class="mobile-lang-opt" data-lang="zh">中文</button><button class="mobile-lang-opt" data-lang="ar">العربية</button></div></div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="page-content" role="application">
+<div class="scroll-anchor" id="scrollAnchor">
+  <div class="scroll-anchor-dot active" data-target="sec-philosophy"><span class="scroll-anchor-label">Color Philosophy</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-palette"><span class="scroll-anchor-label">Color Palette</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-neutral"><span class="scroll-anchor-label">Neutral Colors</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-accent"><span class="scroll-anchor-label">Accent Colors</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-hierarchy"><span class="scroll-anchor-label">Color Hierarchy</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-gradient"><span class="scroll-anchor-label">Gradients</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-applications"><span class="scroll-anchor-label">Applications</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-examples"><span class="scroll-anchor-label">Visual Examples</span></div>
+  <div class="scroll-anchor-line"></div>
+  <div class="scroll-anchor-dot" data-target="sec-dodont"><span class="scroll-anchor-label">Do &amp; Don't</span></div>
+</div>
+<div class="nav-blur-overlay"></div>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-inner">
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Foundation</div><a href="01-introduction.html" class="mobile-menu-link"><i class="fa-solid fa-book-open"></i> 01 Introduction</a><a href="02-brand-overview.html" class="mobile-menu-link"><i class="fa-solid fa-eye"></i> 02 Brand Overview</a><a href="03-meaning-of-koleex.html" class="mobile-menu-link"><i class="fa-solid fa-signature"></i> 03 Meaning of KOLEEX</a><a href="04-brand-philosophy.html" class="mobile-menu-link"><i class="fa-solid fa-lightbulb"></i> 04 Brand Philosophy</a><a href="05-design-philosophy.html" class="mobile-menu-link"><i class="fa-solid fa-compass-drafting"></i> 05 Design Philosophy</a><a href="06-brand-personality.html" class="mobile-menu-link"><i class="fa-solid fa-fingerprint"></i> 06 Brand Personality</a><a href="07-tone-of-voice.html" class="mobile-menu-link"><i class="fa-solid fa-comment-dots"></i> 07 Tone of Voice</a><a href="08-brand-language.html" class="mobile-menu-link"><i class="fa-solid fa-language"></i> 08 Brand Language</a><a href="09-brand-slogan.html" class="mobile-menu-link"><i class="fa-solid fa-quote-right"></i> 09 Brand Slogan</a></div>
+  <div class="mobile-menu-section"><div class="mobile-menu-label">Visual Identity</div><a href="10-logo-system.html" class="mobile-menu-link"><i class="fa-solid fa-vector-square"></i> 10 Logo System</a><a href="#" class="mobile-menu-link"><i class="fa-solid fa-ruler-combined"></i> 11 Logo Usage Rules</a><a href="#" class="mobile-menu-link"><i class="fa-solid fa-ban"></i> 12 Logo Do & Don't</a><a href="13-color-system.html" class="mobile-menu-link"><i class="fa-solid fa-droplet"></i> 13 Color System</a></div>
+</div>
+<style>
+/* ===== PAGE 13 SPECIFIC STYLES ===== */
+
+/* Primary Color Blocks */
+.primary-color-blocks{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.primary-color-block{border-radius:20px;padding:56px;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
+.primary-color-block:hover{transform:translateY(-3px);box-shadow:var(--shadow-l)}
+.primary-color-block.black-block{background:var(--black);color:var(--white)}
+.primary-color-block.white-block{background:var(--white);color:var(--black);border:2px solid var(--gray-200)}
+.primary-color-block .color-hex{font-size:3rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.primary-color-block .color-label{font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;opacity:.5}
+
+/* Color Swatch Grid */
+.color-swatch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.color-swatch{border-radius:16px;overflow:hidden;border:1px solid var(--gray-200);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.color-swatch:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.color-swatch-preview{height:160px;position:relative}
+.color-swatch-info{padding:18px 20px;background:var(--white)}
+.color-swatch-name{font-size:1rem;font-weight:600;color:var(--black);margin-bottom:6px}
+.color-swatch-hex{font-size:.8rem;font-weight:500;color:var(--gray-400);font-family:'SF Mono',Monaco,Consolas,monospace;letter-spacing:.03em}
+.color-swatch-codes{display:flex;flex-direction:column;gap:3px;margin-top:10px;padding-top:10px;border-top:1px solid var(--gray-200)}
+.color-swatch-codes span{font-size:.68rem;font-weight:500;color:var(--gray-500);font-family:'SF Mono',Monaco,Consolas,monospace;letter-spacing:.02em}
+
+/* Color Hierarchy */
+.color-hierarchy{margin-top:40px;display:flex;flex-direction:column;gap:0}
+.hierarchy-level{display:flex;align-items:center;gap:0;border-radius:0;overflow:hidden;transition:var(--transition)}
+.hierarchy-level:first-child{border-radius:16px 16px 0 0}
+.hierarchy-level:last-child{border-radius:0 0 16px 16px}
+.hierarchy-level:hover{transform:scale(1.01)}
+.hierarchy-bar{height:88px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hierarchy-info{flex:1;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;background:var(--gray-50);border:1px solid var(--gray-200);border-left:none;min-height:88px}
+.hierarchy-info-left{display:flex;flex-direction:column;gap:4px}
+.hierarchy-label{font-size:.95rem;font-weight:700;color:var(--black)}
+.hierarchy-desc{font-size:.78rem;font-weight:500;color:var(--gray-500)}
+.hierarchy-percent{font-size:3rem;font-weight:800;color:var(--black);letter-spacing:-.03em}
+
+/* App Cards Grid */
+.app-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.app-card{padding:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;transition:all .4s cubic-bezier(.4,0,.2,1)}
+.app-card:hover{border-color:var(--gray-300);box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
+.app-card-icon{width:52px;height:52px;border-radius:14px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+.app-card-title{font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:16px}
+.app-card-list{list-style:none;padding:0;margin:0}
+.app-card-list li{padding:7px 0;font-size:.82rem;font-weight:500;color:var(--gray-600);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.app-card-list li i{font-size:.5rem;color:var(--gray-400);margin-top:6px;flex-shrink:0}
+
+/* Mockup Poster */
+.mockup-poster{margin-top:32px;border-radius:20px;overflow:hidden;border:2px solid var(--success);position:relative}
+.mockup-poster-inner{background:var(--black);padding:80px 64px;min-height:440px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.mockup-poster-inner .mp-koleex{position:absolute;bottom:32px;left:64px}
+.mockup-poster-inner .mp-koleex svg{width:64px;height:auto}
+.mockup-poster-inner .mp-koleex svg path{fill:rgba(255,255,255,.3)}
+.mockup-poster-inner h2{font-size:2.5rem;font-weight:800;color:var(--white);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px;max-width:500px}
+.mockup-poster-inner .mp-subtitle{font-size:1.15rem;font-weight:400;color:#86868B;margin-bottom:36px}
+.mockup-poster-inner .mp-buttons{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mockup-poster-inner .mp-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px 10px 22px;border-radius:980px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);font-size:.85rem;font-weight:500;letter-spacing:.01em;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
+.mockup-poster-inner .mp-btn .btn-icon{width:30px;height:30px;border-radius:50%;background:#0071E3;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;flex-shrink:0}
+.mockup-poster-inner .mp-btn-outline{display:inline-flex;align-items:center;gap:10px;padding:10px 14px 10px 22px;border-radius:980px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500;letter-spacing:.01em;border:1px solid rgba(255,255,255,.12)}
+.mockup-poster-inner .mp-btn-outline .btn-icon{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.65rem;flex-shrink:0}
+.mockup-poster-caption{padding:14px 20px;background:var(--white);font-size:.78rem;font-weight:600;color:var(--success);display:flex;align-items:center;gap:8px}
+
+/* Mockup Incorrect */
+.mockup-incorrect{margin-top:32px;border-radius:20px;overflow:hidden;border:3px solid var(--error);position:relative}
+.mockup-incorrect-inner{background:linear-gradient(135deg,#ff0000,#ff8800,#ffff00,#00ff00,#0088ff,#8800ff);padding:60px 56px;min-height:440px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;animation:incorrectBg 4s ease infinite}
+@keyframes incorrectBg{0%,100%{filter:saturate(1.2)}50%{filter:saturate(1.8) brightness(1.1)}}
+.mockup-incorrect-inner::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1)}
+.mockup-incorrect-inner h2{font-size:3.5rem;font-weight:900;color:#ff00ff;text-shadow:0 0 30px #ff00ff,0 0 60px #00ffff,0 0 90px #ffff00,0 0 120px #ff0000;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px;position:relative;z-index:1}
+.mockup-incorrect-inner .mi-subtitle{font-size:1.4rem;font-weight:800;color:#00ff00;text-shadow:0 0 20px #00ff00,0 0 40px #00ff00;margin-bottom:12px;position:relative;z-index:1}
+.mockup-incorrect-inner .mi-extra-top{font-size:.85rem;font-weight:700;color:#00ffff;text-shadow:0 0 15px #00ffff;margin-bottom:20px;position:relative;z-index:1;letter-spacing:.15em;text-transform:uppercase}
+.mockup-incorrect-inner .mi-btn{display:inline-flex;padding:16px 40px;border-radius:30px;background:linear-gradient(90deg,#ff0000,#ff8800,#ffff00);color:var(--white);font-size:1.2rem;font-weight:900;text-shadow:0 0 15px rgba(255,255,255,.8);position:relative;z-index:1;animation:pulseBtn 1s ease infinite}
+@keyframes pulseBtn{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.mockup-incorrect-inner .mi-extra{font-size:1rem;font-weight:700;color:#ffff00;text-shadow:0 0 15px #ffff00;margin-top:20px;position:relative;z-index:1}
+.mockup-incorrect-inner .mi-extra-bottom{font-size:.75rem;font-weight:600;color:#ff8800;text-shadow:0 0 10px #ff8800;margin-top:8px;position:relative;z-index:1}
+.mockup-incorrect-overlay{position:absolute;top:20px;right:20px;width:72px;height:72px;border-radius:50%;background:var(--error);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:2.2rem;font-weight:900;z-index:2;box-shadow:0 4px 30px rgba(255,59,48,.6)}
+.mockup-incorrect-caption{padding:14px 20px;background:var(--white);font-size:.78rem;font-weight:600;color:var(--error);display:flex;align-items:center;gap:8px}
+
+/* Mockup Dashboard */
+.mockup-dashboard{margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.mockup-dashboard-inner{display:grid;grid-template-columns:220px 1fr;min-height:400px}
+.mockup-dash-sidebar{background:var(--gray-100);padding:32px 24px;border-right:1px solid var(--gray-200);display:flex;flex-direction:column;gap:6px}
+.mockup-dash-sidebar-logo{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--black);margin-bottom:20px;padding:0 14px}
+.mockup-dash-sidebar-item{padding:11px 14px;border-radius:8px;font-size:.78rem;font-weight:600;color:var(--gray-500);display:flex;align-items:center;gap:10px;transition:var(--transition)}
+.mockup-dash-sidebar-item.active{background:var(--black);color:var(--white)}
+.mockup-dash-sidebar-item:hover:not(.active){color:var(--black);background:var(--gray-200)}
+.mockup-dash-sidebar-item i{font-size:.7rem;width:20px;text-align:center}
+.mockup-dash-main{padding:36px 40px}
+.mockup-dash-main h3{font-size:1.4rem;font-weight:800;color:var(--black);margin-bottom:28px;letter-spacing:-.02em}
+.mockup-dash-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.mockup-dash-stat{padding:24px;border-radius:14px;border:1px solid var(--gray-200);background:var(--white)}
+.mockup-dash-stat .stat-val{font-size:1.8rem;font-weight:800;color:var(--black);letter-spacing:-.02em}
+.mockup-dash-stat .stat-lbl{font-size:.72rem;font-weight:500;color:var(--gray-500);margin-top:4px}
+.mockup-dash-chart{display:flex;align-items:flex-end;gap:14px;height:140px;padding:20px;border:1px solid var(--gray-200);border-radius:14px;background:var(--gray-50)}
+.mockup-dash-bar{flex:1;border-radius:6px 6px 0 0;transition:var(--transition)}
+.mockup-dash-btn{margin-top:20px;display:inline-flex;padding:12px 28px;border-radius:980px;background:#0071E3;color:var(--white);font-size:.8rem;font-weight:600}
+.mockup-dashboard-caption{padding:14px 20px;background:var(--gray-50);border-top:1px solid var(--gray-200);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Mockup Package */
+.mockup-package{margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);background:var(--gray-50)}
+.mockup-package-inner{display:flex;align-items:center;justify-content:center;padding:80px;min-height:420px}
+.mockup-box{width:320px;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:48px 40px;text-align:center;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.mockup-box svg{width:140px;height:auto;display:block;margin:0 auto 24px}
+.mockup-box svg path{fill:var(--black)}
+.mockup-box .box-product{font-size:1.2rem;font-weight:700;color:var(--black);margin-bottom:8px;letter-spacing:-.01em}
+.mockup-box .box-model{font-size:.8rem;font-weight:500;color:var(--gray-500);margin-bottom:20px}
+.mockup-box .box-specs{font-size:.7rem;color:var(--gray-400);line-height:1.9;border-top:1px solid var(--gray-200);padding-top:16px}
+.mockup-package-caption{padding:14px 20px;background:var(--white);border-top:1px solid var(--gray-200);font-size:.78rem;font-weight:600;color:var(--gray-600);display:flex;align-items:center;gap:8px}
+
+/* Responsive overrides for page 13 */
+@media(max-width:1024px){
+  .color-swatch-grid{grid-template-columns:repeat(2,1fr)}
+  .app-cards-grid{grid-template-columns:repeat(2,1fr)}
+  .primary-color-blocks{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .color-swatch-grid{grid-template-columns:1fr}
+  .app-cards-grid{grid-template-columns:1fr}
+  .primary-color-blocks{grid-template-columns:1fr}
+  .mockup-dashboard-inner{grid-template-columns:1fr}
+  .mockup-dash-sidebar{border-right:none;border-bottom:1px solid var(--gray-200);flex-direction:row;flex-wrap:wrap;padding:20px}
+  .mockup-poster-inner{padding:48px 32px}
+  .mockup-poster-inner h2{font-size:1.8rem}
+  .mockup-incorrect-inner{padding:40px 28px}
+  .mockup-incorrect-inner h2{font-size:2rem}
+  .hierarchy-info{padding:14px 16px}
+  .hierarchy-percent{font-size:1.8rem}
+  .mockup-dash-main{padding:24px}
+  .mockup-dash-stat .stat-val{font-size:1.3rem}
+}
+
+/* ===== RTL FOR ARABIC ===== */
+html[lang="ar"] body {
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+html[lang="ar"] {
+  direction: ltr;
+}
+html[lang="ar"] .page-content {
+  direction: rtl;
+  text-align: right;
+}
+html[lang="ar"] .page-header {
+  text-align: right;
+}
+html[lang="ar"] .page-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+html[lang="ar"] .page-header p {
+  margin-left: auto;
+  margin-right: 0;
+}
+html[lang="ar"] .section-title,
+html[lang="ar"] .section-subtitle,
+html[lang="ar"] .section-label {
+  text-align: right;
+}
+html[lang="ar"] .section-label {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .intro-subsection-header {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .nav-center {
+  flex-direction: row-reverse;
+}
+html[lang="ar"] .mega-inner {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[lang="ar"] .nav-dropdown-item {
+  direction: rtl !important;
+  text-align: right !important;
+  flex-direction: row-reverse !important;
+}
+html[lang="ar"] .nav-dropdown-item span {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[lang="ar"] .scroll-anchor {
+  direction: ltr !important;
+  left: 24px !important;
+  right: auto !important;
+}
+html[lang="ar"] .mobile-menu {
+  direction: ltr !important;
+}
+html[lang="ar"] .mobile-menu * {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+</style>
+<!-- Page Header -->
+</div>
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-num">13</div>
+    <div class="page-header-icon reveal"><i class="fa-solid fa-droplet"></i></div>
+    <h1 class="reveal">Color System</h1>
+    <p class="reveal">The official color system defining how colors are used, controlled, and applied to maintain a minimal, professional, and technology-oriented brand identity.</p>
+  </div>
+</section>
+<!-- Section Content -->
+<section class="section intro-section">
+  <div class="container">
+
+    <!-- 1. Section Purpose — Hero Block -->
+    <div id="sec-philosophy" class="intro-hero reveal">
+      <div class="intro-hero-content">
+        <div class="intro-hero-badge"><i class="fa-solid fa-droplet"></i> COLOR IDENTITY SYSTEM</div>
+        <h3>Color in the Koleex brand is not decorative. It is structural.</h3>
+        <p>The Koleex color system is built on the principle of maximum clarity with minimum visual noise. Every color in the palette has a defined purpose, a controlled application, and a strict hierarchy. The brand relies on black and white as its primary visual language, supported by a carefully curated set of neutral grays. Accent colors are permitted only in highly controlled, functional contexts. This system ensures that every visual output from Koleex communicates precision, professionalism, and industrial authority.</p>
+        <div class="intro-hero-tags">
+          <span class="intro-hero-tag"><i class="fa-solid fa-circle-half-stroke"></i> Minimal Palette</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-circle-dot"></i> High Contrast</span>
+          <span class="intro-hero-tag"><i class="fa-solid fa-sliders"></i> Controlled Usage</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Primary Color Philosophy -->
+    <div class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-yin-yang"></i></div>
+        <span class="intro-subsection-title">Primary Color Philosophy</span>
+      </div>
+      <p class="intro-subsection-desc">The Koleex brand is built on two foundational colors: Black and White. These are not just colors — they are the visual language of the brand. Together, they create the maximum possible contrast, the clearest possible communication, and the most timeless visual identity.</p>
+      <div class="primary-color-blocks">
+        <div class="primary-color-block black-block reveal">
+          <div class="color-hex">#000000</div>
+          <div class="color-label">Black — Power, Authority, Precision</div>
+        </div>
+        <div class="primary-color-block white-block reveal">
+          <div class="color-hex">#FFFFFF</div>
+          <div class="color-label">White — Clarity, Space, Openness</div>
+        </div>
+      </div>
+      <div class="objectives-grid" style="margin-top:32px">
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Black represents industrial strength, engineering precision, and corporate authority</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>White represents clarity, breathing space, and modern minimalism</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Together they create the highest possible contrast ratio for legibility</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>The combination is timeless — it will never feel dated or trendy</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Black and white work across all media: digital, print, signage, packaging</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>They reduce visual noise and force content to speak for itself</span></div>
+      </div>
+      <div class="warning-banner reveal">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="warning-banner-content">
+          <h4>Core Design Principle</h4>
+          <p>If a design does not look good in black and white, then the design system is not correct. Color should enhance, not rescue. Every Koleex design must first be evaluated in pure black and white before any additional color is considered.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Visual Example 1: Primary Color Palette -->
+    <div id="sec-palette" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-palette"></i></div>
+        <span class="intro-subsection-title">Primary Color Palette</span>
+      </div>
+      <p class="intro-subsection-desc">The complete Koleex color palette consists of six core colors. These are the only colors permitted in standard brand applications.</p>
+      <div class="color-swatch-grid">
+        <div class="color-swatch reveal">
+          <div class="color-swatch-preview" style="background:#000000"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Black</div>
+            <div class="color-swatch-hex">#000000</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 0, 0, 0</span>
+              <span>CMYK: 0, 0, 0, 100</span>
+              <span>Pantone: Black C</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch reveal delay-1">
+          <div class="color-swatch-preview" style="background:#1E1E20"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Dark Gray</div>
+            <div class="color-swatch-hex">#1E1E20</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 30, 30, 32</span>
+              <span>CMYK: 6, 6, 0, 87</span>
+              <span>Pantone: Black 6 C</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch reveal delay-2">
+          <div class="color-swatch-preview" style="background:#86868B"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Medium Gray</div>
+            <div class="color-swatch-hex">#86868B</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 134, 134, 139</span>
+              <span>CMYK: 4, 4, 0, 45</span>
+              <span>Pantone: Cool Gray 8 C</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch reveal delay-3">
+          <div class="color-swatch-preview" style="background:#D2D2D7"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Light Gray</div>
+            <div class="color-swatch-hex">#D2D2D7</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 210, 210, 215</span>
+              <span>CMYK: 2, 2, 0, 16</span>
+              <span>Pantone: Cool Gray 3 C</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch reveal delay-4">
+          <div class="color-swatch-preview" style="background:#F5F5F7;border-bottom:1px solid var(--gray-200)"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Very Light Gray</div>
+            <div class="color-swatch-hex">#F5F5F7</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 245, 245, 247</span>
+              <span>CMYK: 1, 1, 0, 3</span>
+              <span>Pantone: Cool Gray 1 C</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-swatch reveal delay-5">
+          <div class="color-swatch-preview" style="background:#FFFFFF;border:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">White</div>
+            <div class="color-swatch-hex">#FFFFFF</div>
+            <div class="color-swatch-codes">
+              <span>RGB: 255, 255, 255</span>
+              <span>CMYK: 0, 0, 0, 0</span>
+              <span>Pantone: White</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Neutral Colors -->
+    <div id="sec-neutral" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-circle-half-stroke"></i></div>
+        <span class="intro-subsection-title">Neutral Colors</span>
+      </div>
+      <p class="intro-subsection-desc">Neutral gray tones serve as the structural backbone of the Koleex visual system. They create depth, hierarchy, and separation between content layers without introducing visual distraction.</p>
+      <div class="objectives-grid">
+        <div class="objective-item reveal"><i class="fa-solid fa-layer-group"></i><span>Section backgrounds and content separation</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-heading"></i><span>Secondary text, subtitles, and captions</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-border-all"></i><span>Borders, dividers, and structural lines</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-table-cells"></i><span>Table backgrounds, card surfaces, and form fields</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-circle-nodes"></i><span>Disabled states, placeholder text, and inactive UI elements</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-chart-bar"></i><span>Data visualization supporting elements and chart grids</span></div>
+      </div>
+      <div class="black-callout reveal">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Neutral colors must always maintain readable contrast against text. Never use gray text on a gray background without sufficient contrast ratio (minimum 4.5:1 for body text).</span>
+      </div>
+    </div>
+
+    <!-- 5. Accent Colors -->
+    <div id="sec-accent" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon" style="background:#0071E3"><i class="fa-solid fa-star"></i></div>
+        <span class="intro-subsection-title">Accent Colors</span>
+      </div>
+      <p class="intro-subsection-desc">Accent colors are used sparingly and only in functional, interactive contexts. The primary accent color is a controlled blue (#0071E3) used exclusively for interactive UI elements, hyperlinks, and call-to-action buttons. Accent colors must never dominate a layout.</p>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;margin-top:8px">
+        <div style="width:64px;height:64px;border-radius:var(--radius-m);background:#0071E3;flex-shrink:0"></div>
+        <div>
+          <div style="font-size:.85rem;font-weight:700;color:var(--black)">Brand Accent Blue</div>
+          <div style="font-size:.75rem;font-weight:600;color:var(--gray-500);font-family:'SF Mono',Monaco,Consolas,monospace">#0071E3</div>
+        </div>
+      </div>
+      <!-- Button Style Examples -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0" class="reveal">
+        <!-- Dark bg button -->
+        <div style="background:#1E1E20;border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:center">
+          <div style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px 10px 22px;border-radius:980px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);font-size:.85rem;font-weight:500;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)">Explore Products <span style="width:30px;height:30px;border-radius:50%;background:#0071E3;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem"><i class="fa-solid fa-plus"></i></span></div>
+        </div>
+        <!-- Light bg button -->
+        <div style="background:#F5F5F7;border-radius:16px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+          <div style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:980px;padding:10px 12px 10px 20px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+            <span style="font-size:.82rem;font-weight:500;color:var(--gray-700)">From industrial solutions</span>
+            <span style="display:inline-flex;padding:8px 22px;border-radius:980px;background:#0071E3;color:#fff;font-size:.78rem;font-weight:600">Buy</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.7rem;color:var(--gray-400);text-align:center;margin-bottom:28px">Button styles: Dark background (left) — Light background (right)</p>
+
+      <div class="objectives-grid">
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Interactive buttons and call-to-action elements</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Hyperlinks in digital interfaces</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Active states, selection highlights, and focus indicators</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Progress bars, loading indicators, and status badges</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Data visualization highlights (single emphasis point)</span></div>
+        <div class="objective-item reveal"><i class="fa-solid fa-check"></i><span>Toggle switches and form validation success states</span></div>
+      </div>
+      <div class="warning-banner reveal">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div class="warning-banner-content">
+          <h4>Accent Color Rule</h4>
+          <p>Accent colors must never exceed 8% of the total visible area of any design. They exist to guide the user's eye, not to decorate. If an accent color is removed and the design loses meaning, the design is too dependent on color and must be restructured.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Visual Example 2: Color Usage Hierarchy -->
+    <div id="sec-hierarchy" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-sort-amount-down"></i></div>
+        <span class="intro-subsection-title">Color Usage Hierarchy</span>
+      </div>
+      <p class="intro-subsection-desc">Every Koleex design must follow this strict color distribution. The hierarchy ensures that the brand always appears minimal, professional, and controlled.</p>
+      <div class="color-hierarchy">
+        <div class="hierarchy-level reveal">
+          <div class="hierarchy-bar" style="width:70%;background:var(--black);min-width:120px">
+            <span style="color:var(--white);font-size:.75rem;font-weight:700;letter-spacing:.05em">BLACK &amp; WHITE</span>
+          </div>
+          <div class="hierarchy-info">
+            <div class="hierarchy-info-left">
+              <span class="hierarchy-label">Primary Brand Colors</span>
+              <span class="hierarchy-desc">Headlines, body text, backgrounds, logo, core visuals</span>
+            </div>
+            <span class="hierarchy-percent">70%</span>
+          </div>
+        </div>
+        <div class="hierarchy-level reveal delay-1">
+          <div class="hierarchy-bar" style="width:50%;background:var(--gray-500);min-width:100px">
+            <span style="color:var(--white);font-size:.75rem;font-weight:700;letter-spacing:.05em">GRAY</span>
+          </div>
+          <div class="hierarchy-info">
+            <div class="hierarchy-info-left">
+              <span class="hierarchy-label">Structure &amp; Hierarchy</span>
+              <span class="hierarchy-desc">Borders, dividers, secondary text, backgrounds, cards</span>
+            </div>
+            <span class="hierarchy-percent">20%</span>
+          </div>
+        </div>
+        <div class="hierarchy-level reveal delay-2">
+          <div class="hierarchy-bar" style="width:30%;background:#0071E3;min-width:80px">
+            <span style="color:var(--white);font-size:.75rem;font-weight:700;letter-spacing:.05em">ACCENT</span>
+          </div>
+          <div class="hierarchy-info">
+            <div class="hierarchy-info-left">
+              <span class="hierarchy-label">Highlights &amp; UI States</span>
+              <span class="hierarchy-desc">Buttons, links, active states, focus indicators</span>
+            </div>
+            <span class="hierarchy-percent">8%</span>
+          </div>
+        </div>
+        <div class="hierarchy-level reveal delay-3">
+          <div class="hierarchy-bar" style="width:15%;background:linear-gradient(135deg,var(--gray-700),var(--gray-400));min-width:60px">
+            <span style="color:var(--white);font-size:.65rem;font-weight:700;letter-spacing:.05em">GRAD</span>
+          </div>
+          <div class="hierarchy-info">
+            <div class="hierarchy-info-left">
+              <span class="hierarchy-label">Gradients — Special Visuals Only</span>
+              <span class="hierarchy-desc">Hero sections, premium visuals, motion graphics</span>
+            </div>
+            <span class="hierarchy-percent">2%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Gradient Usage -->
+    <div id="sec-gradient" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <span class="intro-subsection-title">Gradient Usage</span>
+      </div>
+      <p class="intro-subsection-desc">Gradients are a special visual tool in the Koleex system. They are not part of everyday usage and must be applied only in premium, high-impact contexts with strict rules.</p>
+      <div class="compare-row">
+        <div class="compare-col do reveal">
+          <div class="compare-col-header"><i class="fa-solid fa-check-circle"></i> Gradients allowed in:</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-check"></i> Hero sections of websites and landing pages</li>
+            <li><i class="fa-solid fa-check"></i> Premium product visuals and feature highlights</li>
+            <li><i class="fa-solid fa-check"></i> Motion graphics and video intros</li>
+            <li><i class="fa-solid fa-check"></i> Exhibition and event backdrop designs</li>
+            <li><i class="fa-solid fa-check"></i> Special edition packaging accents</li>
+          </ul>
+        </div>
+        <div class="compare-col dont reveal">
+          <div class="compare-col-header"><i class="fa-solid fa-times-circle"></i> Gradients should not be used in:</div>
+          <ul class="compare-col-list">
+            <li><i class="fa-solid fa-xmark"></i> Logo or logo backgrounds</li>
+            <li><i class="fa-solid fa-xmark"></i> Body text or paragraph backgrounds</li>
+            <li><i class="fa-solid fa-xmark"></i> Official documents, invoices, or contracts</li>
+            <li><i class="fa-solid fa-xmark"></i> Business cards or letterheads</li>
+            <li><i class="fa-solid fa-xmark"></i> Standard UI components or navigation</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:.95rem;font-weight:600;color:var(--black);margin-bottom:16px;margin-top:32px">Gradient Rules:</p>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>Gradients must only use colors from the approved palette (black, white, gray tones)</span></div>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>Gradients must be subtle and never oversaturated or neon-like</span></div>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>Gradients must maintain legibility of any overlaid text or logo</span></div>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>Gradients should transition smoothly without visible banding</span></div>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>No more than two gradient colors per application</span></div>
+      <div class="objective-item reveal" style="margin-bottom:10px"><i class="fa-solid fa-check"></i><span>Rainbow or multi-color gradients are strictly prohibited</span></div>
+    </div>
+
+    <!-- 8. Color in Different Applications -->
+    <div id="sec-applications" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <span class="intro-subsection-title">Color in Different Applications</span>
+      </div>
+      <p class="intro-subsection-desc">Each brand touchpoint has specific color rules to ensure consistency. The following guidelines define how color is applied across key application types.</p>
+      <div class="app-cards-grid">
+        <div class="app-card reveal">
+          <div class="app-card-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="app-card-title">Posters</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> Black or white dominant backgrounds</li>
+            <li><i class="fa-solid fa-circle"></i> White or black headline text only</li>
+            <li><i class="fa-solid fa-circle"></i> Gray for subtitles and secondary info</li>
+            <li><i class="fa-solid fa-circle"></i> Accent color for one CTA element maximum</li>
+            <li><i class="fa-solid fa-circle"></i> No colorful imagery as background</li>
+          </ul>
+        </div>
+        <div class="app-card reveal delay-1">
+          <div class="app-card-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="app-card-title">Website</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> White page background as default</li>
+            <li><i class="fa-solid fa-circle"></i> Black navigation bar and footer</li>
+            <li><i class="fa-solid fa-circle"></i> Gray sections for content separation</li>
+            <li><i class="fa-solid fa-circle"></i> Accent blue for links and buttons only</li>
+            <li><i class="fa-solid fa-circle"></i> Dark mode: invert black/white, keep grays</li>
+          </ul>
+        </div>
+        <div class="app-card reveal delay-2">
+          <div class="app-card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <div class="app-card-title">UI / Software</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> White canvas, black text hierarchy</li>
+            <li><i class="fa-solid fa-circle"></i> Gray for sidebar, borders, and disabled states</li>
+            <li><i class="fa-solid fa-circle"></i> Accent for primary actions and active states</li>
+            <li><i class="fa-solid fa-circle"></i> Error red and success green for system states</li>
+            <li><i class="fa-solid fa-circle"></i> No decorative color in functional interfaces</li>
+          </ul>
+        </div>
+        <div class="app-card reveal delay-3">
+          <div class="app-card-icon"><i class="fa-solid fa-box-open"></i></div>
+          <div class="app-card-title">Packaging</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> White or matte black box surfaces</li>
+            <li><i class="fa-solid fa-circle"></i> Black logo and product name</li>
+            <li><i class="fa-solid fa-circle"></i> Gray for specifications and technical text</li>
+            <li><i class="fa-solid fa-circle"></i> No color images or illustrations on package</li>
+            <li><i class="fa-solid fa-circle"></i> Minimal, clean, editorial layout</li>
+          </ul>
+        </div>
+        <div class="app-card reveal delay-4">
+          <div class="app-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="app-card-title">Documents</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> White paper, black body text</li>
+            <li><i class="fa-solid fa-circle"></i> Black headings, gray subheadings</li>
+            <li><i class="fa-solid fa-circle"></i> Gray for table borders and dividers</li>
+            <li><i class="fa-solid fa-circle"></i> No colored backgrounds or highlighted text</li>
+            <li><i class="fa-solid fa-circle"></i> Logo always in black on document headers</li>
+          </ul>
+        </div>
+        <div class="app-card reveal delay-5">
+          <div class="app-card-icon"><i class="fa-solid fa-store"></i></div>
+          <div class="app-card-title">Exhibitions</div>
+          <ul class="app-card-list">
+            <li><i class="fa-solid fa-circle"></i> Black booth structure, white panels</li>
+            <li><i class="fa-solid fa-circle"></i> Large white logo on black surfaces</li>
+            <li><i class="fa-solid fa-circle"></i> Controlled lighting (white or warm neutral)</li>
+            <li><i class="fa-solid fa-circle"></i> Gray for informational signage</li>
+            <li><i class="fa-solid fa-circle"></i> Accent only for digital screens or interactive elements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Visual Example 3: Correct Color Usage (Poster) -->
+    <div id="sec-examples" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon" style="background:var(--success)"><i class="fa-solid fa-check"></i></div>
+        <span class="intro-subsection-title">Visual Example: Correct Color Usage</span>
+      </div>
+      <p class="intro-subsection-desc">A properly designed Koleex poster uses minimal, controlled color with clear hierarchy and maximum readability.</p>
+      <div class="mockup-poster reveal">
+        <div class="mockup-poster-inner">
+          <div class="mp-koleex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+          </div>
+          <div style="font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:28px">Koleex Industrial Group</div>
+          <h2>Industrial<br>Technology</h2>
+          <div class="mp-subtitle">Next Generation Systems</div>
+          <div class="mp-buttons">
+            <div class="mp-btn">Learn More <span class="btn-icon"><i class="fa-solid fa-plus"></i></span></div>
+            <div class="mp-btn-outline">Explore Products <span class="btn-icon"><i class="fa-solid fa-chevron-right"></i></span></div>
+          </div>
+        </div>
+        <div class="mockup-poster-caption"><i class="fa-solid fa-check-circle"></i> Correct — Minimal, controlled color usage with clear hierarchy</div>
+      </div>
+    </div>
+
+    <!-- 10. Visual Example 4: Incorrect Color Usage -->
+    <div class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon" style="background:var(--error)"><i class="fa-solid fa-xmark"></i></div>
+        <span class="intro-subsection-title">Visual Example: Incorrect Color Usage</span>
+      </div>
+      <p class="intro-subsection-desc">This example shows what happens when color rules are violated. Multiple colors, neon effects, and rainbow gradients destroy the brand's professional identity.</p>
+      <div class="mockup-incorrect reveal">
+        <div class="mockup-incorrect-overlay">X</div>
+        <div class="mockup-incorrect-inner">
+          <div class="mi-extra-top">/// HOT NEW DEALS ///</div>
+          <h2>KOLEEX TECH!</h2>
+          <div class="mi-subtitle">*** AMAZING PRODUCTS ***</div>
+          <div class="mi-btn">BUY NOW!!!</div>
+          <div class="mi-extra">~ Best Deals ~ Special Offer ~ Limited Time ~</div>
+          <div class="mi-extra-bottom">DISCOUNT CODE: NEON2026 | FREE SHIPPING | 24/7 SUPPORT</div>
+        </div>
+        <div class="mockup-incorrect-caption"><i class="fa-solid fa-times-circle"></i> Incorrect — Too many colors, no hierarchy, neon effects, not brand-aligned</div>
+      </div>
+    </div>
+
+    <!-- 11. Visual Example 5: UI Color System (Dashboard) -->
+    <div class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-desktop"></i></div>
+        <span class="intro-subsection-title">Visual Example: UI Color System</span>
+      </div>
+      <p class="intro-subsection-desc">A Koleex software dashboard demonstrates how the color palette creates a clean, functional interface with controlled accent usage.</p>
+      <div class="mockup-dashboard reveal">
+        <div class="mockup-dashboard-inner">
+          <div class="mockup-dash-sidebar">
+            <div class="mockup-dash-sidebar-logo">Koleex</div>
+            <div class="mockup-dash-sidebar-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</div>
+            <div class="mockup-dash-sidebar-item"><i class="fa-solid fa-box"></i> Products</div>
+            <div class="mockup-dash-sidebar-item"><i class="fa-solid fa-users"></i> Clients</div>
+            <div class="mockup-dash-sidebar-item"><i class="fa-solid fa-file-lines"></i> Reports</div>
+            <div class="mockup-dash-sidebar-item"><i class="fa-solid fa-gear"></i> Settings</div>
+          </div>
+          <div class="mockup-dash-main">
+            <h3>Overview</h3>
+            <div class="mockup-dash-stats">
+              <div class="mockup-dash-stat">
+                <div class="stat-val">1,284</div>
+                <div class="stat-lbl">Total Orders</div>
+              </div>
+              <div class="mockup-dash-stat">
+                <div class="stat-val">$42.8K</div>
+                <div class="stat-lbl">Revenue</div>
+              </div>
+              <div class="mockup-dash-stat">
+                <div class="stat-val">96.2%</div>
+                <div class="stat-lbl">Uptime</div>
+              </div>
+            </div>
+            <div class="mockup-dash-chart">
+              <div class="mockup-dash-bar" style="height:40%;background:var(--gray-300)"></div>
+              <div class="mockup-dash-bar" style="height:65%;background:var(--gray-400)"></div>
+              <div class="mockup-dash-bar" style="height:85%;background:var(--gray-700)"></div>
+              <div class="mockup-dash-bar" style="height:50%;background:#0071E3"></div>
+              <div class="mockup-dash-bar" style="height:70%;background:var(--gray-300)"></div>
+              <div class="mockup-dash-bar" style="height:55%;background:var(--gray-400)"></div>
+              <div class="mockup-dash-bar" style="height:90%;background:var(--black)"></div>
+            </div>
+            <div class="mockup-dash-btn">Generate Report</div>
+          </div>
+        </div>
+        <div class="mockup-dashboard-caption"><i class="fa-solid fa-desktop"></i> Dashboard — Controlled Color Palette with single accent highlight</div>
+      </div>
+    </div>
+
+    <!-- 12. Visual Example 6: Packaging Color -->
+    <div class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon"><i class="fa-solid fa-box-open"></i></div>
+        <span class="intro-subsection-title">Visual Example: Packaging Color</span>
+      </div>
+      <p class="intro-subsection-desc">Koleex packaging follows the same strict color principles — minimal, authoritative, and industrial. The product packaging should feel premium through restraint, not decoration.</p>
+      <div class="mockup-package reveal">
+        <div class="mockup-package-inner">
+          <div class="mockup-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg>
+            <div class="box-product">Industrial Controller</div>
+            <div class="box-model">Model KX-9400 Series</div>
+            <div class="box-specs">
+              Input: 24V DC | Output: 4-20mA<br>
+              Operating Temp: -20 to 85 C<br>
+              Protection: IP67 Rated<br>
+              Cert: CE / UL / ISO 9001
+            </div>
+          </div>
+        </div>
+        <div class="mockup-package-caption"><i class="fa-solid fa-box-open"></i> Industrial Packaging — Minimal Color, Maximum Authority</div>
+      </div>
+    </div>
+
+    <!-- 13. Color Do -->
+    <div id="sec-dodont" class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon" style="background:var(--success)"><i class="fa-solid fa-check"></i></div>
+        <span class="intro-subsection-title">Color Do</span>
+      </div>
+      <p class="intro-subsection-desc">Always follow these color guidelines across all Koleex brand materials:</p>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Always use black and white as the primary color pair in every design</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Use only the approved gray values from the official palette</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Follow the 70/20/8/2 color distribution hierarchy</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Ensure all text has a minimum contrast ratio of 4.5:1 against its background</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Use accent colors only for interactive and functional elements</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Test every design in black and white first before adding any color</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Use gradients only in approved premium contexts with approved colors</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Maintain consistency across all platforms — digital, print, and physical</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Use the exact HEX values specified in this document — do not approximate</span></div>
+      <div class="green-border-item reveal"><i class="fa-solid fa-check"></i><span>Keep packaging and documents strictly black, white, and gray</span></div>
+    </div>
+
+    <!-- 14. Color Don't -->
+    <div class="intro-subsection reveal">
+      <div class="intro-subsection-header">
+        <div class="intro-subsection-icon" style="background:var(--error)"><i class="fa-solid fa-xmark"></i></div>
+        <span class="intro-subsection-title">Color Don't</span>
+      </div>
+      <p class="intro-subsection-desc">Never do any of the following in Koleex brand materials:</p>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use bright, saturated, or neon colors anywhere in the brand</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use rainbow gradients or multi-color backgrounds</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not apply color to the logo — it must remain black, white, or gray</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use colored text on colored backgrounds (e.g. red text on blue)</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not let accent colors exceed 8% of the visible design area</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use glow, neon, or shadow color effects on any element</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use unapproved gray values — stick to the defined palette</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use color as the only differentiator — structure must work without it</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use gradients in official documents, business cards, or forms</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not introduce new colors without written approval from the brand team</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use color to make a design look "exciting" — the content must speak for itself</span></div>
+      <div class="red-border-item reveal"><i class="fa-solid fa-xmark"></i><span>Do not use decorative color patterns, textures, or color overlays</span></div>
+    </div>
+
+    <!-- Summary -->
+    <div class="intro-summary reveal">
+      <div class="intro-summary-left"><i class="fa-solid fa-bookmark"></i></div>
+      <div class="intro-summary-right">
+        <h4>Summary of Color System</h4>
+        <div style="margin:20px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <div style="width:40px;height:40px;border-radius:8px;background:#000000;border:1px solid rgba(255,255,255,.1)"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#FFFFFF;border:1px solid rgba(255,255,255,.2)"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#1E1E20"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#86868B"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#D2D2D7"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#F5F5F7;border:1px solid rgba(255,255,255,.1)"></div>
+          <div style="width:40px;height:40px;border-radius:8px;background:#0071E3"></div>
+        </div>
+        <div class="intro-summary-tags">
+          <span class="intro-summary-tag">Black &amp; White</span>
+          <span class="intro-summary-tag">Gray Palette</span>
+          <span class="intro-summary-tag">Accent Blue</span>
+          <span class="intro-summary-tag">70/20/8/2 Rule</span>
+          <span class="intro-summary-tag">Gradient Rules</span>
+          <span class="intro-summary-tag">Application Rules</span>
+          <span class="intro-summary-tag">Contrast Standards</span>
+          <span class="intro-summary-tag">Do &amp; Don't</span>
+        </div>
+        <p class="intro-summary-note">The Koleex color system must always be used with precision and restraint. Color is structural, not decorative. Any deviation from this system requires written approval from the brand management team.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Prev/Next -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="prev-next">
+      <a href="#"><i class="fa-solid fa-arrow-left pn-icon"></i><div><div class="pn-label">Previous</div><div class="pn-title">12 Logo Do &amp; Don't</div></div></a>
+      <a href="#" class="next"><div><div class="pn-label">Next</div><div class="pn-title">14 Typography System</div></div><i class="fa-solid fa-arrow-right pn-icon"></i></a>
+    </div>
+  </div>
+</section>
+</div><!-- end page-content -->
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719.83 107.57"><path d="M116.59,96.3v11.05h-10.6L14.66,62.47v44.88H0V1.58h14.66v43.53L105.99,1.58h10.6v11.05L28.42,53.9l88.18,42.4Z"/><path d="M242.65,71.04c0,20.07-14.21,36.54-34.28,36.54h-50.74c-20.52,0-35.18-16.01-35.18-36.54v-35.18C122.45,15.11,136.88.45,157.63.45h49.84c20.52,0,35.18,14.88,35.18,35.41v35.18ZM227.77,38.11c0-12.4-8.34-23.23-20.3-23.23h-49.84c-11.95,0-20.3,10.83-20.3,23.23v31.8c0,11.95,8.34,23,20.3,23h49.84c11.95,0,20.3-11.05,20.3-23v-31.8Z"/><path d="M363.07,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54l.23-71.04h14.66v69.91c0,11.95,8.34,23,20.3,23h68.56v14.66h-.01Z"/><path d="M473.8,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M585.42,107.57h-68.56c-20.52,0-35.18-16.01-35.18-36.54v-34.51c0-20.52,14.66-34.96,35.18-34.96h68.56v14.88h-68.56c-11.73,0-20.3,9.7-20.3,21.2v10.6l88.18.23v14.66l-88.18-.23v6.99c0,11.95,8.57,23,20.3,23h68.56v14.68Z"/><path d="M719.83,96.3v11.05h-10.6l-48.04-42.62-48.04,42.62h-10.37v-11.05l46.91-41.72-46.91-41.95V1.58h10.37l48.04,42.62L709.23,1.58h10.6v11.05l-47.13,41.95,47.13,41.72ZM661.19,71.04l40.59,36.31h-81.19l40.59-36.31h0Z"/></svg></a>
+      <span class="footer-text">&copy; 2026 Koleex International Group. Brand Guidelines v1.0</span>
+    </div>
+  </div>
+</footer>
+
+<script src="translations.js?v=2"></script>
+<script src="shared-nav.js?v=7"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="brand-checker.js"></script>
+<script src="brand-checker-ui.js"></script>
+</body>
+</html>

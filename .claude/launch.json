@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "koleex-brand-site",
+      "runtimeExecutable": "/usr/bin/ruby",
+      "runtimeArgs": ["/tmp/koleex_server.rb"],
+      "port": 8080
+    }
+  ]
+}
